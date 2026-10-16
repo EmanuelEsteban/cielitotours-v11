@@ -50,14 +50,6 @@ function HandHeart({ className = "" }: { className?: string }) {
   return <svg className={`nos-heart ${className}`} viewBox="0 0 40 36" aria-hidden="true"><path d="M20 33C9 25 3 19 3.5 11.5 4 6 8.5 3 13 3.6c3.4.4 5.6 2.8 7 5.6 1.6-3.3 4.6-6 8.6-5.8 4.6.3 8 4.2 7.4 9-.8 6.6-7.4 12.6-17.6 19.8" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>;
 }
 
-function Palm({ className }: { className: string }) {
-  return <svg className={className} viewBox="0 0 200 260" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round">
-    <path d="M104 258c-6-60-4-120 8-176" />
-    <path d="M112 82c-20-26-56-34-92-22 30 2 56 12 74 30M112 82c-30-6-62 6-84 32 26-12 54-16 78-10M112 82c4-30 26-54 60-62-26 14-42 34-50 58M112 82c26-12 58-10 84 8-28-4-54 0-76 12M112 82c18 12 32 34 36 60-12-22-28-38-46-48" />
-    <path d="M40 66l6 6M54 62l4 8M70 64l2 8M36 104l8-2M50 96l6 4M150 34l-2 8M164 30l-6 6M150 92l8 0M168 94l-4 6" />
-  </svg>;
-}
-
 function Stamp() {
   return <svg className="nos-stamp" viewBox="0 0 140 140" aria-hidden="true">
     <defs><path id="nos-circ" d="M70 70 m-46 0 a46 46 0 1 1 92 0 a46 46 0 1 1 -92 0" /></defs>
@@ -81,15 +73,52 @@ function HeroEdge() {
   </svg>;
 }
 
+function HeroRoute() {
+  return <svg className="nos-hero-route" viewBox="0 0 800 400" preserveAspectRatio="none" aria-hidden="true" fill="none">
+    <defs><linearGradient id="nos-hr" x1="0" x2="1"><stop offset="0" stopColor="#E7CB94" stopOpacity="0" /><stop offset=".35" stopColor="#E7CB94" stopOpacity=".7" /><stop offset="1" stopColor="#E7CB94" stopOpacity="0" /></linearGradient></defs>
+    <path d="M40 340 C220 300 300 160 470 130 S700 90 780 30" stroke="url(#nos-hr)" strokeWidth="1.4" strokeDasharray="2 7" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
+  </svg>;
+}
+
+function MapLines({ className }: { className: string }) {
+  return <svg className={className} viewBox="0 0 400 400" aria-hidden="true" fill="none" stroke="currentColor">
+    {[60, 100, 140, 180].map((r) => <circle key={r} cx="400" cy="0" r={r * 1.6} strokeWidth=".7" />)}
+    <path d="M400 40 C300 60 260 140 180 160 S60 220 20 300" strokeWidth=".8" strokeDasharray="1 6" strokeLinecap="round" />
+  </svg>;
+}
+
+function RouteDots({ className }: { className: string }) {
+  return <svg className={className} viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true" fill="none" stroke="currentColor">
+    <path d="M0 90 C200 20 380 110 600 60 S980 10 1200 70" strokeWidth="1" strokeDasharray="2 8" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
+  </svg>;
+}
+
+function Botanic({ className }: { className: string }) {
+  return <svg className={className} viewBox="0 0 200 320" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth=".9" strokeLinecap="round">
+    <path d="M100 318 C96 230 104 140 130 20" />
+    {[60, 100, 140, 180, 220, 260].map((y, i) => <g key={y}>
+      <path d={`M${112 - i * 2} ${y} C${150 - i} ${y - 30} ${180 - i * 3} ${y - 20} ${190 - i * 4} ${y - 40}`} />
+      <path d={`M${110 - i * 2} ${y + 10} C${70 - i} ${y - 16} ${36 + i * 2} ${y - 4} ${16 + i * 3} ${y - 28}`} />
+    </g>)}
+  </svg>;
+}
+
+function CtaDeco() {
+  return <svg className="nos-cta-deco" viewBox="0 0 1440 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" fill="none">
+    <g stroke="#B88A4A" opacity=".28"><circle cx="-40" cy="200" r="190" strokeWidth=".8" /><circle cx="-40" cy="200" r="150" strokeWidth=".6" strokeDasharray="2 5" /><path d="M-230 200 H150 M-40 10 V390" strokeWidth=".5" /></g>
+    <path d="M520 330 C820 360 1040 220 1440 90" stroke="#B88A4A" strokeWidth="1" strokeDasharray="2 8" strokeLinecap="round" opacity=".4" />
+    <path d="M1300 70 l6 18 l18 6 l-18 6 l-6 18 l-6 -18 l-18 -6 l18 -6 Z" fill="#C9A66B" opacity=".55" />
+  </svg>;
+}
+
 function Nosotros() {
   return <SiteShell>
     <div className="nos">
       {/* HERO */}
       <section className="nos-hero">
-        <Palm className="nos-palm nos-palm-hero" />
         <div className="nos-hero-img">
           <img src={IMG + "01_HERO_PLAYA_COSTA.png"} alt="Vista aérea de una costa tropical con playa, vegetación y resort" width={1920} height={1080} fetchPriority="high" />
-          <p className="nos-script nos-hero-hand" aria-hidden="true"><span>Explora</span><span>Vive</span><span>Conecta <HandHeart /></span></p>
+          <HeroRoute />
         </div>
         <div className="nos-wrap nos-hero-grid">
           <div className="nos-hero-txt">
@@ -106,6 +135,7 @@ function Nosotros() {
 
       {/* ESENCIA */}
       <section className="nos-esencia">
+        <MapLines className="nos-deco nos-esencia-map" />
         <div className="nos-wrap nos-esencia-grid">
           <div className="nos-esencia-txt">
             <p className="nos-kicker">Nuestra esencia</p>
@@ -123,9 +153,10 @@ function Nosotros() {
 
       {/* ESPECIALIDAD */}
       <section className="nos-spec">
-        <Palm className="nos-palm nos-palm-spec" />
+        <RouteDots className="nos-deco nos-spec-route" />
         <div className="nos-wrap">
           <p className="nos-kicker text-center">Nuestra especialidad</p>
+          <span className="nos-orn" aria-hidden="true"><i /><b /><i /></span>
           <h2 className="nos-h2 text-center">Diversos propósitos, un mismo compromiso</h2>
           <ul className="nos-cards">
             {specs.map(({ img, pos, icon: I, title, text, alt }) => <li key={title} className="nos-card">
@@ -140,8 +171,8 @@ function Nosotros() {
 
       {/* APAPACHO */}
       <section className="nos-apa">
-        <Palm className="nos-palm nos-palm-apa-l" />
-        <Palm className="nos-palm nos-palm-apa-r" />
+        <Botanic className="nos-deco nos-apa-leaf-l" />
+        <Botanic className="nos-deco nos-apa-leaf-r" />
         <div className="nos-wrap nos-apa-grid">
           <div className="nos-apa-txt">
             <p className="nos-kicker nos-kicker-champ">Bodas destino y eventos especiales</p>
@@ -177,13 +208,14 @@ function Nosotros() {
 
       {/* CTA */}
       <section className="nos-cta">
-        <Palm className="nos-palm nos-palm-cta-l" />
-        <Palm className="nos-palm nos-palm-cta-r" />
+        <CtaDeco />
         <div className="nos-wrap nos-cta-grid">
           <h2 className="nos-h2">Tu próximo viaje o evento<br />comienza aquí.</h2>
           <p className="nos-p">Cuéntanos qué tienes en mente y permítenos ayudarte a encontrar las opciones adecuadas para tu viaje o evento. En Cielito Tours estamos listos para escucharte.</p>
-          <Link to="/cotizar" className="nos-btn">Cotizar mi viaje <ArrowRight className="size-4" aria-hidden /></Link>
-          <p className="nos-script nos-cta-hand" aria-hidden="true">La vida es mejor<br />&nbsp;&nbsp;&nbsp;viajando <HandHeart /></p>
+          <div className="nos-cta-act">
+            <Link to="/cotizar" className="nos-btn">Cotizar mi viaje <ArrowRight className="size-4" aria-hidden /></Link>
+            <p className="nos-script nos-cta-hand" aria-hidden="true">La vida es mejor<br />&nbsp;&nbsp;&nbsp;viajando <HandHeart /></p>
+          </div>
         </div>
       </section>
     </div>
