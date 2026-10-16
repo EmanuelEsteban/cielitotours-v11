@@ -2891,3 +2891,23 @@ main:has(> .vuelos-final:last-child) + .site-footer .footer-transition-thread { 
   .vuelos-final-weave .vf-a { stroke-width: 2.25; }
   .vuelos-final-weave .vf-b { stroke-width: 1.25; opacity: .8; }
 }
+
+/* HOSPEDAJE MASTER DESIGN 01 — hero (page-scoped) */
+.hosp-hero { --hosp-navy: oklch(0.27 0.06 250); --hosp-gold: oklch(0.79 0.1 80); --hosp-gold-hi: oklch(0.87 0.1 85); --hosp-ivory: oklch(0.98 0.015 85); }
+.hosp-hero-shade { background: linear-gradient(0deg, color-mix(in oklab, var(--hosp-navy) 92%, transparent) 0%, color-mix(in oklab, var(--hosp-navy) 55%, transparent) 55%, color-mix(in oklab, var(--hosp-navy) 15%, transparent) 100%); }
+@media (min-width: 640px) { .hosp-hero-shade { background: linear-gradient(90deg, color-mix(in oklab, var(--hosp-navy) 94%, transparent) 0%, color-mix(in oklab, var(--hosp-navy) 78%, transparent) 30%, color-mix(in oklab, var(--hosp-navy) 30%, transparent) 55%, transparent 75%); } }
+.hosp-hero-label { display: flex; align-items: center; gap: 14px; font: 600 13px/1 "Manrope", sans-serif; letter-spacing: .32em; text-transform: uppercase; color: var(--hosp-gold); }
+.hosp-hero-label::before { content: ""; width: 40px; height: 1px; background: linear-gradient(90deg, transparent, var(--hosp-gold)); }
+.hosp-hero-title { margin-top: 18px; font-family: "Cormorant Garamond", "Playfair Display", serif; font-weight: 500; text-transform: uppercase; font-size: clamp(2.2rem, 9vw, 2.8rem); line-height: 1.04; letter-spacing: .01em; color: var(--hosp-ivory); }
+.hosp-hero-title span { font-style: italic; font-weight: 600; color: var(--hosp-gold-hi); }
+@media (min-width: 640px) { .hosp-hero-title { font-size: 3.4rem; } }
+@media (min-width: 1024px) { .hosp-hero-title { font-size: 4.1rem; } }
+.hosp-hero-copy { margin-top: 18px; max-width: 28rem; font: 400 16px/1.65 "Manrope", sans-serif; color: color-mix(in oklab, var(--hosp-ivory) 88%, transparent); }
+.hosp-hero-cta { border-radius: 12px; border: 1px solid color-mix(in oklab, var(--primary) 68%, white 32%); background: linear-gradient(180deg, color-mix(in oklab, var(--primary) 92%, white 8%), var(--primary) 55%, color-mix(in oklab, var(--primary) 92%, black 8%)); box-shadow: 0 6px 18px color-mix(in oklab, var(--primary) 30%, transparent), inset 0 1px 0 color-mix(in oklab, white 25%, transparent); font-weight: 600; transition: transform 220ms ease, box-shadow 220ms ease; }
+.hosp-hero-cta svg { transition: transform 220ms ease; }
+.hosp-hero-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 24px color-mix(in oklab, var(--primary) 36%, transparent), inset 0 1px 0 color-mix(in oklab, white 25%, transparent); }
+.hosp-hero-cta:hover svg { transform: translateX(3px); }
+.hosp-hero-cta:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.hosp-hero-hand { display: none; position: absolute; right: 5%; top: 50%; transform: translateY(-50%); z-index: 1; text-align: right; font: 400 40px/1.1 "Parisienne", cursive; color: var(--hosp-gold-hi); text-shadow: 0 2px 12px color-mix(in oklab, var(--hosp-navy) 60%, transparent); pointer-events: none; }
+@media (min-width: 1100px) { .hosp-hero-hand { display: block; } }
+@media (prefers-reduced-motion: reduce) { .hosp-hero-cta, .hosp-hero-cta svg { transition: none; } }

@@ -87,15 +87,16 @@ export const Route = createFileRoute("/servicios/hospedaje")({
 function StayPage() {
   return (
     <SiteShell>
-      <section className="relative min-h-[510px] overflow-hidden bg-ink text-primary-foreground sm:min-h-[500px] lg:min-h-[540px]">
-        <img src={stayHeroImage} alt="Pareja llegando a una estancia frente al mar" width={1920} height={1088} fetchPriority="high" className="absolute inset-0 size-full object-cover object-[60%_center] sm:object-[58%_center] lg:object-center" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/55 to-ink/5 sm:bg-gradient-to-r sm:from-ink sm:via-ink/70 sm:to-ink/5" />
-        <div className="relative mx-auto flex min-h-[510px] max-w-7xl items-end px-6 pb-11 pt-24 sm:min-h-[500px] sm:items-center sm:px-10 sm:py-14 lg:min-h-[540px] lg:px-8">
-          <div className="max-w-2xl border-l-2 border-accent pl-5 sm:pl-7">
-            <p className="kicker-text font-extrabold uppercase tracking-[.18em] text-accent">Hospedaje</p>
-            <h1 className="mt-3 font-display text-[clamp(2.05rem,8.5vw,2.8rem)] font-extrabold uppercase leading-[1.02] sm:text-[3.15rem] lg:text-[3.75rem]">Un buen viaje también se siente en <span className="text-accent">donde te quedas.</span></h1>
-            <p className="mt-4 max-w-xl text-base leading-7 text-primary-foreground/85 sm:text-lg sm:leading-8">Cuéntanos tu destino, tus fechas y el tipo de estancia que imaginas. Te ayudamos a preparar opciones que encajen con tu viaje.</p>
-            <Button asChild size="lg" className="mt-6 min-h-12 w-full sm:w-auto"><a href="#cotizar-hospedaje">Cotizar hospedaje <ArrowDown /></a></Button>
+      <section className="hosp-hero relative min-h-[560px] overflow-hidden bg-ink text-primary-foreground sm:min-h-[540px] lg:min-h-[600px]">
+        <img src={stayHeroImage} alt="Terraza de resort con piscina infinita frente al mar al atardecer" width={1920} height={1088} fetchPriority="high" className="absolute inset-0 size-full object-cover object-[62%_center] lg:object-center" />
+        <div className="hosp-hero-shade absolute inset-0" />
+        <p aria-hidden="true" className="hosp-hero-hand">Tu descanso<br />también<br />es parte<br />del viaje.</p>
+        <div className="relative mx-auto flex min-h-[560px] max-w-7xl items-end px-5 pb-12 pt-24 sm:min-h-[540px] sm:items-center sm:px-10 sm:py-16 lg:min-h-[600px] lg:px-8">
+          <div className="max-w-[34rem]">
+            <p className="hosp-hero-label">Hospedaje</p>
+            <h1 className="hosp-hero-title">Un buen viaje<br />también se siente<br />en donde<br /><span>te quedas.</span></h1>
+            <p className="hosp-hero-copy">Encuentra el alojamiento ideal para tu estilo de viaje. Hoteles, resorts, villas y experiencias únicas en México y el mundo.</p>
+            <Button asChild size="lg" className="hosp-hero-cta mt-7 min-h-12 w-full sm:w-auto"><a href="#cotizar-hospedaje">Cotizar hospedaje <ArrowRight aria-hidden="true" strokeWidth={1.5} /></a></Button>
           </div>
         </div>
         <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-background to-transparent" />
