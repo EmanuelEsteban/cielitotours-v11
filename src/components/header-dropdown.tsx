@@ -13,7 +13,7 @@ export function HeaderDropdown({ id, open, children, pathname }: {
   return <div id={id} className="header-dropdown" inert={!open}>
     <div className="header-dropdown-options" onMouseLeave={(event) => {
       const focused = event.currentTarget.querySelector<HTMLAnchorElement>(":focus");
-      setActive(focused ? Number(focused.dataset.index) : null);
+      setActive(focused ? Number(focused.dataset['index']) : null);
     }} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setActive(null); }}>
       <span aria-hidden="true" className={`header-selection-marker marker-${active ?? 0}`} data-visible={active !== null && open} />
       {children.map(([label, href], index) => {

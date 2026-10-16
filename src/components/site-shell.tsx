@@ -1,9 +1,10 @@
 import { Link, useLocation } from "@tanstack/react-router";
-import { ArrowRight, ChevronDown, Facebook, Instagram, Menu, Music2, Plane, X } from "lucide-react";
+import { ArrowRight, ChevronDown, Facebook, Instagram, Menu, MessageCircle, Music2, Plane, X } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import logoAsset from "@/assets/cielito-logo-mark.jpg";
 import { HeaderDropdown } from "@/components/header-dropdown";
+import { WHATSAPP_URL } from "@/lib/contact-request";
 
 type NavItem = { label: string; href: string; children?: ReadonlyArray<readonly [string, string]> };
 
@@ -56,7 +57,11 @@ export function SiteShell({ children }: { children: ReactNode }) {
         <div className="header-signature-inner">
           <span className="header-signature-message"><Plane aria-hidden="true" strokeWidth={1.5} />Viajar bien, cambia todo</span>
           <span className="header-signature-brand">EXPERIENCIAS QUE CONECTAN</span>
-          <div className="header-signature-socials" aria-label="Redes sociales" />
+          <div className="header-signature-socials" aria-label="Redes sociales">
+            <span className="header-signature-social" data-pending="true" role="img" aria-label="Instagram: enlace oficial pendiente" title="Instagram: enlace oficial pendiente"><Instagram aria-hidden="true" strokeWidth={1.5} /></span>
+            <a className="header-signature-social" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp"><MessageCircle aria-hidden="true" strokeWidth={1.5} /></a>
+            <span className="header-signature-social" data-pending="true" role="img" aria-label="TikTok: enlace oficial pendiente" title="TikTok: enlace oficial pendiente"><Music2 aria-hidden="true" strokeWidth={1.5} /></span>
+          </div>
         </div>
       </div>
       <div className={`header-main mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 transition-[height] duration-300 sm:px-5 lg:grid-cols-[minmax(0,1fr)_auto_auto] lg:gap-7 lg:px-8 ${scrolled ? "h-16" : "h-[4.75rem] lg:h-[5.5rem]"}`}>
