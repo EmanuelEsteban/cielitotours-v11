@@ -1,10 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { format, parseISO, startOfToday } from "date-fns";
 import { es } from "date-fns/locale";
-import { ArrowDown, ArrowLeft, ArrowRight, BedDouble, CalendarDays, ChevronDown, Minus, Plus } from "lucide-react";
+import { ArrowDown, ArrowLeft, ArrowRight, BedDouble, CalendarDays, ChevronDown, Hotel, Minus, Plus } from "lucide-react";
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import stayHeroImage from "@/assets/hospedaje-hero-resort.jpg";
-import stayProcessImage from "@/assets/cielito-stay-process.jpg";
+import stayProcessImage from "@/assets/hospedaje-process-terrace.jpg";
+import stayQuoteImage from "@/assets/hospedaje-quote-resort.jpg";
 import { SiteShell } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
@@ -90,50 +91,55 @@ function StayPage() {
       <section className="hosp-hero relative min-h-[560px] overflow-hidden bg-ink text-primary-foreground sm:min-h-[540px] lg:min-h-[600px]">
         <img src={stayHeroImage} alt="Terraza de resort con piscina infinita frente al mar al atardecer" width={1920} height={1088} fetchPriority="high" className="absolute inset-0 size-full object-cover object-[62%_center] lg:object-center" />
         <div className="hosp-hero-shade absolute inset-0" />
-        <p aria-hidden="true" className="hosp-hero-hand">Tu descanso<br />también<br />es parte<br />del viaje.</p>
+        <p aria-hidden="true" className="hosp-hand hosp-hero-hand">Tu descanso<br />también<br />es parte<br />del viaje.</p>
         <div className="relative mx-auto flex min-h-[560px] max-w-7xl items-end px-5 pb-12 pt-24 sm:min-h-[540px] sm:items-center sm:px-10 sm:py-16 lg:min-h-[600px] lg:px-8">
-          <div className="max-w-[36rem]">
+          <div className="max-w-[38rem]">
             <p className="hosp-hero-label">Hospedaje</p>
             <h1 className="hosp-hero-title">Un buen viaje<br />también se siente<br />en donde<br /><span>te quedas.</span></h1>
             <p className="hosp-hero-copy">Encuentra el alojamiento ideal para tu estilo de viaje. Hoteles, resorts, villas y experiencias únicas en México y el mundo.</p>
             <Button asChild size="lg" className="hosp-hero-cta mt-7 min-h-12 w-full sm:w-auto"><a href="#cotizar-hospedaje">Cotizar hospedaje <ArrowRight aria-hidden="true" strokeWidth={1.5} /></a></Button>
           </div>
         </div>
-        <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-background to-transparent" />
-        
+        <svg aria-hidden="true" viewBox="0 0 1440 90" preserveAspectRatio="none" className="hosp-wave"><path className="hosp-wave-fill" d="M0 64C300 96 520 30 820 46S1240 70 1440 18V90H0Z" /><path className="hosp-wave-line" d="M0 64C300 96 520 30 820 46S1240 70 1440 18" /></svg>
       </section>
 
-      <section id="cotizar-hospedaje" className="mobile-section bg-background py-16 sm:py-24">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[.58fr_1.42fr] lg:gap-16 lg:px-8">
-          <div className="lg:sticky lg:top-24 lg:self-start">
-            <p className="section-kicker">Cotización personalizada</p>
-            <h2 className="mt-4 font-display text-4xl font-bold leading-tight text-ink sm:text-5xl">Imagina tu estancia.</h2>
+      <section id="cotizar-hospedaje" className="hosp-quote mobile-section relative overflow-hidden py-16 sm:py-24">
+        <img src={stayQuoteImage} alt="" aria-hidden="true" width={1024} height={1280} loading="lazy" className="hosp-quote-photo" />
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[.66fr_1.34fr] lg:gap-14 lg:px-8">
+          <div className="lg:self-center lg:pl-10 xl:pl-14">
+            <p className="hosp-quote-kicker">Cotización personalizada</p>
+            <h2 className="hosp-serif mt-4 text-[2.6rem] leading-[1.05] text-ink sm:text-[3.4rem]">Imagina tu <em>estancia.</em></h2>
             <p className="mt-5 max-w-md font-semibold leading-7 text-ink">Preparamos tu solicitud de hospedaje de forma personalizada.</p>
             <p className="mt-3 max-w-md leading-7 text-muted-foreground">Cuéntanos qué necesitas para que nuestro equipo pueda revisar opciones adecuadas para tu viaje.</p>
-            <div className="mt-8 border-l-2 border-accent pl-5 text-sm leading-6 text-muted-foreground">Disponibilidad, condiciones y tarifas se confirman al momento de cotizar.</div>
+            <div className="mt-8 flex max-w-md items-center gap-4 text-sm leading-6 text-muted-foreground"><span className="hosp-icon-chip"><Hotel aria-hidden="true" strokeWidth={1.5} /></span>Disponibilidad, condiciones y tarifas se confirman al momento de cotizar.</div>
           </div>
           <StayQuoteForm />
         </div>
       </section>
 
-      <section className="overflow-hidden bg-ink text-primary-foreground">
-        <div className="mx-auto grid max-w-7xl lg:grid-cols-[.9fr_1.1fr]">
-          <div className="relative min-h-[360px] overflow-hidden sm:min-h-[460px] lg:min-h-[620px]">
-            <img src={stayProcessImage} alt="Familia disfrutando la vista desde la terraza de su estancia" width={1600} height={1200} loading="lazy" className="absolute inset-0 size-full object-cover object-center" />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-ink/35" />
+      <section className="hosp-process relative overflow-hidden text-primary-foreground">
+        <div className="grid lg:grid-cols-[.85fr_1.15fr]">
+          <div className="hosp-process-media relative min-h-[360px] overflow-hidden sm:min-h-[460px] lg:min-h-[560px]">
+            <img src={stayProcessImage} alt="Camastro con sombrero y toallas frente al mar y formaciones de roca" width={1280} height={1024} loading="lazy" className="absolute inset-0 size-full object-cover object-center" />
+            <p aria-hidden="true" className="hosp-hand hosp-hand-left">Estancias<br />que se viven.</p>
           </div>
-          <div className="relative px-6 py-14 sm:px-10 sm:py-20 lg:px-16 lg:py-24">
-            <p className="kicker-text font-bold uppercase tracking-[.16em] text-accent">Una estancia pensada contigo</p>
-            <h2 className="mt-4 max-w-lg font-display text-4xl font-bold leading-tight sm:text-5xl">Así encontramos lo que encaja.</h2>
-            <ol className="mt-10 border-t border-primary-foreground/20">
+          <div className="relative px-5 pb-20 pt-12 sm:px-10 sm:py-20 lg:grid lg:grid-cols-[.9fr_1.1fr] lg:gap-10 lg:px-10 lg:py-20">
+            <svg aria-hidden="true" viewBox="0 0 100 100" className="hosp-compass"><circle cx="50" cy="50" r="46" /><circle cx="50" cy="50" r="38" /><path d="M50 4 54 46 96 50 54 54 50 96 46 54 4 50 46 46Z" /><path d="M50 50 70 30M50 50 30 70M50 50 70 70M50 50 30 30" /></svg>
+            <div>
+              <p className="hosp-process-kicker">Una estancia pensada contigo</p>
+              <h2 className="hosp-serif mt-4 text-[2.4rem] leading-[1.08] sm:text-5xl">Así encontramos <em>lo que encaja.</em></h2>
+            </div>
+            <ol className="hosp-steps mt-10 lg:mt-0">
               {[
                 ["01", "Nos cuentas tu estancia", "Comparte el destino, las fechas y aquello que haría sentir bien tu viaje."],
                 ["02", "Revisamos qué encaja contigo", "Nuestro equipo considera tus prioridades para preparar opciones adecuadas."],
                 ["03", "Te ayudamos a elegir", "Conversamos contigo para que tomes una decisión clara y acompañada."],
-              ].map(([number, title, copy]) => <li key={number} className="grid grid-cols-[3.5rem_minmax(0,1fr)] gap-4 border-b border-primary-foreground/20 py-6"><span className="font-display text-xl font-bold text-accent">{number}</span><div><h3 className="font-display text-lg font-bold">{title}</h3><p className="mt-2 text-sm leading-6 text-primary-foreground/65">{copy}</p></div></li>)}
+              ].map(([number, title, copy]) => <li key={number} className="hosp-step"><span className="hosp-step-num">{number}</span><div><h3 className="text-base font-bold">{title}</h3><p className="mt-1.5 text-sm leading-6 text-primary-foreground/70">{copy}</p></div></li>)}
             </ol>
+            <p aria-hidden="true" className="hosp-hand hosp-hand-right">Más que hoteles,<br />grandes experiencias.</p>
           </div>
         </div>
+        <svg aria-hidden="true" viewBox="0 0 1440 60" preserveAspectRatio="none" className="hosp-process-wave"><path d="M0 48C380 8 700 60 1040 30S1340 20 1440 4" /></svg>
       </section>
 
       <section className="relative overflow-hidden bg-secondary py-16 sm:py-24">
