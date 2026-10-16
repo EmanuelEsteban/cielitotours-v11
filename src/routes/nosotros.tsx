@@ -182,8 +182,10 @@ function Nosotros() {
         <div className="nos-wrap nos-cta-grid">
           <h2 className="nos-h2">Tu próximo viaje o evento<br />comienza aquí.</h2>
           <p className="nos-p">Cuéntanos qué tienes en mente y permítenos ayudarte a encontrar las opciones adecuadas para tu viaje o evento. En Cielito Tours estamos listos para escucharte.</p>
-          <Link to="/cotizar" className="nos-btn">Cotizar mi viaje <ArrowRight className="size-4" aria-hidden /></Link>
-          <p className="nos-script nos-cta-hand" aria-hidden="true">La vida es mejor<br />&nbsp;&nbsp;&nbsp;viajando <HandHeart /></p>
+          <div className="nos-cta-act">
+            <Link to="/cotizar" className="nos-btn">Cotizar mi viaje <ArrowRight className="size-4" aria-hidden /></Link>
+            <p className="nos-script nos-cta-hand" aria-hidden="true">La vida es mejor<br />&nbsp;&nbsp;&nbsp;viajando <HandHeart /></p>
+          </div>
         </div>
       </section>
     </div>
