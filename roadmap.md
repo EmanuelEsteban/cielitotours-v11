@@ -13,3 +13,8 @@
 - [x] Sección cotización marfil con nota e ícono de auto
 - [x] Proceso navy con foto, brújula y pasos 01-03 en círculos dorados
 - [x] Sección final celeste con unión dorada al pie
+
+## Autos Premium 02
+- [ ] Remove only left quotation sticky behavior.
+- [ ] Add scoped pearl satin background, soft photographic road reflection and fine route curves.
+- [ ] Verify natural scrolling and unchanged four-step form at 1920/1440/768/390px and 375px; inspect zoom when supported.
