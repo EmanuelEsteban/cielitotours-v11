@@ -302,7 +302,7 @@
 .faq-paper-curve { position: absolute; z-index: 4; inset: auto 0 0; width: 100%; height: 72px; fill: none; pointer-events: none; }
 .faq-curve-thread { fill: none; stroke: var(--faq-champagne); stroke-width: 2; vector-effect: non-scaling-stroke; }
 .faq-thread-secondary { stroke-width: 1; opacity: .55; }
-.faq-paper { position: relative; isolation: isolate; margin-top: -54px; padding-top: 54px; background: var(--faq-paper); clip-path: shape(from 0 12px, curve to 100% 62px with 30% 115px / 66% -30px, line to 100% 100%, line to 0 100%, close); }
+.faq-paper { position: relative; z-index: 2; isolation: isolate; margin-top: -54px; margin-bottom: -48px; padding-top: 54px; background: var(--faq-paper); clip-path: shape(from 0 12px, curve to 100% 62px with 30% 115px / 66% -30px, line to 100% 100%, line to 0 100%, close); }
 .faq-mineral-texture { position: absolute; z-index: -1; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
 .faq-paper-note { position: absolute; left: 4.5%; bottom: 80px; color: var(--faq-muted); font: 500 16px/1.6 var(--font-accent); }
 .faq-content { position: relative; z-index: 1; max-width: 824px; margin: auto; padding: 0 32px 70px; }
