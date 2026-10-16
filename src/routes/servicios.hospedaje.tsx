@@ -91,17 +91,6 @@ function StayPage() {
       <section className="hosp-hero relative min-h-[560px] overflow-hidden bg-ink text-primary-foreground sm:min-h-[540px] lg:min-h-[600px]">
         <img src={stayHeroImage} alt="Terraza de resort con piscina infinita frente al mar al atardecer" width={1920} height={1088} fetchPriority="high" className="absolute inset-0 size-full object-cover object-[62%_center] lg:object-center" />
         <div className="hosp-hero-shade absolute inset-0" />
-        <div aria-hidden="true" className="hosp-hero-aura">
-          <span className="hosp-hero-aura-glow" />
-          <svg className="hosp-hero-aura-lines" viewBox="0 0 460 340" fill="none" preserveAspectRatio="none">
-            <defs><linearGradient id="hospAuraFade" x1="0" x2="1"><stop offset="0" stopColor="#D4AD62" stopOpacity="0" /><stop offset=".5" stopColor="#E7C98B" stopOpacity="1" /><stop offset="1" stopColor="#D4AD62" stopOpacity="0" /></linearGradient></defs>
-            <path d="M10 300 C 120 250, 180 320, 300 250 S 430 200, 455 150" stroke="url(#hospAuraFade)" strokeWidth=".9" opacity=".22" />
-            <path d="M20 40 C 110 70, 150 10, 250 30 S 400 80, 450 40" stroke="url(#hospAuraFade)" strokeWidth=".8" opacity=".18" />
-            <path d="M0 220 C 90 180, 140 260, 230 290 S 390 300, 450 260" stroke="url(#hospAuraFade)" strokeWidth=".7" opacity=".15" />
-            <path d="M60 330 C 160 300, 260 330, 350 300 S 430 260, 460 280" stroke="url(#hospAuraFade)" strokeWidth=".8" opacity=".2" />
-          </svg>
-        </div>
-        <p aria-hidden="true" className="hosp-hand hosp-hero-hand">Tu descanso<br />también<br />es parte<br />del viaje.</p>
         <div className="relative mx-auto flex min-h-[560px] max-w-7xl items-end px-5 pb-12 pt-24 sm:min-h-[540px] sm:items-center sm:px-10 sm:py-16 lg:min-h-[600px] lg:px-8">
           <div className="max-w-[38rem]">
             <p className="hosp-hero-label">Hospedaje</p>
@@ -152,7 +141,7 @@ function StayPage() {
         <svg aria-hidden="true" viewBox="0 0 1440 60" preserveAspectRatio="none" className="hosp-process-wave"><path d="M0 48C380 8 700 60 1040 30S1340 20 1440 4" /></svg>
       </section>
 
-      <section className="relative overflow-hidden bg-secondary py-16 sm:py-24">
+      <section className="hosp-final relative bg-secondary py-16 sm:py-24">
         <svg aria-hidden="true" viewBox="0 0 1000 260" className="pointer-events-none absolute inset-0 hidden size-full text-primary opacity-15 sm:block"><path d="M-20 210 C180 40 350 265 540 105 S790 30 1030 155" fill="none" stroke="currentColor" strokeWidth="2" className="route-line" /></svg>
         <div className="relative mx-auto max-w-4xl px-6 text-center">
           <p className="section-kicker">Tu descanso también importa</p>
@@ -160,9 +149,49 @@ function StayPage() {
           <p className="mx-auto mt-5 max-w-xl leading-7 text-muted-foreground">Cuéntanos cómo imaginas tu estancia y empecemos a preparar opciones contigo.</p>
           <Button asChild size="lg" className="mt-8 min-h-12 w-full sm:w-auto"><a href="#cotizar-hospedaje">Cotizar hospedaje <ArrowRight /></a></Button>
         </div>
+        <StayGoldTransition />
       </section>
     </SiteShell>
   );
+}
+
+// Sample the unchanged shared footer wave; offset only the second filament.
+const stayFooterWave = "M0 9C240 41 460 32 720 18S1130 43 1440 5";
+function stayWavePoint(progress: number, offset: boolean) {
+  const second = progress > .5;
+  const t = second ? (progress - .5) * 2 : progress * 2;
+  const u = 1 - t;
+  const points = second ? [[720, 18], [980, 4], [1130, 43], [1440, 5]] : [[0, 9], [240, 41], [460, 32], [720, 18]];
+  const weights = [u ** 3, 3 * u ** 2 * t, 3 * u * t ** 2, t ** 3];
+  const x = points.reduce((value, point, index) => value + (point[0] ?? 0) * (weights[index] ?? 0), 0);
+  const y = points.reduce((value, point, index) => value + (point[1] ?? 0) * (weights[index] ?? 0), 0);
+  return `${x.toFixed(3)} ${(y + (offset ? 5 * Math.cos(3 * Math.PI * progress) : 0)).toFixed(3)}`;
+}
+function stayWaveSegment(start: number, end: number, offset: boolean, samples: number) {
+  return Array.from({ length: samples + 1 }, (_, index) => `${index === 0 ? "M" : "L"}${stayWavePoint(start + (end - start) * index / samples, offset)}`).join(" ");
+}
+const staySecondThread = stayWaveSegment(0, 1, true, 180);
+const stayOverCrossings = [1 / 6, 5 / 6].map((crossing) => stayWaveSegment(crossing - .012, crossing + .012, true, 8));
+const stayUnderCrossing = stayWaveSegment(.488, .512, false, 8);
+
+function StayGoldTransition() {
+  return <svg aria-hidden="true" className="hosp-final-gold" viewBox="0 0 1440 48" preserveAspectRatio="none">
+    <defs>
+      <linearGradient id="stay-metal" x1="0" y1="0" x2="1" y2="0">
+        <stop className="hosp-metal-deep" offset="0" /><stop className="hosp-metal-champagne" offset=".2" /><stop className="hosp-metal-light" offset=".38" /><stop className="hosp-metal-satin" offset=".56" /><stop className="hosp-metal-light" offset=".76" /><stop className="hosp-metal-champagne" offset=".9" /><stop className="hosp-metal-deep" offset="1" />
+      </linearGradient>
+      <mask id="stay-primary-weave" maskUnits="userSpaceOnUse" x="-8" y="-8" width="1456" height="64">
+        <rect className="hosp-mask-visible" x="-8" y="-8" width="1456" height="64" />
+        {stayOverCrossings.map((path) => <path key={path} d={path} className="hosp-mask-cut" />)}
+      </mask>
+      <mask id="stay-secondary-weave" maskUnits="userSpaceOnUse" x="-8" y="-8" width="1456" height="64">
+        <rect className="hosp-mask-visible" x="-8" y="-8" width="1456" height="64" />
+        <path d={stayUnderCrossing} className="hosp-mask-cut" />
+      </mask>
+    </defs>
+    <g mask="url(#stay-primary-weave)"><path d={stayFooterWave} className="hosp-gold-primary" /><path d={stayFooterWave} className="hosp-gold-highlight" /></g>
+    <path d={staySecondThread} className="hosp-gold-secondary" mask="url(#stay-secondary-weave)" />
+  </svg>;
 }
 
 function StayQuoteForm() {
