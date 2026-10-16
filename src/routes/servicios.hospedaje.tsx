@@ -91,6 +91,16 @@ function StayPage() {
       <section className="hosp-hero relative min-h-[560px] overflow-hidden bg-ink text-primary-foreground sm:min-h-[540px] lg:min-h-[600px]">
         <img src={stayHeroImage} alt="Terraza de resort con piscina infinita frente al mar al atardecer" width={1920} height={1088} fetchPriority="high" className="absolute inset-0 size-full object-cover object-[62%_center] lg:object-center" />
         <div className="hosp-hero-shade absolute inset-0" />
+        <div aria-hidden="true" className="hosp-hero-aura">
+          <span className="hosp-hero-aura-glow" />
+          <svg className="hosp-hero-aura-lines" viewBox="0 0 460 340" fill="none" preserveAspectRatio="none">
+            <defs><linearGradient id="hospAuraFade" x1="0" x2="1"><stop offset="0" stopColor="#D4AD62" stopOpacity="0" /><stop offset=".5" stopColor="#E7C98B" stopOpacity="1" /><stop offset="1" stopColor="#D4AD62" stopOpacity="0" /></linearGradient></defs>
+            <path d="M10 300 C 120 250, 180 320, 300 250 S 430 200, 455 150" stroke="url(#hospAuraFade)" strokeWidth=".9" opacity=".22" />
+            <path d="M20 40 C 110 70, 150 10, 250 30 S 400 80, 450 40" stroke="url(#hospAuraFade)" strokeWidth=".8" opacity=".18" />
+            <path d="M0 220 C 90 180, 140 260, 230 290 S 390 300, 450 260" stroke="url(#hospAuraFade)" strokeWidth=".7" opacity=".15" />
+            <path d="M60 330 C 160 300, 260 330, 350 300 S 430 260, 460 280" stroke="url(#hospAuraFade)" strokeWidth=".8" opacity=".2" />
+          </svg>
+        </div>
         <p aria-hidden="true" className="hosp-hand hosp-hero-hand">Tu descanso<br />también<br />es parte<br />del viaje.</p>
         <div className="relative mx-auto flex min-h-[560px] max-w-7xl items-end px-5 pb-12 pt-24 sm:min-h-[540px] sm:items-center sm:px-10 sm:py-16 lg:min-h-[600px] lg:px-8">
           <div className="max-w-[38rem]">
