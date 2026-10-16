@@ -92,7 +92,7 @@ function Nosotros() {
         </div>
         <div className="nos-wrap nos-hero-grid">
           <div className="nos-hero-txt">
-            <p className="nos-kicker">Cielito Tours</p>
+            <p className="nos-kicker nos-kicker-rules">Cielito Tours</p>
             <h1 className="nos-h1">Tenemos la experiencia para llevarte a las <em>opciones correctas.</em></h1>
             <p className="nos-p">Cada viaje tiene un propósito, y en Cielito Tours te ayudamos a encontrar las mejores opciones con asesoría personalizada, de acuerdo con tus necesidades, objetivos y presupuesto.</p>
             <Link to="/cotizar" className="nos-btn">Comenzar mi cotización <ArrowRight className="size-4" aria-hidden /></Link>
