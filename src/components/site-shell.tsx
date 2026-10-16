@@ -1,8 +1,9 @@
 import { Link, useLocation } from "@tanstack/react-router";
-import { ChevronDown, Facebook, Instagram, Menu, Music2, X } from "lucide-react";
+import { ArrowRight, ChevronDown, Facebook, Instagram, Menu, Music2, Plane, X } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import logoAsset from "@/assets/cielito-logo-mark.jpg";
+import { HeaderDropdown } from "@/components/header-dropdown";
 
 type NavItem = { label: string; href: string; children?: ReadonlyArray<readonly [string, string]> };
 
@@ -51,7 +52,14 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
   return <div className="min-h-screen overflow-x-clip bg-background text-foreground">
     <header className={`site-header sticky top-0 z-50 border-b border-primary-foreground/10 bg-ink/98 text-primary-foreground transition-shadow duration-300 ${scrolled ? "is-scrolled" : ""}`}>
-      <div className={`mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 transition-[height] duration-300 sm:px-5 lg:grid-cols-[minmax(0,1fr)_auto_auto] lg:gap-7 lg:px-8 ${scrolled ? "h-16" : "h-[4.75rem] lg:h-[5.5rem]"}`}>
+      <div className="header-signature">
+        <div className="header-signature-inner">
+          <span className="header-signature-message"><Plane aria-hidden="true" strokeWidth={1.5} />Viajar bien, cambia todo</span>
+          <span className="header-signature-brand">EXPERIENCIAS QUE CONECTAN</span>
+          <div className="header-signature-socials" aria-label="Redes sociales" />
+        </div>
+      </div>
+      <div className={`header-main mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 transition-[height] duration-300 sm:px-5 lg:grid-cols-[minmax(0,1fr)_auto_auto] lg:gap-7 lg:px-8 ${scrolled ? "h-16" : "h-[4.75rem] lg:h-[5.5rem]"}`}>
         <Link to="/" aria-label="Cielito Tours, inicio" className="min-w-0 justify-self-start"><img src={logoAsset} alt="Cielito Tours — Vuela, viaja y vive" className={`w-auto object-contain transition-[height] duration-300 ${scrolled ? "h-12 lg:h-16" : "h-14 lg:h-20"}`} /></Link>
         <nav aria-label="Navegación principal" className="header-navigation hidden items-center gap-7 lg:flex" onKeyDown={(event) => {
           if (event.key !== "Escape") return;
@@ -66,13 +74,11 @@ export function SiteShell({ children }: { children: ReactNode }) {
             onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setDesktopMenu(null); }}>
             <a href={item.href} className="header-nav-link" aria-current={pathname === item.href ? "page" : undefined} onFocus={() => setDesktopMenu(item.children ? item.label : null)}>{item.label}</a>
             {item.children && <Button variant="ghost" size="icon" className="header-menu-toggle" aria-label={`Opciones de ${item.label}`} aria-expanded={desktopMenu === item.label} aria-controls={`header-menu-${item.label}`} onClick={() => setDesktopMenu(desktopMenu === item.label ? null : item.label)}><ChevronDown aria-hidden="true" /></Button>}
-            {item.children && <div id={`header-menu-${item.label}`} className="header-dropdown" inert={desktopMenu !== item.label}>
-              {item.children.map(([label, href]) => <a key={href} href={href} aria-current={pathname === href ? "page" : undefined} className="header-dropdown-link">{label}</a>)}
-            </div>}
+            {item.children && <HeaderDropdown id={`header-menu-${item.label}`} open={desktopMenu === item.label} pathname={pathname} children={item.children} />}
           </div>)}
         </nav>
         <div className="flex items-center gap-2">
-          <Button asChild size="sm" className="header-quote hidden sm:inline-flex"><Link to="/cotizar">Cotizar</Link></Button>
+          <Button asChild size="sm" className="header-quote hidden sm:inline-flex"><Link to="/cotizar">Cotizar<ArrowRight aria-hidden="true" strokeWidth={1.5} /></Link></Button>
           <Button ref={menuButtonRef} variant="ghost" size="icon" className="header-mobile-toggle size-11 shrink-0 lg:hidden" aria-label={open ? "Cerrar menú" : "Abrir menú"} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</Button>
         </div>
       </div>
