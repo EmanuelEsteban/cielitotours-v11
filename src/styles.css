@@ -2993,7 +2993,7 @@ main:has(> .hosp-final:last-child) + .site-footer .footer-transition-thread { di
   --autos-reflection: #FAF8F2;
   --autos-satin-gold: #D8C39A;
   --autos-card-shadow: 0 8px 30px color-mix(in srgb, var(--autos-blue-silver) 28%, transparent), 0 2px 8px color-mix(in srgb, var(--ink) 5%, transparent);
-  position: relative; isolation: isolate;
+  position: relative; isolation: isolate; z-index: 3;
   background: linear-gradient(180deg, var(--background), transparent 100px), linear-gradient(125deg, var(--autos-pearl) 8%, var(--autos-champagne-silver) 43%, var(--autos-warm-silver) 72%, var(--autos-blue-silver) 100%);
   padding-block: clamp(3.5rem, 7vw, 5.5rem);
 }
