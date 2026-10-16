@@ -2416,7 +2416,7 @@ textarea.ct-input { resize: vertical; }
 .nos-esencia-txt .nos-p strong { font-weight: 500; }
 @media (max-width: 900px) { .nos-esencia-txt .nos-p { font-size: 16.5px; } }
 .nos-rule { display: block; width: 46px; height: 1px; margin-top: 20px; background: linear-gradient(90deg, var(--nos-champ), transparent); }
-.nos-esencia-hand { margin-top: 48px; }
+.nos-esencia-hand { margin-top: 64px; }
 .nos-apa .nos-h2 { font-size: clamp(38px, 3.5vw, 56px); line-height: 1.02; font-weight: 500; }
 .nos-apa .nos-h2 em { font-style: italic; color: #F3DFB8; }
 .nos-apa-txt .nos-p { margin-top: 20px; font-size: clamp(15.5px, 1.1vw, 17px); line-height: 1.65; color: rgb(251 245 233 / .9); max-width: 54ch; }
