@@ -282,17 +282,26 @@
 .site-footer {
   --footer-navy: oklch(0.27 0.054 250);
   --footer-corporate: oklch(0.34 0.075 251);
-  --footer-petroleum: oklch(0.39 0.056 236);
-  --footer-night: oklch(0.29 0.057 251);
+  --footer-petroleum: oklch(0.43 0.064 236);
+  --footer-night: oklch(0.205 0.043 251);
   --footer-champagne: oklch(0.79 0.055 85);
   --footer-ivory: oklch(0.96 0.012 85);
   --footer-muted: color-mix(in oklab, var(--footer-ivory) 80%, var(--footer-navy));
   --footer-route: color-mix(in oklab, var(--footer-champagne) 55%, var(--footer-petroleum));
   position: relative; isolation: isolate; overflow: hidden; color: var(--footer-ivory);
-  background: linear-gradient(165deg, transparent 45%, color-mix(in oklab, var(--footer-night) 85%, transparent)), linear-gradient(25deg, color-mix(in oklab, var(--footer-champagne) 5%, transparent), transparent 36%), linear-gradient(115deg, var(--footer-navy), var(--footer-corporate) 52%, var(--footer-petroleum));
+  background: radial-gradient(ellipse at 83% 18%, color-mix(in oklab, var(--footer-petroleum) 75%, transparent), transparent 58%), linear-gradient(155deg, transparent 34%, color-mix(in oklab, var(--footer-night) 92%, transparent) 94%), linear-gradient(28deg, color-mix(in oklab, var(--footer-champagne) 8%, transparent), transparent 34%), linear-gradient(115deg, var(--footer-navy), var(--footer-corporate) 52%, var(--footer-petroleum));
 }
 .site-footer > :not(.footer-cartography) { position: relative; z-index: 1; }
-.footer-top-edge { height: 14px; background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--footer-champagne) 30%, transparent), transparent) top / 100% 1px no-repeat; }
+.footer-top-edge { height: 14px; pointer-events: none; }
+.footer-top-edge svg { position: absolute; top: 0; left: 0; width: 100%; height: 48px; }
+.footer-transition-shape { fill: var(--primary); }
+.footer-transition-thread { fill: none; stroke: color-mix(in oklab, var(--footer-champagne) 45%, transparent); stroke-width: 1; vector-effect: non-scaling-stroke; }
+main:not(:has(> #cta-final:last-child)) + .site-footer .footer-transition-shape { fill: var(--background); }
+@media (min-width: 768px) {
+  .footer-composition { grid-template-columns: calc((100% - 96px) * 7 / 22) minmax(0, 1fr); }
+  .footer-columns { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 32px; }
+}
+@media (min-width: 1280px) { .footer-composition { column-gap: 85px; } }
 .footer-cartography { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; color: var(--footer-route); opacity: .12; fill: none; stroke: url(#footer-route-fade); stroke-width: 1; }
 .footer-cartography path { vector-effect: non-scaling-stroke; }
 .site-footer .footer-heading { display: table; margin: 0; padding-bottom: 10px; border-bottom: 1px solid color-mix(in oklab, var(--footer-champagne) 65%, transparent); font-family: var(--font-sans); font-size: 15px; line-height: 1.5; font-weight: 600; letter-spacing: 0; text-transform: uppercase; color: var(--footer-champagne); }
