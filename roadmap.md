@@ -1,5 +1,4 @@
-# Header Signature Luxury 02
-- [x] Add the brand microbar and existing official WhatsApp URL; Instagram/TikTok are explicitly pending, without fake links.
-- [x] Refine header finishes and dropdowns with a single moving focus/hover indicator.
-- [x] Verify existing logo dimensions, menu links, keyboard behavior and layout at 1440, 768, 390 and 375px.
-- [ ] Activate Instagram and TikTok when the user supplies their official URLs.
+# Header 03
+- [x] Remove the microbar, exclusive styles and unused imports; preserve premium navigation.
+- [x] Remove the mobile menu height allowance for the deleted microbar.
+- [ ] Verify top-edge positioning, original alignment, sticky behavior, menus and overflow on desktop and mobile.
