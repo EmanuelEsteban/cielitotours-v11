@@ -11,8 +11,8 @@ import { HandKicker } from "./hand-kicker";
 /** Boarding-pass style secondary accesses (Home · Servicios). */
 const passes = [
   { name: "Autos", note: "Muévete a tu ritmo", href: "/servicios/renta-de-autos", image: imagery.cars, icon: Car, glow: "var(--atlas-aqua)" },
-  { name: "Disney", note: "Planeación para toda la familia", href: "/disney", image: paseDisney, icon: Sparkles, glow: "var(--primary)" },
-  { name: "Tours", note: "Experiencias por el mundo", href: "/tours", image: paseTours, icon: Compass, glow: "var(--accent)" },
+  { name: "Disney", note: "Planeación para toda la familia", href: "/cotizar", image: paseDisney, icon: Sparkles, glow: "var(--primary)" },
+  { name: "Tours", note: "Experiencias por el mundo", href: "/cotizar", image: paseTours, icon: Compass, glow: "var(--accent)" },
 ] as const;
 
 export const PaseTickets = forwardRef<HTMLDivElement, { arrived?: boolean }>(function PaseTickets({ arrived }, ref) {

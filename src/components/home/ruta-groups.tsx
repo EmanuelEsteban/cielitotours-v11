@@ -5,8 +5,8 @@ import { Reveal } from "@/components/motion/reveal";
 import { LAND_RINGS } from "@/lib/world-land-110m";
 
 const panels = [
-  { n: "01", name: "Empresas", href: "/grupos/empresas", icon: BriefcaseBusiness, image: imagery.empresas2, alt: "Colegas conversando en el pasillo de un centro de convenciones", note: "Rutas, estancias y traslados alineados a la agenda del equipo." },
-  { n: "02", name: "Deportivos", href: "/grupos/deportivos", icon: Trophy, image: imagery.deportivos2, alt: "Equipo deportivo saliendo del túnel hacia la cancha", note: "Equipos, clubes, academias y delegaciones, listos para llegar juntos." },
+  { n: "01", name: "Empresas", href: "/cotizar", icon: BriefcaseBusiness, image: imagery.empresas2, alt: "Colegas conversando en el pasillo de un centro de convenciones", note: "Rutas, estancias y traslados alineados a la agenda del equipo." },
+  { n: "02", name: "Deportivos", href: "/cotizar", icon: Trophy, image: imagery.deportivos2, alt: "Equipo deportivo saliendo del túnel hacia la cancha", note: "Equipos, clubes, academias y delegaciones, listos para llegar juntos." },
 ] as const;
 
 const steps = [
