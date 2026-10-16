@@ -2477,7 +2477,7 @@ textarea.ct-input { resize: vertical; }
   pointer-events: none;
 }
 .nos-spec > .nos-wrap > .nos-kicker {
-  height: 1.5em;
+  height: round(up, 1.5em, .015625px);
   line-height: 1.5;
   font-family: "Manrope", sans-serif;
   font-weight: 600;
