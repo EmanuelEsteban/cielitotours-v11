@@ -1,4 +1,4 @@
-# FAQ Signature Artisanal 01
-- [x] Inspect original questions, fonts, shared navigation and available controls.
-- [x] Redesign FAQ-only hero, engraved decoration, broad paper transition and interactive questions while preserving all copy and links.
-- [x] Verify presentation at 1440/768/390/375px, all accordion keyboard/click behavior, return link and no overflow or console errors; build OK.
+# FAQ Signature Artisanal 02
+- [x] Inspect approved reference and FAQ-only scope; document is truncated mid-sentence.
+- [x] Reproduce reference backgrounds, stamp, calligraphic subtitle, parchment accordions and double gold organic waves with live accessible content.
+- [x] Inspect desktop/mobile screenshots; verify all three accordions, keyboard controls and return link at 1440/768/390/375px with no overflow or console errors; build OK. Shared header/footer unchanged.
