@@ -307,7 +307,7 @@
 .faq-paper-note { position: absolute; left: 4.5%; bottom: 80px; color: var(--faq-text); font: italic 500 25px/1.2 "Cormorant Garamond", serif; }
 .faq-content { position: relative; z-index: 1; max-width: 896px; margin: auto; padding: 0 28px 88px; }
 .faq-questions { display: grid; align-content: start; gap: 18px; min-height: var(--faq-reserved-height, 390px); }
-.faq-question > [data-state="closed"] { height: 0; animation: none; visibility: hidden; }
+.faq-question > div[data-state="closed"] { height: 0; animation: none; visibility: hidden; }
 .faq-question { position: relative; border: 1px solid var(--faq-rule); border-radius: 16px; background: linear-gradient(115deg,color-mix(in oklab,var(--faq-ivory) 88%,transparent),color-mix(in oklab,var(--faq-ivory) 73%,transparent)); box-shadow: 0 1px 3px color-mix(in oklab,var(--faq-navy) 6%,transparent); transition: border-color 200ms ease; }
 .faq-question::before { content: ""; position: absolute; top: 16px; bottom: 16px; left: 0; width: 2px; background: var(--faq-rule); transition: background 200ms ease; }
 .faq-question[data-state="open"]::before { background: var(--primary); }
