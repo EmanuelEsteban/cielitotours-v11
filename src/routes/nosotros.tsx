@@ -89,7 +89,6 @@ function Nosotros() {
         <Palm className="nos-palm nos-palm-hero" />
         <div className="nos-hero-img">
           <img src={IMG + "01_HERO_PLAYA_COSTA.png"} alt="Vista aérea de una costa tropical con playa, vegetación y resort" width={1920} height={1080} fetchPriority="high" />
-          <p className="nos-script nos-hero-hand" aria-hidden="true"><span>Explora</span><span>Vive</span><span>Conecta <HandHeart /></span></p>
         </div>
         <div className="nos-wrap nos-hero-grid">
           <div className="nos-hero-txt">
