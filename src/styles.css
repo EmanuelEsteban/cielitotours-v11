@@ -2694,11 +2694,12 @@ textarea.ct-input { resize: vertical; }
 }
 .vuelos-quote-photo {
   position: absolute;
-  left: -7%;
-  top: 52%;
-  width: 660px;
+  left: clamp(-80px, -2%, 0px);
+  bottom: 0;
+  width: clamp(620px, 42%, 1000px);
   height: auto;
-  opacity: .15;
+  object-fit: contain;
+  opacity: .22;
   filter: grayscale(.6) sepia(.16) hue-rotate(178deg) saturate(.85) brightness(1.04);
   pointer-events: none;
   mask-image:
@@ -2720,7 +2721,7 @@ textarea.ct-input { resize: vertical; }
   pointer-events: none;
 }
 @media (max-width: 1023px) {
-  .vuelos-quote-photo { width: 480px; left: -22%; top: auto; bottom: -4%; opacity: .11; }
+  .vuelos-quote-photo { width: clamp(340px, 92%, 560px); left: -8%; bottom: 0; opacity: .13; }
   .vuelos-quote-routes { width: 88%; right: -22%; opacity: .42; }
 }
 
