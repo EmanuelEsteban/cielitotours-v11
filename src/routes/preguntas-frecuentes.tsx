@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
+import { useEffect, useRef } from "react";
 import { ArrowLeft, Compass, Luggage, FileText, Plane } from "lucide-react";
 import paperTexture from "@/assets/faq-mineral-paper.jpg";
 import nightTexture from "@/assets/faq-night-engraving.jpg";
@@ -14,6 +15,25 @@ const questions = [
 ];
 
 function Page() {
+  const questionsRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const list = questionsRef.current;
+    if (!list) return;
+    const reserveSpace = () => {
+      const triggers = Array.from(list.querySelectorAll<HTMLElement>(".faq-question-trigger"));
+      const answers = Array.from(list.querySelectorAll<HTMLElement>(".faq-answer"));
+      const gap = parseFloat(getComputedStyle(list).rowGap) || 0;
+      const height = triggers.reduce((total, trigger) => total + trigger.getBoundingClientRect().height + 2, 0)
+        + Math.max(0, ...answers.map(answer => answer.getBoundingClientRect().height))
+        + gap * Math.max(0, triggers.length - 1);
+      list.style.setProperty("--faq-reserved-height", `${Math.ceil(height)}px`);
+    };
+    const observer = new ResizeObserver(reserveSpace);
+    list.querySelectorAll(".faq-question-trigger, .faq-answer").forEach(element => observer.observe(element));
+    reserveSpace();
+    void document.fonts.ready.then(reserveSpace);
+    return () => observer.disconnect();
+  }, []);
   return <SiteShell><section className="faq-artisan faq-hero">
     <img src={nightTexture} className="faq-night-texture" alt="" aria-hidden="true" />
     <div className="faq-travel-stamp" aria-hidden="true"><svg viewBox="0 0 180 180"><defs><path id="faq-stamp-top" d="M28 90a62 62 0 0 1 124 0" /><path id="faq-stamp-bottom" d="M22 90a68 68 0 0 0 136 0" /></defs><circle cx="90" cy="90" r="83" /><circle cx="90" cy="90" r="79" /><circle cx="90" cy="90" r="48" /><text><textPath href="#faq-stamp-top" startOffset="50%" textAnchor="middle">EXPERIENCIAS</textPath></text><text><textPath href="#faq-stamp-bottom" startOffset="50%" textAnchor="middle">QUE CONECTAN</textPath></text></svg><Plane strokeWidth={1.3} /><svg className="faq-postmark" viewBox="0 0 180 100">{[0,1,2,3,4].map(i=><path key={i} d={`M0 ${20+i*13}C40 ${45+i*13} 55 ${-10+i*13} 95 ${12+i*13}S150 ${30+i*13} 180 ${5+i*13}`} />)}</svg></div>
@@ -24,10 +44,10 @@ function Page() {
     <img src={paperTexture} className="faq-mineral-texture" alt="" aria-hidden="true" />
     <p className="faq-paper-note" aria-hidden="true">VIAJAR<br />TAMBIÉN ES<br />DESCUBRIRSE<span /></p>
     <div className="faq-content">
-      <Accordion type="single" collapsible defaultValue="question-1" className="faq-questions">
+      <Accordion ref={questionsRef} type="single" collapsible defaultValue="question-1" className="faq-questions">
         {questions.map(({ icon: Icon, question, answer }, index) => <AccordionItem className="faq-question" value={`question-${index}`} key={question}>
           <AccordionTrigger className="faq-question-trigger"><span className="faq-question-icon" aria-hidden="true"><Icon strokeWidth={1.5} /></span><span className="faq-question-title">{question}</span></AccordionTrigger>
-          <AccordionContent className="faq-answer"><p>{answer}</p></AccordionContent>
+          <AccordionContent forceMount className="faq-answer"><p>{answer}</p></AccordionContent>
         </AccordionItem>)}
       </Accordion>
       <Button asChild variant="outline" className="faq-back"><Link to="/"><ArrowLeft aria-hidden="true" />Volver al inicio</Link></Button>

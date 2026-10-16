@@ -290,51 +290,53 @@
 .faq-label { display: inline-flex; align-items: center; gap: 12px; margin: 0; color: var(--faq-ivory); font: 500 22px/1.4 var(--font-accent); letter-spacing: 0; }
 .faq-label::before, .faq-label::after { content: ""; width: 44px; height: 1px; background: var(--faq-rule); }
 .faq-hero h1 { max-width: 780px; margin: 0; font: 400 62px/1.13 var(--font-accent); letter-spacing: 0; }
-.faq-intro { margin: 0 0 0 12px; color: var(--faq-champagne); font: 400 38px/1.4 "Caveat", cursive; }
+.faq-intro { min-height: 53.2px; margin: 0 0 0 12px; color: var(--faq-champagne); font: italic 500 32px/1.25 "Cormorant Garamond", serif; }
 .faq-travel-stamp { position: absolute; z-index: 1; width: 150px; height: 150px; top: 44px; left: calc(50% + 195px); color: var(--faq-champagne); opacity: .82; transform: rotate(-15deg); }
 .faq-travel-stamp > svg:first-child { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1; }
 .faq-travel-stamp text { fill: currentColor; stroke: none; font: 500 14px var(--font-sans); }
 .faq-travel-stamp > svg:nth-child(2) { position: absolute; width: 48px; height: 48px; left: 51px; top: 51px; transform: rotate(-30deg); }
 .faq-postmark { position: absolute; width: 150px; height: 90px; top: 46px; left: 136px; fill: none; stroke: currentColor; stroke-width: 1; opacity: .5; }
-.faq-hero-note { position: absolute; right: 32px; bottom: 48px; color: var(--faq-champagne); text-align: right; font: 500 12px/1.5 var(--font-accent); }
+.faq-hero-note { position: absolute; right: 32px; bottom: 48px; color: var(--faq-champagne); text-align: right; font: 600 13px/1.8 var(--font-sans); letter-spacing: 0; }
 .faq-hero-note span, .faq-paper-note span { display: block; width: 32px; height: 1px; background: var(--faq-rule); margin-top: 12px; }
 .faq-hero-note span { margin-left: auto; }
 .faq-paper-curve { position: absolute; z-index: 4; inset: auto 0 0; width: 100%; height: 72px; fill: none; pointer-events: none; }
 .faq-curve-thread { fill: none; stroke: var(--faq-champagne); stroke-width: 2; vector-effect: non-scaling-stroke; }
 .faq-thread-secondary { stroke-width: 1; opacity: .55; }
-.faq-paper { position: relative; z-index: 2; isolation: isolate; margin-top: -54px; margin-bottom: -48px; padding-top: 54px; background: var(--faq-paper); clip-path: shape(from 0 12px, curve to 100% 62px with 30% 115px / 66% -30px, line to 100% 100%, line to 0 100%, close); }
+.faq-paper { position: relative; z-index: 2; isolation: isolate; margin-top: -54px; margin-bottom: -48px; padding-top: 134px; background: var(--faq-paper); clip-path: shape(from 0 12px, curve to 100% 62px with 30% 115px / 66% -30px, line to 100% 100%, line to 0 100%, close); }
 .faq-mineral-texture { position: absolute; z-index: -1; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
-.faq-paper-note { position: absolute; left: 4.5%; bottom: 80px; color: var(--faq-muted); font: 500 16px/1.6 var(--font-accent); }
-.faq-content { position: relative; z-index: 1; max-width: 824px; margin: auto; padding: 0 32px 70px; }
-.faq-questions { display: grid; gap: 16px; }
+.faq-paper-note { position: absolute; left: 4.5%; bottom: 80px; color: var(--faq-text); font: italic 500 25px/1.2 "Cormorant Garamond", serif; }
+.faq-content { position: relative; z-index: 1; max-width: 896px; margin: auto; padding: 0 28px 88px; }
+.faq-questions { display: grid; align-content: start; gap: 18px; min-height: var(--faq-reserved-height, 390px); }
+.faq-question > div[data-state="closed"] { height: 0; animation: none; visibility: hidden; }
 .faq-question { position: relative; border: 1px solid var(--faq-rule); border-radius: 16px; background: linear-gradient(115deg,color-mix(in oklab,var(--faq-ivory) 88%,transparent),color-mix(in oklab,var(--faq-ivory) 73%,transparent)); box-shadow: 0 1px 3px color-mix(in oklab,var(--faq-navy) 6%,transparent); transition: border-color 200ms ease; }
 .faq-question::before { content: ""; position: absolute; top: 16px; bottom: 16px; left: 0; width: 2px; background: var(--faq-rule); transition: background 200ms ease; }
 .faq-question[data-state="open"]::before { background: var(--primary); }
 .faq-question:hover, .faq-question:focus-within { border-color: var(--faq-champagne); }
-.faq-question .faq-question-trigger { gap: 16px; padding: 16px 20px; color: var(--faq-text); font: 500 19px/1.5 var(--font-accent); text-decoration: none; }
+.faq-question .faq-question-trigger { gap: 18px; padding: 22px 28px; color: var(--faq-text); font: 500 19px/1.5 var(--font-accent); text-decoration: none; }
 .faq-question-trigger:focus-visible { outline: 2px solid var(--primary); outline-offset: 4px; border-radius: 12px; }
 .faq-question-icon { display: grid; place-items: center; flex-shrink: 0; width: 48px; height: 48px; border-radius: 50%; color: var(--faq-text); background: color-mix(in oklab,var(--faq-champagne) 20%,var(--faq-ivory)); box-shadow: 0 1px 3px color-mix(in oklab,var(--faq-navy) 6%,transparent); }
 .faq-question-icon svg { width: 24px; height: 24px; }
 .faq-question-title { flex: 1; }
 .faq-question-trigger > svg { width: 20px; height: 20px; color: var(--faq-text); }
-.faq-answer { padding: 0 32px 20px 84px; color: var(--faq-muted); font: 400 15px/1.6 var(--font-sans); }
+.faq-answer { padding: 0 28px 22px 94px; color: var(--faq-muted); font: 400 15px/1.6 var(--font-sans); }
 .faq-answer p { max-width: 680px; margin: 0; border-top: 1px solid var(--faq-rule); padding-top: 12px; }
 .faq-content .faq-back { height: 44px; margin-top: 24px; border: 1px solid var(--faq-rule); border-radius: 12px; background: color-mix(in oklab,var(--faq-ivory) 65%,transparent); color: var(--faq-text); font-size: 14px; }
 .faq-content .faq-back:hover { background: var(--faq-ivory); }
 .faq-footer-curve { position: absolute; bottom: -1px; left: 0; width: 100%; height: 64px; fill: var(--faq-corporate); pointer-events: none; }
-@media (max-width: 1199px) { .faq-hero h1 { font-size: 52px; max-width: 650px; } .faq-travel-stamp { left: auto; right: 16%; width: 124px; height: 124px; } .faq-travel-stamp > svg:nth-child(2) { width: 40px; height: 40px; top: 42px; left: 42px; } .faq-hero-note { right: 20px; font-size: 11px; } .faq-paper-note { font-size: 14px; left: 24px; } }
-@media (max-width: 1023px) { .faq-hero-inner { padding-top: 40px; } .faq-hero h1 { font-size: 48px; max-width: 520px; } .faq-travel-stamp { right: 24px; top: 110px; opacity: .45; } .faq-postmark, .faq-hero-note, .faq-paper-note { display: none; } .faq-content { max-width: 740px; } }
+@media (max-width: 1199px) { .faq-hero h1 { font-size: 52px; max-width: 650px; } .faq-travel-stamp { left: auto; right: 16%; width: 124px; height: 124px; } .faq-travel-stamp > svg:nth-child(2) { width: 40px; height: 40px; top: 42px; left: 42px; } .faq-hero-note { right: 20px; font-size: 12px; } .faq-paper-note { font-size: 23px; left: 20px; } }
+@media (max-width: 1023px) { .faq-hero-inner { padding-top: 40px; } .faq-hero h1 { font-size: 48px; max-width: 520px; } .faq-intro { font-size: 28px; } .faq-travel-stamp { right: 24px; top: 110px; opacity: .45; } .faq-postmark, .faq-hero-note, .faq-paper-note { display: none; } .faq-paper { padding-top: 124px; } .faq-content { max-width: 896px; } }
 @media (max-width: 639px) {
   .faq-hero-inner { padding: 32px 20px 88px; }
   .faq-label { font-size: 16px; }
   .faq-label::before, .faq-label::after { width: 28px; }
   .faq-hero h1 { font-size: 38px; max-width: 340px; margin-top: 12px; }
-  .faq-intro { font-size: 28px; max-width: 300px; margin: 12px 0 0; }
+  .faq-intro { min-height: 78.4px; font-size: 25px; max-width: 300px; margin: 12px 0 0; }
   .faq-travel-stamp { width: 76px; height: 76px; top: auto; bottom: 42px; right: 20px; opacity: .32; }
   .faq-travel-stamp > svg:nth-child(2) { width: 24px; height: 24px; left: 26px; top: 26px; }
-  .faq-paper { margin-top: -54px; padding-top: 64px; }
+  .faq-paper { margin-top: -54px; padding-top: 106px; }
   .faq-mineral-texture { object-position: 35% center; opacity: .7; }
   .faq-content { padding: 0 20px 88px; }
+  .faq-questions { gap: 16px; min-height: var(--faq-reserved-height, 620px); }
   .faq-question .faq-question-trigger { padding: 16px 12px; gap: 12px; font-size: 17px; }
   .faq-question-icon { width: 40px; height: 40px; }
   .faq-question-icon svg { width: 20px; height: 20px; }
