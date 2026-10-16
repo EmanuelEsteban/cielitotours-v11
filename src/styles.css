@@ -2452,5 +2452,5 @@ textarea.ct-input { resize: vertical; }
   .nos-esencia-txt > .nos-kicker { font-size: 15px; }
 }
 @media (max-width: 640px) {
-  .nos-esencia-txt > .nos-p { height: calc(15.5px * 1.68 * 7); }
+  .nos-esencia-txt > .nos-p { height: calc(15.5px * 1.68 * 7); font-size: 16px; }
 }
