@@ -1,4 +1,4 @@
-# Footer Signature Luxury 02
-- [x] Record original brand geometry and links at 1440/1024/768/390/375px.
-- [x] Group navigation columns independently, increase wide-desktop brand separation, deepen the footer surface and soften its upper transition without editing the preceding section.
-- [x] Verify preserved brand geometry, evenly spaced headings, links and no overflow or console errors across recorded widths.
+# FAQ Signature Artisanal 01
+- [x] Inspect original questions, fonts, shared navigation and available controls.
+- [x] Redesign FAQ-only hero, engraved decoration, broad paper transition and interactive questions while preserving all copy and links.
+- [x] Verify presentation at 1440/768/390/375px, all accordion keyboard/click behavior, return link and no overflow or console errors; build OK.
