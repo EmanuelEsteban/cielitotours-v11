@@ -10,8 +10,8 @@ type NavItem = { label: string; href: string; children?: ReadonlyArray<readonly 
 const nav: ReadonlyArray<NavItem> = [
   { label: "Viajes", href: "/viajes", children: [["Paquetes", "/viajes"], ["Tours", "/tours"], ["Cruceros", "/cruceros"], ["Disney", "/disney"]] },
   { label: "Servicios", href: "/servicios", children: [["Vuelos", "/servicios/vuelos"], ["Hospedaje", "/servicios/hospedaje"], ["Autos", "/servicios/renta-de-autos"]] },
-  { label: "Destinos", href: "/destinos" },
   { label: "Grupos", href: "/grupos", children: [["Empresas", "/grupos/empresas"], ["Deportivos", "/grupos/deportivos"]] },
+  { label: "Destinos", href: "/destinos" },
   { label: "Nosotros", href: "/nosotros" },
 ];
 
@@ -52,9 +52,9 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
   return <div className="min-h-screen overflow-x-clip bg-background text-foreground">
     <header className={`site-header sticky top-0 z-50 border-b border-primary-foreground/10 bg-ink/98 text-primary-foreground transition-shadow duration-300 ${scrolled ? "is-scrolled" : ""}`}>
-      <div className={`header-main mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 transition-[height] duration-300 sm:px-5 lg:grid-cols-[minmax(0,1fr)_auto_auto] lg:gap-7 lg:px-8 ${scrolled ? "h-16" : "h-[4.75rem] lg:h-[5.5rem]"}`}>
+      <div className={`header-main mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 transition-[height] duration-300 sm:px-5 lg:grid-cols-[minmax(0,1fr)_auto_auto] lg:gap-[18px] lg:px-8 ${scrolled ? "h-16" : "h-[4.75rem] lg:h-[5.5rem]"}`}>
         <Link to="/" aria-label="Cielito Tours, inicio" className="min-w-0 justify-self-start"><img src={logoAsset} alt="Cielito Tours — Vuela, viaja y vive" className={`w-auto object-contain transition-[height] duration-300 ${scrolled ? "h-12 lg:h-16" : "h-14 lg:h-20"}`} /></Link>
-        <nav aria-label="Navegación principal" className="header-navigation hidden items-center gap-7 lg:flex" onKeyDown={(event) => {
+        <nav aria-label="Navegación principal" className="header-navigation hidden items-center gap-2.5 lg:flex" onKeyDown={(event) => {
           if (event.key !== "Escape") return;
           event.preventDefault();
           const group = (event.target as HTMLElement).closest(".header-nav-item");
@@ -69,6 +69,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
             {item.children && <Button variant="ghost" size="icon" className="header-menu-toggle" aria-label={`Opciones de ${item.label}`} aria-expanded={desktopMenu === item.label} aria-controls={`header-menu-${item.label}`} onClick={() => setDesktopMenu(desktopMenu === item.label ? null : item.label)}><ChevronDown aria-hidden="true" /></Button>}
             {item.children && <HeaderDropdown id={`header-menu-${item.label}`} open={desktopMenu === item.label} pathname={pathname} children={item.children} />}
           </div>)}
+          <span className="header-quote-divider" aria-hidden="true" />
         </nav>
         <div className="flex items-center gap-2">
           <Button asChild size="sm" className="header-quote hidden sm:inline-flex"><Link to="/cotizar">Cotizar<ArrowRight aria-hidden="true" strokeWidth={1.5} /></Link></Button>
