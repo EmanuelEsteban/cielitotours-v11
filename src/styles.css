@@ -297,7 +297,7 @@
 .faq-paper-curve { position: absolute; z-index: 4; inset: auto 0 0; width: 100%; height: 72px; fill: none; pointer-events: none; }
 .faq-curve-thread { fill: none; stroke: var(--faq-champagne); stroke-width: 2; vector-effect: non-scaling-stroke; }
 .faq-thread-secondary { stroke-width: 1; opacity: .55; }
-.faq-paper { position: relative; z-index: 2; isolation: isolate; margin-top: -54px; margin-bottom: -64px; padding-top: 134px; background: var(--faq-paper); clip-path: shape(from 0 12px, curve to 100% 62px with 30% 115px / 66% -30px, line to 100% calc(100% - 33.74545px), curve to 0 calc(100% - 57.01818px) with 59.72222% calc(100% - 113.45455px) / 32.63889% 100%, close); }
+.faq-paper { position: relative; z-index: 2; isolation: isolate; margin-top: -54px; margin-bottom: -64px; padding-top: 134px; background: var(--faq-paper); clip-path: shape(from 0 12px, curve to 100% 62px with 30% 115px / 66% -30px, line to 100% calc(100% - 31.74545px), curve to 0 calc(100% - 55.01818px) with 59.72222% calc(100% - 111.45455px) / 32.63889% calc(100% + 2px), close); }
 .faq-mineral-texture { position: absolute; z-index: -1; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
 .faq-content { position: relative; z-index: 1; max-width: 896px; margin: auto; padding: 0 28px 88px; }
 .faq-questions { display: grid; align-content: start; gap: 18px; min-height: var(--faq-reserved-height, 390px); }
@@ -322,7 +322,7 @@ main:has(> .faq-paper) + .site-footer .footer-top-edge { visibility: hidden; }
 @media (max-width: 1023px) { .faq-hero-inner { padding-top: 40px; } .faq-hero h1 { font-size: 48px; max-width: 520px; } .faq-intro { font-size: 32px; } .faq-travel-stamp { opacity: .28; } .faq-postmark { display: none; } .faq-paper { padding-top: 124px; } .faq-content { max-width: 896px; } }
 @media (max-width: 639px) {
   .faq-hero-inner { padding: 32px 20px 88px; }
-  .faq-hero h1 { font-size: 38px; max-width: 340px; margin: 0 0 34.703125px; }
+  .faq-hero h1 { font-size: 38px; max-width: 340px; margin: 0 0 52.71875px; }
   .faq-intro { min-height: 78.4px; font-size: 29px; max-width: 300px; margin: 12px 0 0; }
   .faq-travel-stamp { width: 76px; height: 76px; top: var(--faq-stamp-y, 160px); left: calc(var(--faq-stamp-x, 300px) - 38px); opacity: .2; }
   .faq-travel-stamp > svg:nth-child(2) { width: 24px; height: 24px; left: 26px; top: 26px; }
