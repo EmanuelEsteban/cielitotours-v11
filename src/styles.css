@@ -287,24 +287,18 @@
 .faq-hero { position: relative; isolation: isolate; overflow: hidden; color: var(--faq-ivory); background: linear-gradient(110deg,var(--faq-navy),var(--faq-petroleum)); }
 .faq-night-texture { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 46%; pointer-events: none; }
 .faq-hero-inner { position: relative; z-index: 1; max-width: 1100px; margin: auto; padding: 32px 32px 80px; }
-.faq-label { display: inline-flex; align-items: center; gap: 12px; margin: 0; color: var(--faq-ivory); font: 500 22px/1.4 var(--font-accent); letter-spacing: 0; }
-.faq-label::before, .faq-label::after { content: ""; width: 44px; height: 1px; background: var(--faq-rule); }
-.faq-hero h1 { max-width: 780px; margin: 0; font: 400 62px/1.13 var(--font-accent); letter-spacing: 0; }
-.faq-intro { min-height: 53.2px; margin: 0 0 0 12px; color: var(--faq-champagne); font: italic 500 32px/1.25 "Cormorant Garamond", serif; }
-.faq-travel-stamp { position: absolute; z-index: 1; width: 150px; height: 150px; top: 44px; left: calc(50% + 195px); color: var(--faq-champagne); opacity: .82; transform: rotate(-15deg); }
+.faq-hero h1 { position: relative; z-index: 2; max-width: 780px; margin: 0 0 32.90625px; font: 400 62px/1.13 var(--font-accent); letter-spacing: 0; }
+.faq-intro { min-height: 53.2px; margin: 0 0 0 12px; color: var(--faq-champagne); font: 400 37px/1.25 "Allura", cursive; }
+.faq-travel-stamp { position: absolute; z-index: 0; width: 150px; height: 150px; top: var(--faq-stamp-y, 90px); left: calc(var(--faq-stamp-x, 760px) - 75px); color: var(--faq-champagne); opacity: .65; transform: rotate(-15deg); }
 .faq-travel-stamp > svg:first-child { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1; }
 .faq-travel-stamp text { fill: currentColor; stroke: none; font: 500 14px var(--font-sans); }
 .faq-travel-stamp > svg:nth-child(2) { position: absolute; width: 48px; height: 48px; left: 51px; top: 51px; transform: rotate(-30deg); }
 .faq-postmark { position: absolute; width: 150px; height: 90px; top: 46px; left: 136px; fill: none; stroke: currentColor; stroke-width: 1; opacity: .5; }
-.faq-hero-note { position: absolute; right: 32px; bottom: 48px; color: var(--faq-champagne); text-align: right; font: 600 13px/1.8 var(--font-sans); letter-spacing: 0; }
-.faq-hero-note span, .faq-paper-note span { display: block; width: 32px; height: 1px; background: var(--faq-rule); margin-top: 12px; }
-.faq-hero-note span { margin-left: auto; }
 .faq-paper-curve { position: absolute; z-index: 4; inset: auto 0 0; width: 100%; height: 72px; fill: none; pointer-events: none; }
 .faq-curve-thread { fill: none; stroke: var(--faq-champagne); stroke-width: 2; vector-effect: non-scaling-stroke; }
 .faq-thread-secondary { stroke-width: 1; opacity: .55; }
-.faq-paper { position: relative; z-index: 2; isolation: isolate; margin-top: -54px; margin-bottom: -48px; padding-top: 134px; background: var(--faq-paper); clip-path: shape(from 0 12px, curve to 100% 62px with 30% 115px / 66% -30px, line to 100% 100%, line to 0 100%, close); }
+.faq-paper { position: relative; z-index: 2; isolation: isolate; margin-top: -54px; margin-bottom: -64px; padding-top: 134px; background: var(--faq-paper); clip-path: shape(from 0 12px, curve to 100% 62px with 30% 115px / 66% -30px, line to 100% calc(100% - 33.74545px), curve to 0 calc(100% - 57.01818px) with 59.72222% calc(100% - 113.45455px) / 32.63889% 100%, close); }
 .faq-mineral-texture { position: absolute; z-index: -1; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
-.faq-paper-note { position: absolute; left: 4.5%; bottom: 80px; color: var(--faq-text); font: italic 500 25px/1.2 "Cormorant Garamond", serif; }
 .faq-content { position: relative; z-index: 1; max-width: 896px; margin: auto; padding: 0 28px 88px; }
 .faq-questions { display: grid; align-content: start; gap: 18px; min-height: var(--faq-reserved-height, 390px); }
 .faq-question > div[data-state="closed"] { height: 0; animation: none; visibility: hidden; }
@@ -322,16 +316,15 @@
 .faq-answer p { max-width: 680px; margin: 0; border-top: 1px solid var(--faq-rule); padding-top: 12px; }
 .faq-content .faq-back { height: 44px; margin-top: 24px; border: 1px solid var(--faq-rule); border-radius: 12px; background: color-mix(in oklab,var(--faq-ivory) 65%,transparent); color: var(--faq-text); font-size: 14px; }
 .faq-content .faq-back:hover { background: var(--faq-ivory); }
-.faq-footer-curve { position: absolute; bottom: -1px; left: 0; width: 100%; height: 64px; fill: var(--faq-corporate); pointer-events: none; }
-@media (max-width: 1199px) { .faq-hero h1 { font-size: 52px; max-width: 650px; } .faq-travel-stamp { left: auto; right: 16%; width: 124px; height: 124px; } .faq-travel-stamp > svg:nth-child(2) { width: 40px; height: 40px; top: 42px; left: 42px; } .faq-hero-note { right: 20px; font-size: 12px; } .faq-paper-note { font-size: 23px; left: 20px; } }
-@media (max-width: 1023px) { .faq-hero-inner { padding-top: 40px; } .faq-hero h1 { font-size: 48px; max-width: 520px; } .faq-intro { font-size: 28px; } .faq-travel-stamp { right: 24px; top: 110px; opacity: .45; } .faq-postmark, .faq-hero-note, .faq-paper-note { display: none; } .faq-paper { padding-top: 124px; } .faq-content { max-width: 896px; } }
+.faq-footer-curve { position: absolute; bottom: -1px; left: 0; width: 100%; height: 64px; fill: none; pointer-events: none; }
+main:has(> .faq-paper) + .site-footer .footer-top-edge { visibility: hidden; }
+@media (max-width: 1199px) { .faq-hero h1 { font-size: 52px; max-width: 650px; } .faq-travel-stamp { left: calc(var(--faq-stamp-x, 620px) - 62px); width: 124px; height: 124px; } .faq-travel-stamp > svg:nth-child(2) { width: 40px; height: 40px; top: 42px; left: 42px; } }
+@media (max-width: 1023px) { .faq-hero-inner { padding-top: 40px; } .faq-hero h1 { font-size: 48px; max-width: 520px; } .faq-intro { font-size: 32px; } .faq-travel-stamp { opacity: .28; } .faq-postmark { display: none; } .faq-paper { padding-top: 124px; } .faq-content { max-width: 896px; } }
 @media (max-width: 639px) {
   .faq-hero-inner { padding: 32px 20px 88px; }
-  .faq-label { font-size: 16px; }
-  .faq-label::before, .faq-label::after { width: 28px; }
-  .faq-hero h1 { font-size: 38px; max-width: 340px; margin-top: 12px; }
-  .faq-intro { min-height: 78.4px; font-size: 25px; max-width: 300px; margin: 12px 0 0; }
-  .faq-travel-stamp { width: 76px; height: 76px; top: auto; bottom: 42px; right: 20px; opacity: .32; }
+  .faq-hero h1 { font-size: 38px; max-width: 340px; margin: 0 0 34.703125px; }
+  .faq-intro { min-height: 78.4px; font-size: 29px; max-width: 300px; margin: 12px 0 0; }
+  .faq-travel-stamp { width: 76px; height: 76px; top: var(--faq-stamp-y, 160px); left: calc(var(--faq-stamp-x, 300px) - 38px); opacity: .2; }
   .faq-travel-stamp > svg:nth-child(2) { width: 24px; height: 24px; left: 26px; top: 26px; }
   .faq-paper { margin-top: -54px; padding-top: 106px; }
   .faq-mineral-texture { object-position: 35% center; opacity: .7; }
