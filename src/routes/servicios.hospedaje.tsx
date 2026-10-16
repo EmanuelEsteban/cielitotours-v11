@@ -93,7 +93,7 @@ function StayPage() {
         <div className="hosp-hero-shade absolute inset-0" />
         <p aria-hidden="true" className="hosp-hand hosp-hero-hand">Tu descanso<br />también<br />es parte<br />del viaje.</p>
         <div className="relative mx-auto flex min-h-[560px] max-w-7xl items-end px-5 pb-12 pt-24 sm:min-h-[540px] sm:items-center sm:px-10 sm:py-16 lg:min-h-[600px] lg:px-8">
-          <div className="max-w-[36rem]">
+          <div className="max-w-[38rem]">
             <p className="hosp-hero-label">Hospedaje</p>
             <h1 className="hosp-hero-title">Un buen viaje<br />también se siente<br />en donde<br /><span>te quedas.</span></h1>
             <p className="hosp-hero-copy">Encuentra el alojamiento ideal para tu estilo de viaje. Hoteles, resorts, villas y experiencias únicas en México y el mundo.</p>
