@@ -278,13 +278,35 @@
 .service-tile:hover .service-tile-arrow, .service-tile:focus-visible .service-tile-arrow { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .service-tile, .service-tile-arrow { transition: color .2s, background .2s, border-color .2s, opacity .2s; } .service-tile:hover, .service-tile:focus-visible, .service-tile .service-tile-arrow { transform: none !important; } }
 
-/* Footer */
-.footer-link { position: relative; display: inline-flex; align-items: center; min-height: 2.75rem; font-size: 16px; color: color-mix(in oklab, var(--primary-foreground) 75%, transparent); transition: color .2s; }
-@media (min-width: 768px) { .footer-link { min-height: 0; padding: 5px 0; } }
-.footer-link span { background: linear-gradient(var(--accent), var(--accent)) left bottom / 0 1px no-repeat; transition: background-size .25s ease; padding-bottom: 2px; }
-.footer-link:hover, .footer-link:focus-visible { color: var(--primary-foreground); }
-.footer-link:hover span, .footer-link:focus-visible span { background-size: 100% 1px; }
-.papel-picado { height: 14px; opacity: .12; background: radial-gradient(circle at 50% 0, transparent 5px, var(--accent) 5.5px) 0 0 / 22px 14px; -webkit-mask: linear-gradient(90deg, transparent, black 15%, black 85%, transparent); mask: linear-gradient(90deg, transparent, black 15%, black 85%, transparent); }
+/* Footer-only satin surface and editorial navigation. */
+.site-footer {
+  --footer-navy: oklch(0.27 0.054 250);
+  --footer-corporate: oklch(0.34 0.075 251);
+  --footer-petroleum: oklch(0.39 0.056 236);
+  --footer-night: oklch(0.29 0.057 251);
+  --footer-champagne: oklch(0.79 0.055 85);
+  --footer-ivory: oklch(0.96 0.012 85);
+  --footer-muted: color-mix(in oklab, var(--footer-ivory) 80%, var(--footer-navy));
+  --footer-route: color-mix(in oklab, var(--footer-champagne) 55%, var(--footer-petroleum));
+  position: relative; isolation: isolate; overflow: hidden; color: var(--footer-ivory);
+  background: linear-gradient(165deg, transparent 45%, color-mix(in oklab, var(--footer-night) 85%, transparent)), linear-gradient(25deg, color-mix(in oklab, var(--footer-champagne) 5%, transparent), transparent 36%), linear-gradient(115deg, var(--footer-navy), var(--footer-corporate) 52%, var(--footer-petroleum));
+}
+.site-footer > :not(.footer-cartography) { position: relative; z-index: 1; }
+.footer-top-edge { height: 14px; background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--footer-champagne) 30%, transparent), transparent) top / 100% 1px no-repeat; }
+.footer-cartography { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; color: var(--footer-route); opacity: .12; fill: none; stroke: url(#footer-route-fade); stroke-width: 1; }
+.footer-cartography path { vector-effect: non-scaling-stroke; }
+.site-footer .footer-heading { display: table; margin: 0; padding-bottom: 10px; border-bottom: 1px solid color-mix(in oklab, var(--footer-champagne) 65%, transparent); font-family: var(--font-sans); font-size: 15px; line-height: 1.5; font-weight: 600; letter-spacing: 0; text-transform: uppercase; color: var(--footer-champagne); }
+.site-footer .footer-link { position: relative; display: inline-flex; align-items: center; min-height: 44px; font-family: var(--font-sans); font-size: 15px; font-weight: 400; line-height: 1.55; color: var(--footer-muted); transition: color 200ms ease; }
+.site-footer .footer-link::before { content: ""; position: absolute; left: -10px; width: 2px; height: 15px; border-radius: 2px; background: var(--primary); opacity: 0; transition: opacity 200ms ease; }
+.site-footer .footer-link:hover, .site-footer .footer-link:focus-visible { color: var(--footer-champagne); }
+.site-footer .footer-link:hover::before, .site-footer .footer-link:focus-visible::before { opacity: 1; }
+.footer-description { font-family: var(--font-sans); font-size: 15px; font-weight: 400; line-height: 1.55; text-align: left; color: var(--footer-muted); }
+.footer-slogan { font-family: var(--font-display); font-size: 24px; font-weight: 500; line-height: 1.4; text-align: left; color: var(--accent); }
+.footer-legal { border-top: 1px solid color-mix(in oklab, var(--footer-champagne) 20%, transparent); color: var(--footer-muted); background: linear-gradient(110deg, color-mix(in oklab, var(--footer-night) 65%, transparent), color-mix(in oklab, var(--footer-navy) 85%, transparent)); }
+.site-footer .footer-legal-link { transition: color 200ms ease; }
+.site-footer .footer-legal-link:hover { color: var(--footer-champagne); }
+.site-footer a:focus-visible { outline: 2px solid var(--footer-champagne); outline-offset: 4px; border-radius: 2px; }
+@media (prefers-reduced-motion: reduce) { .site-footer a, .site-footer a::before { transition: none; } }
 
 
 /* Final typography: fluid scale on large screens, kickers, wrapping */
@@ -295,7 +317,6 @@
 .section-kicker, .kicker-text { font-size: .9375rem; }
 @media (min-width: 1024px) { .section-kicker, .kicker-text { font-size: 1rem; } }
 @media (min-width: 640px) and (max-width: 1023px) { .section-kicker { font-size: .9375rem; } }
-.footer-heading { font-size: 14px; }
 p, li, figcaption, blockquote { text-wrap: pretty; }
 h1, h2, h3, h4, .service-tile span, .caribe-card p, a[class*="button"], button { text-wrap: balance; }
 
