@@ -1,0 +1,16 @@
+{
+  "project": "CielitoTour v11 (migrated from github EmanuelEsteban/cielito-tours-v10)",
+  "capabilities": [
+    {"capability": "code", "source": "github:/tmp/v10", "outcome": "src/, public/, drizzle/, scripts/, supabase/, drizzle.config.ts, AGENTS.md, README.md copied; deps installed (@supabase/supabase-js, lenis, drizzle-kit, drizzle-orm, postgres)", "status": "verified", "next_action": ""},
+    {"capability": "schema", "source": "drizzle/migrations 0000-0003 (user_roles, travel_offers, quote_requests, private.has_role)", "outcome": "applied to Lovable Cloud; types regenerated via get_types; fix: GRANT EXECUTE private.has_role to anon (anon could not read published offers)", "status": "verified", "next_action": ""},
+    {"capability": "records", "source": "none attached; old data lives in the v10 cloud project", "outcome": "3 seed travel_offers rows from migration applied", "status": "pending", "next_action": "request CSV/JSON exports of quote_requests (and any extra travel_offers/user_roles rows + auth users) from the v10 project after preview"},
+    {"capability": "auth", "source": "supabase auth middleware (attachSupabaseAuth, auth-middleware, cron-auth); no sign-in UI in v10", "outcome": "Lovable Cloud auth active; same middleware; user_roles table applied", "status": "verified", "next_action": ""},
+    {"capability": "authorization", "source": "RLS policies from migrations", "outcome": "applied and probed: anon can read published offers and insert quote requests", "status": "verified", "next_action": ""},
+    {"capability": "uploaded_file_bytes", "source": "no storage usage found in code", "outcome": "n/a", "status": "verified", "next_action": ""},
+    {"capability": "external_providers", "source": "none besides supabase", "outcome": "n/a", "status": "verified", "next_action": ""},
+    {"capability": "public_endpoints", "source": "no src/routes/api in v10", "outcome": "n/a", "status": "verified", "next_action": ""},
+    {"capability": "secrets", "source": "supabase keys via Lovable Cloud env", "outcome": "managed by cloud", "status": "verified", "next_action": ""},
+    {"capability": "cutover", "source": "new project, no traffic", "outcome": "n/a", "status": "n/a", "next_action": ""},
+    {"capability": "verification", "source": "build + preview + probes", "outcome": "build OK; / and /cotizar render without console errors; anon read of published offers OK; anon insert of quote_requests OK (test row deleted)", "status": "verified", "next_action": ""}
+  ]
+}
