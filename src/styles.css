@@ -2184,9 +2184,6 @@ textarea.ct-input { resize: vertical; }
 .nos-hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: 60% 62%; transform: scale(1.04); transform-origin: 60% 70%;
   -webkit-mask-image: linear-gradient(105deg, transparent 0%, rgb(0 0 0 / .35) 14%, #000 34%); mask-image: linear-gradient(105deg, transparent 0%, rgb(0 0 0 / .35) 14%, #000 34%); }
 .nos-hero-img::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgb(255 244 225 / .18), transparent 30%), linear-gradient(0deg, color-mix(in oklab, var(--nos-cream) 40%, transparent), transparent 18%); pointer-events: none; }
-.nos-hero-hand { position: absolute; top: 9%; right: 5%; display: grid; font-size: clamp(36px, 3vw, 54px); color: #FFFBF2; text-shadow: 0 2px 14px rgb(20 44 73 / .35); transform: rotate(-8deg); z-index: 2; }
-.nos-hero-hand span:nth-child(2) { padding-left: .9em; } .nos-hero-hand span:nth-child(3) { padding-left: 1.6em; }
-.nos-hero-hand .nos-heart { color: #FFFBF2; }
 .nos-hero-grid { z-index: 1; padding-block: 64px; }
 .nos-hero-txt { max-width: min(590px, 44%); }
 .nos-cats { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 14px 28px; padding-top: 22px; border-top: 1px solid color-mix(in oklab, var(--nos-champ) 35%, transparent); max-width: 560px; }
@@ -2275,7 +2272,6 @@ textarea.ct-input { resize: vertical; }
   .nos-hero { flex-direction: column; align-items: stretch; }
   .nos-hero-img { position: relative; width: 100%; height: 340px; order: 2; }
   .nos-hero-img img { -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 26%); mask-image: linear-gradient(180deg, transparent 0, #000 26%); }
-  .nos-hero-hand { top: auto; bottom: 12%; }
   .nos-hero-txt { max-width: none; }
   .nos-stamp { left: auto; right: 0; top: 20px; width: 96px; }
   .nos-esencia-grid, .nos-apa-grid { grid-template-columns: 1fr; gap: 44px; }
@@ -2324,8 +2320,6 @@ textarea.ct-input { resize: vertical; }
 .nos .nos-kicker { font-size: clamp(13px, 1.05vw, 15.5px); letter-spacing: .26em; }
 .nos-hero-img { -webkit-mask-image: linear-gradient(100deg, transparent 0%, rgb(0 0 0 / .18) 8%, rgb(0 0 0 / .55) 18%, rgb(0 0 0 / .88) 27%, #000 34%); mask-image: linear-gradient(100deg, transparent 0%, rgb(0 0 0 / .18) 8%, rgb(0 0 0 / .55) 18%, rgb(0 0 0 / .88) 27%, #000 34%); }
 @media (min-width: 901px) { .nos-hero-img img { object-position: 60% 72%; } }
-.nos-hero-hand { color: var(--nos-navy); text-shadow: 0 0 18px rgb(255 251 242 / .75), 0 0 2px rgb(255 251 242 / .6); font-size: clamp(40px, 3.3vw, 62px); line-height: 1.02; top: 8%; right: 4.5%; }
-.nos-hero-hand .nos-heart { color: var(--primary); }
 .nos-hero-edge { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: clamp(22px, 2.4vw, 42px); z-index: 3; pointer-events: none; }
 .nos-btn:not(.nos-btn-light) { background: linear-gradient(180deg, color-mix(in oklab, var(--primary) 86%, white) 0%, var(--primary) 55%, color-mix(in oklab, var(--primary) 88%, black) 100%); border: 1px solid color-mix(in oklab, var(--primary) 70%, black 10%);
   box-shadow: inset 0 1px 0 rgb(255 255 255 / .28), inset 0 -1px 0 rgb(0 0 0 / .08), 0 2px 4px -1px rgb(120 10 60 / .25), 0 12px 24px -14px color-mix(in oklab, var(--primary) 80%, transparent); transition: transform .22s ease, box-shadow .22s ease, filter .22s ease; }
@@ -2358,13 +2352,11 @@ textarea.ct-input { resize: vertical; }
 @media (max-width: 900px) {
   .nos-hero-img { -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 28%); mask-image: linear-gradient(180deg, transparent 0, #000 28%); }
   .nos-hero-img img { -webkit-mask-image: none; mask-image: none; }
-  .nos-hero-hand { font-size: 36px; }
   .nos-esencia-grid { grid-template-columns: 1fr; }
   .nos-apa-photos { height: 74vw; max-height: 520px; margin-top: 30px; }
   .nos-apa-hand { top: -36px; }
 }
 @media (max-width: 640px) {
-  .nos-hero-hand { font-size: 30px; right: 4%; }
   .nos-apa-photos { height: 92vw; }
   .nos-apa-a { width: 46%; } .nos-apa-b { width: 70%; top: 24%; }
   .nos-apa-hand { position: absolute; top: auto; bottom: -46px; left: 0; right: 0; text-align: center; grid-column: auto; font-size: 24px; }
@@ -2399,12 +2391,7 @@ textarea.ct-input { resize: vertical; }
   .nos-hero-img { -webkit-mask-composite: initial; mask-composite: initial;
     -webkit-mask-image: linear-gradient(120deg, transparent 0%, transparent 14%, rgb(0 0 0 / .2) 22%, rgb(0 0 0 / .55) 30%, rgb(0 0 0 / .85) 38%, #000 46%);
     mask-image: linear-gradient(120deg, transparent 0%, transparent 14%, rgb(0 0 0 / .2) 22%, rgb(0 0 0 / .55) 30%, rgb(0 0 0 / .85) 38%, #000 46%); }
-  .nos-hero-hand { top: 2.5%; right: 4%; transform: rotate(-5deg); font-size: clamp(40px, 3.1vw, 58px); line-height: .98; }
 }
-/* Explora · Vive · Conecta: velo marfil atmosférico, sin caja */
-.nos-hero-hand { color: var(--nos-navy); text-shadow: 0 0 12px rgb(255 250 240 / .9), 0 0 3px rgb(255 250 240 / .8); isolation: isolate; }
-.nos-hero-hand::before { content: ""; position: absolute; inset: -40% -30% -35% -35%; z-index: -1; pointer-events: none;
-  background: radial-gradient(closest-side, rgb(251 245 233 / .88) 0%, rgb(248 238 220 / .7) 45%, rgb(246 234 214 / .3) 75%, transparent 100%); }
 
 /* Hero → Esencia: ondas amplias */
 .nos-hero-edge { height: clamp(36px, 4.6vw, 70px); }
@@ -2431,4 +2418,3 @@ textarea.ct-input { resize: vertical; }
   .nos-hero-img { width: 75%; -webkit-mask-image: linear-gradient(120deg, transparent 0%, transparent 25%, rgb(0 0 0 / .18) 32%, rgb(0 0 0 / .5) 39%, rgb(0 0 0 / .82) 46%, #000 53%);
     mask-image: linear-gradient(120deg, transparent 0%, transparent 25%, rgb(0 0 0 / .18) 32%, rgb(0 0 0 / .5) 39%, rgb(0 0 0 / .82) 46%, #000 53%); }
 }
-@media (max-width: 900px) { .nos-hero-hand { top: auto; bottom: 14%; align-content: end; line-height: 1; } }
