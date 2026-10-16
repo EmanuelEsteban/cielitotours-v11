@@ -2965,3 +2965,54 @@ main:has(> .hosp-final:last-child) + .site-footer .footer-transition-thread { di
 .hosp-gold-primary { stroke: url(#stay-metal); stroke-width: 2.8; }
 .hosp-gold-secondary { stroke: url(#stay-metal); stroke-width: 1.8; }
 .hosp-gold-highlight { stroke: var(--hosp-metal-light); stroke-width: .7; opacity: .6; transform: translateY(-.8px); }
+
+/* ——— Autos (renta de autos) ——— */
+.autos-hero { position: relative; overflow: hidden; background: var(--ink); color: var(--primary-foreground); }
+.autos-hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 68% 50%; }
+.autos-hero-veil { position: absolute; inset: 0; background: linear-gradient(100deg, color-mix(in oklab, var(--ink) 94%, transparent) 0%, color-mix(in oklab, var(--ink) 68%, transparent) 36%, color-mix(in oklab, var(--ink) 12%, transparent) 62%, transparent 78%); }
+.autos-hero-route { position: absolute; left: 0; right: 0; bottom: 10%; width: 100%; height: 34%; color: var(--accent); opacity: .5; pointer-events: none; }
+.autos-hero-inner { position: relative; z-index: 2; max-width: 80rem; margin-inline: auto; padding: clamp(4.5rem, 9vw, 7rem) 1.25rem clamp(5.5rem, 10vw, 8rem); }
+@media (min-width: 1024px) { .autos-hero-inner { padding-inline: 2rem; } }
+.autos-kicker { display: flex; align-items: center; gap: 12px; font-family: Manrope, sans-serif; font-size: .78rem; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); }
+.autos-kicker-rule { display: inline-block; width: 35px; height: 1px; background: var(--accent); opacity: .85; }
+.autos-kicker-center { justify-content: center; }
+.autos-hero-title { margin-top: 1.1rem; font-family: Manrope, sans-serif; font-weight: 800; text-transform: uppercase; line-height: 1.04; letter-spacing: -.01em; font-size: clamp(2.1rem, 7.5vw, 3.6rem); max-width: 14ch; }
+.autos-hero-title span { color: var(--accent); }
+.autos-hero-copy { margin-top: 1.15rem; max-width: 34rem; font-size: 1rem; line-height: 1.7; color: color-mix(in oklab, var(--primary-foreground) 88%, transparent); }
+.autos-cta { margin-top: 1.6rem; min-height: 52px; border-radius: 12px; padding-inline: 1.6rem; font-weight: 600; box-shadow: 0 4px 14px color-mix(in oklab, var(--primary) 30%, transparent); }
+.autos-wave { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 48px; pointer-events: none; }
+.autos-wave-fill { fill: var(--background); }
+.autos-wave-thread { fill: none; stroke: var(--accent); stroke-width: 2; opacity: .8; }
+.autos-wave-process .autos-wave-fill { fill: var(--autos-celeste); }
+
+.autos-quote { --autos-celeste: oklch(0.94 0.03 225); background: var(--background); padding-block: clamp(3.5rem, 7vw, 5.5rem); }
+.autos-quote-kicker { display: flex; align-items: center; gap: 12px; font-family: Manrope, sans-serif; font-size: .78rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--primary); }
+.autos-quote-kicker-rule { display: inline-block; width: 44px; height: 2px; background: var(--accent); }
+.autos-quote-title { margin-top: 1rem; font-family: Manrope, sans-serif; font-weight: 800; line-height: 1.06; letter-spacing: -.01em; color: var(--ink); font-size: clamp(2rem, 5.5vw, 3rem); }
+.autos-quote-note { margin-top: 2rem; display: flex; align-items: flex-start; gap: 14px; max-width: 26rem; border-left: 2px solid var(--accent); padding-left: 1.1rem; font-size: .875rem; line-height: 1.6; color: var(--muted-foreground); }
+.autos-quote-note-icon { flex: none; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 999px; border: 1.5px solid var(--accent); color: var(--accent); background: color-mix(in oklab, var(--accent) 10%, transparent); }
+
+.autos-process { --autos-celeste: oklch(0.94 0.03 225); position: relative; overflow: hidden; background: linear-gradient(160deg, oklch(0.30 0.08 248) 0%, var(--ink) 45%, oklch(0.27 0.07 240) 100%); color: var(--primary-foreground); }
+.autos-process-photo { position: absolute; inset: 0 auto 0 0; width: min(46%, 640px); height: 100%; object-fit: cover; object-position: center; opacity: .9; -webkit-mask-image: linear-gradient(90deg, black 55%, transparent 100%); mask-image: linear-gradient(90deg, black 55%, transparent 100%); }
+@media (max-width: 900px) { .autos-process-photo { width: 100%; opacity: .22; -webkit-mask-image: linear-gradient(180deg, black 40%, transparent 85%); mask-image: linear-gradient(180deg, black 40%, transparent 85%); } }
+.autos-process-veil { position: absolute; inset: 0; background: linear-gradient(90deg, transparent 0%, color-mix(in oklab, var(--ink) 55%, transparent) 45%, color-mix(in oklab, var(--ink) 82%, transparent) 100%); pointer-events: none; }
+@media (max-width: 900px) { .autos-process-veil { background: color-mix(in oklab, var(--ink) 55%, transparent); } }
+.autos-compass { position: absolute; top: clamp(2rem, 5vw, 3.5rem); right: clamp(1.25rem, 5vw, 4rem); width: clamp(84px, 10vw, 128px); color: var(--accent); opacity: .5; pointer-events: none; }
+.autos-process-inner { position: relative; z-index: 2; max-width: 80rem; margin-inline: auto; padding: clamp(4rem, 8vw, 6rem) 1.25rem clamp(5.5rem, 9vw, 7.5rem); text-align: center; }
+@media (min-width: 1024px) { .autos-process-inner { padding-inline: 2rem; } }
+.autos-process-title { margin-top: 1.1rem; font-family: var(--font-display, Fraunces, serif); font-weight: 600; line-height: 1.08; font-size: clamp(2rem, 5.5vw, 3.2rem); }
+.autos-process-title em { font-style: italic; color: var(--accent); }
+.autos-steps { margin-top: clamp(2.5rem, 5vw, 3.5rem); display: grid; gap: 2.25rem; text-align: left; }
+@media (min-width: 768px) { .autos-steps { grid-template-columns: repeat(3, 1fr); gap: 2rem; position: relative; }
+  .autos-steps::before { content: ""; position: absolute; top: 26px; left: 8%; right: 8%; border-top: 2px dotted color-mix(in oklab, var(--accent) 55%, transparent); }
+}
+.autos-step { position: relative; }
+.autos-step-num { position: relative; z-index: 1; display: grid; place-items: center; width: 52px; height: 52px; border-radius: 999px; border: 1.5px solid var(--accent); background: var(--ink); color: var(--accent); font-family: var(--font-display, Fraunces, serif); font-style: italic; font-size: 1.15rem; font-weight: 600; }
+.autos-step h3 { margin-top: 1rem; font-family: Manrope, sans-serif; font-size: .95rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.autos-step p { margin-top: .5rem; font-size: .9rem; line-height: 1.65; color: color-mix(in oklab, var(--primary-foreground) 72%, transparent); }
+
+.autos-final { --autos-celeste: oklch(0.94 0.03 225); background: linear-gradient(180deg, var(--autos-celeste) 0%, oklch(0.955 0.025 225) 100%); padding-block: clamp(4rem, 8vw, 6rem); }
+.autos-final-kicker { font-family: Manrope, sans-serif; font-size: .78rem; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: var(--primary); }
+.autos-final-title { margin-top: 1.1rem; font-family: Manrope, sans-serif; font-weight: 800; text-transform: uppercase; line-height: 1.06; letter-spacing: -.01em; color: var(--ink); font-size: clamp(1.9rem, 6vw, 3.4rem); }
+main:has(> .autos-final:last-child):not(:has(> #cta-final:last-child)) + .site-footer .footer-transition-shape { fill: oklch(0.955 0.025 225); }
+main:has(> .autos-final:last-child) + .site-footer .footer-transition-thread { display: none; }

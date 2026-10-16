@@ -1,10 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { format, parseISO, startOfToday } from "date-fns";
 import { es } from "date-fns/locale";
-import { ArrowDown, ArrowLeft, ArrowRight, CalendarDays, ChevronDown, Minus, Plus } from "lucide-react";
+import { ArrowLeft, ArrowRight, CalendarDays, Car, ChevronDown, Minus, Plus } from "lucide-react";
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
-import carsHeroImage from "@/assets/cielito-cars-hero.jpg";
-import roadProcessImage from "@/assets/cielito-road-process.jpg";
+import autosHeroImage from "@/assets/autos-hero-coast.jpg";
+import autosProcessImage from "@/assets/autos-process-coast.jpg";
 import { SiteShell } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
@@ -87,63 +87,77 @@ export const Route = createFileRoute("/servicios/renta-de-autos")({
 function CarsPage() {
   return (
     <SiteShell>
-      <section className="relative bg-background">
-        <div className="relative h-[300px] overflow-hidden sm:h-[380px] lg:h-[440px]">
-          <img src={carsHeroImage} alt="Pareja cargando equipaje en su auto junto a una carretera costera" width={1920} height={1088} fetchPriority="high" className="absolute inset-0 size-full object-cover object-[72%_12%] sm:object-[68%_16%] lg:object-[62%_18%]" />
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/20 to-background sm:bg-gradient-to-br sm:from-ink/75 sm:via-ink/15 sm:to-background/90" />
-          <svg aria-hidden="true" viewBox="0 0 1000 200" className="pointer-events-none absolute inset-x-0 bottom-0 hidden w-full text-accent opacity-45 sm:block"><path d="M-20 160 C220 120 360 40 560 90 S840 150 1030 60" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="10 12" className="route-line" /></svg>
+      <section className="autos-hero">
+        <img src={autosHeroImage} alt="SUV moderno recorriendo una carretera costera al atardecer" width={1920} height={1088} fetchPriority="high" className="autos-hero-photo" />
+        <div className="autos-hero-veil" aria-hidden="true" />
+        <svg aria-hidden="true" viewBox="0 0 1000 200" preserveAspectRatio="none" className="autos-hero-route"><path d="M-20 170 C220 130 360 45 560 95 S840 155 1030 65" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="10 12" /></svg>
+        <div className="autos-hero-inner">
+          <p className="autos-kicker"><span aria-hidden="true" className="autos-kicker-rule" />Renta de autos<span aria-hidden="true" className="autos-kicker-rule" /></p>
+          <h1 className="autos-hero-title">Tu viaje sigue<br /><span>a tu ritmo.</span></h1>
+          <p className="autos-hero-copy">Cuéntanos dónde necesitas tu auto, tus fechas y cómo vas a viajar. Te ayudamos a preparar una opción adecuada para tu recorrido.</p>
+          <Button asChild size="lg" className="autos-cta"><a href="#cotizar-auto">Cotizar mi auto <ArrowRight aria-hidden="true" /></a></Button>
         </div>
-        <div className="relative z-10 mx-auto -mt-16 max-w-7xl px-5 sm:-mt-20 lg:px-8">
-          <div className="max-w-3xl border-t-4 border-accent bg-ink px-6 py-8 text-primary-foreground shadow-xl sm:px-10 sm:py-10 lg:ml-auto lg:mr-0">
-            <p className="kicker-text font-extrabold uppercase tracking-[.18em] text-accent">Renta de autos</p>
-            <h1 className="mt-3 font-display text-[clamp(1.95rem,8vw,2.6rem)] font-extrabold uppercase leading-[1.04] sm:text-[2.9rem] lg:text-[3.2rem]">Tu viaje sigue <span className="text-accent">a tu ritmo.</span></h1>
-            <p className="mt-4 max-w-xl text-base leading-7 text-primary-foreground/85">Cuéntanos dónde necesitas tu auto, tus fechas y cómo vas a viajar. Te ayudamos a preparar una opción adecuada para tu recorrido.</p>
-            <Button asChild size="lg" className="mt-6 min-h-12 w-full sm:w-auto"><a href="#cotizar-auto">Cotizar mi auto <ArrowDown /></a></Button>
-          </div>
-        </div>
+        <svg aria-hidden="true" viewBox="0 0 1440 48" preserveAspectRatio="none" className="autos-wave autos-wave-hero">
+          <path className="autos-wave-fill" d="M0 48V9C240 41 460 32 720 18S1130 43 1440 5V48Z" />
+          <path className="autos-wave-thread" d="M0 9C240 41 460 32 720 18S1130 43 1440 5" />
+        </svg>
       </section>
 
-      <section id="cotizar-auto" className="mobile-section bg-background py-14 sm:py-20">
+      <section id="cotizar-auto" className="autos-quote">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[.58fr_1.42fr] lg:gap-16 lg:px-8">
           <div className="lg:sticky lg:top-24 lg:self-start">
-            <p className="section-kicker">Cotización personalizada</p>
-            <h2 className="mt-4 font-display text-4xl font-bold leading-tight text-ink sm:text-5xl">Cuéntanos tu recorrido.</h2>
+            <p className="autos-quote-kicker">Cotización personalizada<span aria-hidden="true" className="autos-quote-kicker-rule" /></p>
+            <h2 className="autos-quote-title">Cuéntanos<br />tu recorrido.</h2>
             <p className="mt-5 max-w-md font-semibold leading-7 text-ink">Preparamos tu solicitud de renta de forma personalizada.</p>
             <p className="mt-3 max-w-md leading-7 text-muted-foreground">Cuéntanos tu recorrido y lo que necesitas para que nuestro equipo pueda revisar opciones contigo.</p>
-            <div className="mt-8 border-l-2 border-accent pl-5 text-sm leading-6 text-muted-foreground">Disponibilidad, condiciones, requisitos y tarifas se confirman al momento de cotizar.</div>
+            <div className="autos-quote-note"><span className="autos-quote-note-icon" aria-hidden="true"><Car className="size-5" /></span><p>Disponibilidad, condiciones, requisitos y tarifas se confirman al momento de cotizar.</p></div>
           </div>
           <CarQuoteForm />
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-ink text-primary-foreground">
-        <img src={roadProcessImage} alt="Carretera abierta al atardecer en el campo mexicano" width={1600} height={1200} loading="lazy" className="absolute inset-0 size-full object-cover object-center opacity-30" />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/45" />
-        <div className="relative mx-auto max-w-7xl px-6 py-14 sm:px-10 sm:py-20 lg:px-8">
-          <p className="kicker-text font-bold uppercase tracking-[.16em] text-accent">Seguimos el viaje contigo</p>
-          <h2 className="mt-4 max-w-xl font-display text-4xl font-bold leading-tight sm:text-5xl">Así preparamos tu camino.</h2>
-          <ol className="mt-10 grid gap-8 sm:grid-cols-3 sm:gap-6">
+      <section className="autos-process">
+        <img src={autosProcessImage} alt="SUV en una carretera costera entre acantilados al atardecer" width={1280} height={1024} loading="lazy" className="autos-process-photo" />
+        <div className="autos-process-veil" aria-hidden="true" />
+        <svg aria-hidden="true" viewBox="0 0 120 120" className="autos-compass">
+          <circle cx="60" cy="60" r="46" fill="none" stroke="currentColor" strokeWidth="1.4" />
+          <circle cx="60" cy="60" r="34" fill="none" stroke="currentColor" strokeWidth=".8" opacity=".55" />
+          <path d="M60 22 68 60 60 98 52 60Z" fill="currentColor" opacity=".9" />
+          <path d="M22 60 60 52 98 60 60 68Z" fill="currentColor" opacity=".45" />
+          <text x="60" y="12" textAnchor="middle" fontSize="11" fill="currentColor">N</text>
+          <text x="60" y="116" textAnchor="middle" fontSize="11" fill="currentColor">S</text>
+          <text x="8" y="64" textAnchor="middle" fontSize="11" fill="currentColor">O</text>
+          <text x="112" y="64" textAnchor="middle" fontSize="11" fill="currentColor">E</text>
+        </svg>
+        <div className="autos-process-inner">
+          <p className="autos-kicker autos-kicker-center"><span aria-hidden="true" className="autos-kicker-rule" />Seguimos el viaje contigo<span aria-hidden="true" className="autos-kicker-rule" /></p>
+          <h2 className="autos-process-title">Así preparamos<br /><em>tu camino.</em></h2>
+          <ol className="autos-steps">
             {[
               ["01", "Nos cuentas tu recorrido", "Dónde inicias, hasta dónde llegas y cuándo necesitas el auto."],
               ["02", "Revisamos qué necesitas", "Consideramos pasajeros, equipaje y tipo de recorrido antes de proponerte algo."],
               ["03", "Te ayudamos a elegir", "Conversamos contigo para que tomes la decisión con claridad."],
-            ].map(([number, title, copy], index) => (
-              <li key={number} className={cn("border-t-2 border-accent/70 pt-5", index === 1 && "sm:mt-10", index === 2 && "sm:mt-20")}>
-                <span className="font-display text-4xl font-extrabold text-accent">{number}</span>
-                <h3 className="mt-3 font-display text-lg font-bold uppercase">{title}</h3>
-                <p className="mt-2 text-sm leading-6 text-primary-foreground/70">{copy}</p>
+            ].map(([number, title, copy]) => (
+              <li key={number} className="autos-step">
+                <span className="autos-step-num">{number}</span>
+                <h3>{title}</h3>
+                <p>{copy}</p>
               </li>
             ))}
           </ol>
         </div>
+        <svg aria-hidden="true" viewBox="0 0 1440 48" preserveAspectRatio="none" className="autos-wave autos-wave-process">
+          <path className="autos-wave-fill" d="M0 48V9C240 41 460 32 720 18S1130 43 1440 5V48Z" />
+          <path className="autos-wave-thread" d="M0 9C240 41 460 32 720 18S1130 43 1440 5" />
+        </svg>
       </section>
 
-      <section className="relative overflow-hidden bg-secondary py-16 sm:py-24">
+      <section className="autos-final">
         <div className="relative mx-auto max-w-4xl px-6 text-center">
-          <p className="section-kicker">Sigue moviéndote</p>
-          <h2 className="mt-5 font-display text-4xl font-bold uppercase leading-tight text-ink sm:text-6xl">El camino también es parte del viaje.</h2>
-          <p className="mx-auto mt-5 max-w-xl leading-7 text-muted-foreground">Cuéntanos dónde vas y preparemos una opción para moverte a tu ritmo.</p>
-          <Button asChild size="lg" className="mt-8 min-h-12 w-full sm:w-auto"><a href="#cotizar-auto">Cotizar mi auto <ArrowRight /></a></Button>
+          <p className="autos-final-kicker">Sigue moviéndote</p>
+          <h2 className="autos-final-title">El camino también<br />es parte del viaje.</h2>
+          <p className="mx-auto mt-5 max-w-xl leading-7 text-muted-foreground">Cuéntanos dónde vas y preparamos una opción para moverte a tu ritmo.</p>
+          <Button asChild size="lg" className="autos-cta mt-8"><a href="#cotizar-auto">Cotizar mi auto <ArrowRight aria-hidden="true" /></a></Button>
         </div>
       </section>
     </SiteShell>
