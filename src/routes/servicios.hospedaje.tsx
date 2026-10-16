@@ -3,7 +3,7 @@ import { format, parseISO, startOfToday } from "date-fns";
 import { es } from "date-fns/locale";
 import { ArrowDown, ArrowLeft, ArrowRight, BedDouble, CalendarDays, ChevronDown, Minus, Plus } from "lucide-react";
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
-import stayHeroImage from "@/assets/cielito-stay-hero.jpg";
+import stayHeroImage from "@/assets/hospedaje-hero-resort.jpg";
 import stayProcessImage from "@/assets/cielito-stay-process.jpg";
 import { SiteShell } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
@@ -100,7 +100,7 @@ function StayPage() {
           </div>
         </div>
         <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-background to-transparent" />
-        <svg aria-hidden="true" viewBox="0 0 1000 220" className="pointer-events-none absolute inset-x-0 bottom-2 hidden w-full text-accent opacity-40 sm:block"><path d="M-30 175 C185 70 335 225 530 105 S790 35 1030 130" fill="none" stroke="currentColor" strokeWidth="2" className="route-line" /></svg>
+        
       </section>
 
       <section id="cotizar-hospedaje" className="mobile-section bg-background py-16 sm:py-24">
