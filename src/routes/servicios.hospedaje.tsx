@@ -105,8 +105,8 @@ function StayPage() {
 
       <section id="cotizar-hospedaje" className="hosp-quote mobile-section relative overflow-hidden py-16 sm:py-24">
         <img src={stayQuoteImage} alt="" aria-hidden="true" width={1024} height={1280} loading="lazy" className="hosp-quote-photo" />
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[.58fr_1.42fr] lg:gap-16 lg:px-8">
-          <div className="lg:self-center lg:pl-16 xl:pl-24">
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[.66fr_1.34fr] lg:gap-14 lg:px-8">
+          <div className="lg:self-center lg:pl-10 xl:pl-14">
             <p className="hosp-quote-kicker">Cotización personalizada</p>
             <h2 className="hosp-serif mt-4 text-[2.6rem] leading-[1.05] text-ink sm:text-[3.4rem]">Imagina tu <em>estancia.</em></h2>
             <p className="mt-5 max-w-md font-semibold leading-7 text-ink">Preparamos tu solicitud de hospedaje de forma personalizada.</p>
