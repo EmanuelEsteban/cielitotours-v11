@@ -2918,7 +2918,7 @@ main:has(> .vuelos-final:last-child) + .site-footer .footer-transition-thread { 
 .hosp-wave-fill { fill: oklch(0.975 0.012 85); }
 .hosp-wave-line { fill: none; stroke: oklch(0.79 0.1 80); stroke-width: 2; vector-effect: non-scaling-stroke; }
 .hosp-quote { background: linear-gradient(160deg, oklch(0.975 0.012 85), oklch(0.965 0.015 88) 55%, oklch(0.94 0.02 230)); }
-.hosp-quote-photo { position: absolute; left: 0; top: 0; height: 100%; width: min(24%, 360px); object-fit: cover; object-position: left center; opacity: .85; -webkit-mask-image: linear-gradient(90deg, black 10%, transparent 95%); mask-image: linear-gradient(90deg, black 10%, transparent 95%); pointer-events: none; }
+.hosp-quote-photo { position: absolute; left: 0; top: 0; height: 100%; width: min(20%, 300px); object-fit: cover; object-position: left center; opacity: .85; -webkit-mask-image: linear-gradient(90deg, black 10%, transparent 95%); mask-image: linear-gradient(90deg, black 10%, transparent 95%); pointer-events: none; }
 @media (max-width: 1023px) { .hosp-quote-photo { display: none; } }
 .hosp-serif { font-family: "Fraunces", "Playfair Display", serif; font-weight: 600; }
 .hosp-serif em { display: block; font-style: italic; font-weight: 500; color: oklch(0.72 0.11 78); }
