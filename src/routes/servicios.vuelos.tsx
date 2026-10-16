@@ -183,7 +183,7 @@ function FlightsPage() {
           <path className="vf-b" d="M0 14C260 30 420 44 720 13C1000 0 1100 50 1440 10" />
           <path className="vf-a" d="M0 9C240 41 460 32 720 18C980 4 1130 43 1440 5" />
           <path className="vf-a-shine" d="M0 9C240 41 460 32 720 18C980 4 1130 43 1440 5" />
-          <g mask="url(#vf-over)"><path className="vf-gap" d="M0 14C260 30 420 44 720 13C1000 0 1100 50 1440 10" /><path className="vf-b" d="M0 14C260 30 420 44 720 13C1000 0 1100 50 1440 10" /></g>
+          <g mask="url(#vf-over)"><path className="vf-b" d="M0 14C260 30 420 44 720 13C1000 0 1100 50 1440 10" /></g>
         </svg>
         <svg aria-hidden="true" viewBox="0 0 1000 260" className="pointer-events-none absolute inset-0 hidden size-full text-primary opacity-15 sm:block"><path d="M-20 210 C180 40 350 265 540 105 S790 30 1030 155" fill="none" stroke="currentColor" strokeWidth="2" className="route-line" /></svg>
         <div className="relative mx-auto max-w-4xl px-6 text-center">
