@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
 import { ChevronDown, Facebook, Instagram, Menu, Music2, X } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
@@ -25,6 +25,8 @@ const legalLinks = [["Privacidad", "/privacidad"], ["Términos", "/terminos"], [
 export function SiteShell({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [desktopMenu, setDesktopMenu] = useState<string | null>(null);
+  const pathname = useLocation({ select: (location) => location.pathname });
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const firstMobileLinkRef = useRef<HTMLAnchorElement>(null);
 
@@ -48,25 +50,35 @@ export function SiteShell({ children }: { children: ReactNode }) {
   }, [open]);
 
   return <div className="min-h-screen overflow-x-clip bg-background text-foreground">
-    <header className={`sticky top-0 z-50 border-b border-primary-foreground/10 bg-ink/98 text-primary-foreground transition-shadow duration-300 ${scrolled ? "shadow-lg backdrop-blur-sm" : ""}`}>
+    <header className={`site-header sticky top-0 z-50 border-b border-primary-foreground/10 bg-ink/98 text-primary-foreground transition-shadow duration-300 ${scrolled ? "is-scrolled" : ""}`}>
       <div className={`mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 transition-[height] duration-300 sm:px-5 lg:grid-cols-[minmax(0,1fr)_auto_auto] lg:gap-7 lg:px-8 ${scrolled ? "h-16" : "h-[4.75rem] lg:h-[5.5rem]"}`}>
         <Link to="/" aria-label="Cielito Tours, inicio" className="min-w-0 justify-self-start"><img src={logoAsset} alt="Cielito Tours — Vuela, viaja y vive" className={`w-auto object-contain transition-[height] duration-300 ${scrolled ? "h-12 lg:h-16" : "h-14 lg:h-20"}`} /></Link>
-        <nav aria-label="Navegación principal" className="hidden items-center gap-7 lg:flex">
-          {nav.map((item) => <div className="group relative" key={item.label}>
-            <a href={item.href} className="flex items-center gap-1 text-sm font-semibold text-primary-foreground/90 transition-colors hover:text-accent focus-visible:text-accent">{item.label}{item.children && <ChevronDown className="size-3.5" />}</a>
-            {item.children && <div className="invisible absolute left-0 top-full mt-4 min-w-44 translate-y-2 border border-primary-foreground/10 bg-ink p-2 opacity-0 shadow-xl transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
-              {item.children.map(([label, href]) => <a key={href} href={href} className="block px-3 py-2 text-sm text-foreground hover:bg-muted hover:text-primary">{label}</a>)}
+        <nav aria-label="Navegación principal" className="header-navigation hidden items-center gap-7 lg:flex" onKeyDown={(event) => {
+          if (event.key !== "Escape") return;
+          event.preventDefault();
+          const group = (event.target as HTMLElement).closest(".header-nav-item");
+          group?.querySelector<HTMLAnchorElement>(".header-nav-link")?.focus();
+          setDesktopMenu(null);
+        }}>
+          {nav.map((item) => <div className="header-nav-item relative" key={item.label} data-open={desktopMenu === item.label} data-active={pathname === item.href || pathname.startsWith(`${item.href}/`)}
+            onMouseEnter={() => setDesktopMenu(item.children ? item.label : null)}
+            onMouseLeave={(event) => { if (!event.currentTarget.contains(document.activeElement)) setDesktopMenu(null); }}
+            onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setDesktopMenu(null); }}>
+            <a href={item.href} className="header-nav-link" aria-current={pathname === item.href ? "page" : undefined} onFocus={() => setDesktopMenu(item.children ? item.label : null)}>{item.label}</a>
+            {item.children && <Button variant="ghost" size="icon" className="header-menu-toggle" aria-label={`Opciones de ${item.label}`} aria-expanded={desktopMenu === item.label} aria-controls={`header-menu-${item.label}`} onClick={() => setDesktopMenu(desktopMenu === item.label ? null : item.label)}><ChevronDown aria-hidden="true" /></Button>}
+            {item.children && <div id={`header-menu-${item.label}`} className="header-dropdown" inert={desktopMenu !== item.label}>
+              {item.children.map(([label, href]) => <a key={href} href={href} aria-current={pathname === href ? "page" : undefined} className="header-dropdown-link">{label}</a>)}
             </div>}
           </div>)}
         </nav>
         <div className="flex items-center gap-2">
-          <Button asChild size="sm" className="hidden sm:inline-flex"><Link to="/cotizar">Cotizar</Link></Button>
-          <Button ref={menuButtonRef} variant="ghost" size="icon" className="size-11 shrink-0 text-primary-foreground hover:bg-primary-foreground/10 hover:text-accent lg:hidden" aria-label={open ? "Cerrar menú" : "Abrir menú"} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</Button>
+          <Button asChild size="sm" className="header-quote hidden sm:inline-flex"><Link to="/cotizar">Cotizar</Link></Button>
+          <Button ref={menuButtonRef} variant="ghost" size="icon" className="header-mobile-toggle size-11 shrink-0 lg:hidden" aria-label={open ? "Cerrar menú" : "Abrir menú"} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</Button>
         </div>
       </div>
-      {open && <nav id="mobile-navigation" className="border-t border-primary-foreground/10 bg-ink px-5 py-5 text-primary-foreground lg:hidden" aria-label="Navegación móvil">
-        <div className="grid gap-0">{[...nav, { label: "Contacto", href: "/contacto" }].map((item, index) => <a ref={index === 0 ? firstMobileLinkRef : undefined} key={item.href} href={item.href} onClick={() => setOpen(false)} className="flex min-h-11 items-center border-b border-primary-foreground/10 py-3.5 text-base font-semibold transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent">{item.label}</a>)}</div>
-        <Button asChild className="mt-5 w-full"><Link to="/cotizar" onClick={() => setOpen(false)}>Cotizar</Link></Button>
+      {open && <nav id="mobile-navigation" className="header-mobile-panel px-5 py-5 lg:hidden" aria-label="Navegación móvil">
+        <div className="grid gap-0">{[...nav, { label: "Contacto", href: "/contacto" }].map((item, index) => <a ref={index === 0 ? firstMobileLinkRef : undefined} key={item.href} href={item.href} aria-current={pathname === item.href ? "page" : undefined} onClick={() => setOpen(false)} className="header-mobile-link flex min-h-11 items-center py-3.5">{item.label}</a>)}</div>
+        <Button asChild className="header-quote mt-5 w-full"><Link to="/cotizar" onClick={() => setOpen(false)}>Cotizar</Link></Button>
       </nav>}
     </header>
     <main>{children}</main>
