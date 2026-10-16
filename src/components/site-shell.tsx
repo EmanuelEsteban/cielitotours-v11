@@ -1,5 +1,5 @@
 import { Link, useLocation } from "@tanstack/react-router";
-import { ArrowRight, ChevronDown, Facebook, Instagram, Menu, Music2, X } from "lucide-react";
+import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import logoAsset from "@/assets/cielito-logo-mark.jpg";
@@ -82,18 +82,24 @@ export function SiteShell({ children }: { children: ReactNode }) {
       </nav>}
     </header>
     <main>{children}</main>
-    <footer className="bg-ink text-primary-foreground">
-      <div aria-hidden="true" className="papel-picado pointer-events-none" />
+    <footer className="site-footer">
+      <div aria-hidden="true" className="footer-top-edge" />
+      <svg className="footer-cartography" aria-hidden="true" viewBox="0 0 1440 700" preserveAspectRatio="none">
+        <defs><linearGradient id="footer-route-fade" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="currentColor" stopOpacity="0" /><stop offset=".5" stopColor="currentColor" /><stop offset="1" stopColor="currentColor" stopOpacity="0" /></linearGradient></defs>
+        <path d="M 1130 -80 C 1220 15 1390 -15 1500 150" />
+        <path d="M 1260 -70 C 1260 20 1460 70 1490 270" />
+        <path d="M -120 490 C -15 540 30 700 300 750" />
+      </svg>
       <div className="mx-auto grid max-w-7xl gap-10 px-5 pb-12 pt-12 md:grid-cols-[1.4fr_1fr_1fr_1fr] md:gap-8 md:pt-14 lg:px-8">
-        <div className="text-center md:text-left"><img src={logoAsset} alt="Cielito Tours" loading="lazy" className="mx-auto h-auto w-full max-w-[330px] object-contain md:mx-0 md:object-left" /><p className="mx-auto mt-6 max-w-sm text-sm leading-6 text-primary-foreground/70 md:mx-0">Vuelos, hospedaje, experiencias y grupos en México y el mundo, con un equipo que te acompaña.</p><p className="mt-5 font-display text-2xl font-semibold text-accent">Vuela, viaja y vive…</p><div className="mt-7 flex justify-center gap-3 md:justify-start"><a href="/contacto" aria-label="Instagram" className="grid size-11 place-items-center border border-primary-foreground/20 transition-colors hover:border-accent hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent md:size-10"><Instagram className="size-4" /></a><a href="/contacto" aria-label="Facebook" className="grid size-11 place-items-center border border-primary-foreground/20 transition-colors hover:border-accent hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent md:size-10"><Facebook className="size-4" /></a><a href="/contacto" aria-label="TikTok" className="grid size-11 place-items-center border border-primary-foreground/20 transition-colors hover:border-accent hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent md:size-10"><Music2 className="size-4" /></a></div></div>
+        <div className="text-center md:text-left"><img src={logoAsset} alt="Cielito Tours" loading="lazy" className="mx-auto h-auto w-full max-w-[330px] object-contain md:mx-0 md:object-left" /><p className="footer-description mx-auto mt-6 max-w-sm md:mx-0">Vuelos, hospedaje, experiencias y grupos en México y el mundo, con un equipo que te acompaña.</p><p className="footer-slogan mt-5">Vuela, viaja y vive…</p></div>
         <div className="grid grid-cols-2 gap-x-6 gap-y-8 md:contents">
-          {footerColumns.map((col) => <div key={col.title}><h2 className="footer-heading font-extrabold uppercase tracking-[.18em] text-accent">{col.title}</h2><ul className="mt-3 md:mt-4 md:space-y-1.5">{col.links.map(([label, href]) => <li key={href + label}><a className="footer-link" href={href}><span>{label}</span></a></li>)}</ul></div>)}
+          {footerColumns.map((col) => <div key={col.title}><h2 className="footer-heading">{col.title}</h2><ul className="mt-3 md:mt-4 md:space-y-1.5">{col.links.map(([label, href]) => <li key={href + label}><a className="footer-link" href={href}><span>{label}</span></a></li>)}</ul></div>)}
         </div>
       </div>
-      <div className="border-t border-primary-foreground/15">
-        <div className="mx-auto flex max-w-7xl flex-col items-center gap-2 px-5 py-5 text-center text-sm text-primary-foreground/75 md:flex-row md:justify-between md:text-left lg:px-8">
+      <div className="footer-legal">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-2 px-5 py-5 text-center text-sm md:flex-row md:justify-between md:text-left lg:px-8">
           <p>© 2026 Cielito Tours. Todo tu viaje, con un mismo equipo.</p>
-          <p className="flex flex-wrap items-center justify-center gap-x-2">{legalLinks.map(([label, href], i) => <span key={href} className="flex items-center gap-x-2">{i > 0 && <span aria-hidden="true">·</span>}<a href={href} className="inline-flex min-h-11 items-center hover:text-primary-foreground md:min-h-0">{label}</a></span>)}</p>
+          <p className="flex flex-wrap items-center justify-center gap-x-2">{legalLinks.map(([label, href], i) => <span key={href} className="flex items-center gap-x-2">{i > 0 && <span aria-hidden="true">·</span>}<a href={href} className="inline-flex min-h-11 items-center footer-legal-link md:min-h-0">{label}</a></span>)}</p>
         </div>
       </div>
     </footer>
