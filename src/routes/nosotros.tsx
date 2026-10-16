@@ -105,6 +105,11 @@ function Nosotros() {
 
       {/* ESENCIA */}
       <section className="nos-esencia">
+        <svg className="nos-editorial-curves" viewBox="0 0 1440 360" preserveAspectRatio="none" fill="none" aria-hidden="true">
+          <path className="nos-editorial-curve-champ" d="M-100 18C165 70 158 128 60 192S-35 294 118 350" />
+          <path className="nos-editorial-curve-stone" d="M-80 82C86 120 132 190 38 244S-12 316 80 380" />
+          <path className="nos-editorial-curve-ivory" d="M1530 4C1290 88 1304 142 1400 204S1510 290 1318 368" />
+        </svg>
         <div className="nos-wrap nos-esencia-grid">
           <div className="nos-esencia-txt">
             <p className="nos-kicker">Nuestra esencia</p>
@@ -124,7 +129,7 @@ function Nosotros() {
       <section className="nos-spec">
         <Palm className="nos-palm nos-palm-spec" />
         <div className="nos-wrap">
-          <p className="nos-kicker text-center">Nuestra especialidad</p>
+          <p className="nos-kicker text-center"><span>Nuestra especialidad</span></p>
           <h2 className="nos-h2 text-center">Diversos propósitos, un mismo compromiso</h2>
           <ul className="nos-cards">
             {specs.map(({ img, pos, icon: I, title, text, alt }) => <li key={title} className="nos-card">
