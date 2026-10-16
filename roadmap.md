@@ -13,3 +13,8 @@
 - [x] Sección cotización marfil con nota e ícono de auto
 - [x] Proceso navy con foto, brújula y pasos 01-03 en círculos dorados
 - [x] Sección final celeste con unión dorada al pie
+
+## Autos Premium 02
+- [x] Remove only left quotation sticky behavior (lg:sticky / lg:top-24); browser confirmed normal 1000px movement and text leaving viewport.
+- [x] Add scoped pearl satin gradient, broad light reflections, generated coastal-road photo at 12% / 7% mobile, four fading curves and external form shadow; isolated quotation stacking keeps calendars above next section.
+- [x] Verify at 1920/1440/768/390/375px without overflow or runtime errors; desktop/mobile four steps, validation, calendars, retained values and preview-only submission passed; artwork dimensions stable across steps. Routing test passed and build OK. Real browser 125% zoom not verified in headless environment.

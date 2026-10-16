@@ -2985,7 +2985,33 @@ main:has(> .hosp-final:last-child) + .site-footer .footer-transition-thread { di
 .autos-wave-thread { fill: none; stroke: var(--accent); stroke-width: 2; opacity: .8; }
 .autos-wave-process .autos-wave-fill { fill: var(--autos-celeste); }
 
-.autos-quote { --autos-celeste: oklch(0.94 0.03 225); background: var(--background); padding-block: clamp(3.5rem, 7vw, 5.5rem); }
+.autos-quote {
+  --autos-pearl: #F3F0E9;
+  --autos-champagne-silver: #E5E2DA;
+  --autos-warm-silver: #D2D7D8;
+  --autos-blue-silver: #BCC9CF;
+  --autos-reflection: #FAF8F2;
+  --autos-satin-gold: #D8C39A;
+  --autos-card-shadow: 0 8px 30px color-mix(in srgb, var(--autos-blue-silver) 28%, transparent), 0 2px 8px color-mix(in srgb, var(--ink) 5%, transparent);
+  position: relative; isolation: isolate; z-index: 3;
+  background: linear-gradient(180deg, var(--background), transparent 100px), linear-gradient(125deg, var(--autos-pearl) 8%, var(--autos-champagne-silver) 43%, var(--autos-warm-silver) 72%, var(--autos-blue-silver) 100%);
+  padding-block: clamp(3.5rem, 7vw, 5.5rem);
+}
+.autos-quote-surface { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.autos-quote-surface * { pointer-events: none; }
+.autos-quote-reflections { position: absolute; inset: 0; background: linear-gradient(125deg, transparent 18%, color-mix(in srgb, var(--autos-reflection) 65%, transparent) 35%, color-mix(in srgb, var(--autos-reflection) 18%, transparent) 47%, transparent 60%), linear-gradient(108deg, transparent 60%, color-mix(in srgb, var(--autos-blue-silver) 24%, transparent) 85%, transparent), linear-gradient(0deg, color-mix(in srgb, var(--autos-satin-gold) 14%, transparent), transparent 180px); }
+.autos-quote-road { position: absolute; top: 220px; left: -80px; width: min(1000px, 85%); height: auto; aspect-ratio: 3 / 2; object-fit: cover; opacity: .12; filter: grayscale(.95) saturate(.18) blur(2px); mask-image: radial-gradient(ellipse at 40% 55%, black 12%, transparent 70%); }
+.autos-quote-routes { position: absolute; top: 280px; left: -4%; width: min(1200px, 100%); height: auto; aspect-ratio: 1200 / 560; color: var(--autos-satin-gold); opacity: .22; }
+.autos-quote-routes-silver { color: var(--autos-blue-silver); }
+.autos-quote-content { position: relative; z-index: 1; }
+.autos-quote-content > form { box-shadow: var(--autos-card-shadow); }
+@media (max-width: 900px) {
+  .autos-quote-routes { opacity: .13; }
+}
+@media (max-width: 639px) {
+  .autos-quote-road { top: 240px; left: -64px; width: 680px; max-width: none; opacity: .07; }
+  .autos-quote-routes { top: 260px; width: 680px; max-width: none; opacity: .1; }
+}
 .autos-quote-kicker { display: flex; align-items: center; gap: 12px; font-family: Manrope, sans-serif; font-size: .78rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--primary); }
 .autos-quote-kicker-rule { display: inline-block; width: 44px; height: 2px; background: var(--accent); }
 .autos-quote-title { margin-top: 1rem; font-family: Manrope, sans-serif; font-weight: 800; line-height: 1.06; letter-spacing: -.01em; color: var(--ink); font-size: clamp(2rem, 5.5vw, 3rem); }
