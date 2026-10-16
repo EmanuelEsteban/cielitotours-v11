@@ -91,7 +91,7 @@ function StayPage() {
       <section className="hosp-hero relative min-h-[560px] overflow-hidden bg-ink text-primary-foreground sm:min-h-[540px] lg:min-h-[600px]">
         <img src={stayHeroImage} alt="Terraza de resort con piscina infinita frente al mar al atardecer" width={1920} height={1088} fetchPriority="high" className="absolute inset-0 size-full object-cover object-[62%_center] lg:object-center" />
         <div className="hosp-hero-shade absolute inset-0" />
-        <p aria-hidden="true" className="hosp-hero-hand">Tu descanso<br />también<br />es parte<br />del viaje.</p>
+        <p aria-hidden="true" className="hosp-hand hosp-hero-hand">Tu descanso<br />también<br />es parte<br />del viaje.</p>
         <div className="relative mx-auto flex min-h-[560px] max-w-7xl items-end px-5 pb-12 pt-24 sm:min-h-[540px] sm:items-center sm:px-10 sm:py-16 lg:min-h-[600px] lg:px-8">
           <div className="max-w-[36rem]">
             <p className="hosp-hero-label">Hospedaje</p>
