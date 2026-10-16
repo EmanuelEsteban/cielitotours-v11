@@ -126,16 +126,48 @@ function FlightsPage() {
         </div>
       </section>
 
-      <section className="overflow-hidden bg-ink py-16 text-primary-foreground sm:py-24">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-[.72fr_1.28fr] lg:gap-20">
-            <div><p className="kicker-text font-bold uppercase tracking-[.16em] text-accent">Una persona detrás de cada ruta</p><h2 className="mt-4 font-display text-4xl font-bold leading-tight sm:text-5xl">Así empieza tu cotización.</h2></div>
-            <ol className="border-t border-primary-foreground/20">
+      <section className="vuelos-proceso py-16 text-primary-foreground sm:py-20">
+        <svg aria-hidden="true" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" className="vuelos-proceso-carto">
+          <g fill="none" stroke="currentColor" strokeWidth="1">
+            <path d="M-80 180 C 320 120 760 240 1520 140" />
+            <path d="M-80 340 C 360 280 820 400 1520 300" />
+            <path d="M-80 500 C 400 440 880 560 1520 460" />
+            <path d="M240 -60 C 200 240 300 460 220 760" />
+            <path d="M720 -60 C 680 240 780 460 700 760" />
+            <path d="M1200 -60 C 1160 240 1260 460 1180 760" />
+          </g>
+        </svg>
+        <svg aria-hidden="true" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" className="vuelos-proceso-curvas">
+          <defs>
+            <linearGradient id="vp-champagne" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="oklch(0.82 0.16 93)" stopOpacity="0" /><stop offset=".5" stopColor="oklch(0.82 0.16 93)" stopOpacity=".5" /><stop offset="1" stopColor="oklch(0.82 0.16 93)" stopOpacity="0" /></linearGradient>
+          </defs>
+          <path d="M-60 560 C 380 470 760 640 1500 420" fill="none" stroke="url(#vp-champagne)" strokeWidth="1.25" />
+          <path d="M-60 130 C 420 220 820 60 1500 240" fill="none" stroke="url(#vp-champagne)" strokeWidth="1" />
+        </svg>
+        <svg aria-hidden="true" viewBox="0 0 200 200" className="vuelos-proceso-brujula">
+          <g fill="none" stroke="currentColor" strokeWidth="1">
+            <circle cx="100" cy="100" r="88" />
+            <circle cx="100" cy="100" r="62" strokeDasharray="2 6" />
+            <path d="M100 22 L108 100 L100 178 L92 100 Z" />
+            <path d="M22 100 L100 92 L178 100 L100 108 Z" />
+          </g>
+        </svg>
+        <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-[.54fr_1.46fr] lg:gap-16">
+            <div>
+              <p className="vuelos-proceso-label">Una persona detrás de cada ruta</p>
+              <h2 className="vuelos-proceso-title">Así empieza <span className="vuelos-proceso-title-accent">tu cotización.</span></h2>
+              <span aria-hidden="true" className="vuelos-proceso-filete" />
+            </div>
+            <ol className="vuelos-proceso-steps">
               {[
                 ["01", "Nos cuentas tu viaje", "Comparte tu ruta, fechas y la forma en que quieres viajar."],
                 ["02", "Revisamos las opciones", "Nuestro equipo considera tus prioridades antes de preparar alternativas."],
                 ["03", "Te acompañamos para elegir", "Conversamos contigo para encontrar una opción adecuada para tu viaje."],
-              ].map(([number, title, copy]) => <li key={number} className="grid gap-3 border-b border-primary-foreground/20 py-7 sm:grid-cols-[4rem_minmax(0,1fr)_1.2fr] sm:items-start sm:gap-6"><span className="font-display text-xl font-bold text-accent">{number}</span><h3 className="font-display text-xl font-bold">{title}</h3><p className="text-sm leading-6 text-primary-foreground/65">{copy}</p></li>)}
+              ].map(([number, title, copy]) => <li key={number} className="vuelos-proceso-step">
+                <span className="vuelos-proceso-num">{number}</span>
+                <div className="min-w-0"><h3 className="vuelos-proceso-step-title">{title}</h3><p className="vuelos-proceso-step-copy">{copy}</p></div>
+              </li>)}
             </ol>
           </div>
         </div>
