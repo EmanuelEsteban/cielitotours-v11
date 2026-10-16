@@ -16,6 +16,7 @@ AS $$
 $$;
 REVOKE ALL ON FUNCTION private.has_role(uuid, public.app_role) FROM PUBLIC;
 GRANT EXECUTE ON FUNCTION private.has_role(uuid, public.app_role) TO authenticated;
+GRANT EXECUTE ON FUNCTION private.has_role(uuid, public.app_role) TO anon;
 
 ALTER POLICY "Admins can manage roles" ON public.user_roles
 USING (private.has_role(auth.uid(), 'admin'))
