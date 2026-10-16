@@ -83,16 +83,18 @@ export function SiteShell({ children }: { children: ReactNode }) {
     </header>
     <main>{children}</main>
     <footer className="site-footer">
-      <div aria-hidden="true" className="footer-top-edge" />
+      <div aria-hidden="true" className="footer-top-edge">
+        <svg viewBox="0 0 1440 48" preserveAspectRatio="none"><path className="footer-transition-shape" d="M0 0H1440V5C1130 43 980 4 720 18S240 41 0 9Z" /><path className="footer-transition-thread" d="M0 9C240 41 460 32 720 18S1130 43 1440 5" /></svg>
+      </div>
       <svg className="footer-cartography" aria-hidden="true" viewBox="0 0 1440 700" preserveAspectRatio="none">
         <defs><linearGradient id="footer-route-fade" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="currentColor" stopOpacity="0" /><stop offset=".5" stopColor="currentColor" /><stop offset="1" stopColor="currentColor" stopOpacity="0" /></linearGradient></defs>
         <path d="M 1130 -80 C 1220 15 1390 -15 1500 150" />
         <path d="M 1260 -70 C 1260 20 1460 70 1490 270" />
         <path d="M -120 490 C -15 540 30 700 300 750" />
       </svg>
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 pb-12 pt-12 md:grid-cols-[1.4fr_1fr_1fr_1fr] md:gap-8 md:pt-14 lg:px-8">
+      <div className="footer-composition mx-auto grid max-w-7xl gap-10 px-5 pb-12 pt-12 md:gap-8 md:pt-14 lg:px-8">
         <div className="text-center md:text-left"><img src={logoAsset} alt="Cielito Tours" loading="lazy" className="mx-auto h-auto w-full max-w-[330px] object-contain md:mx-0 md:object-left" /><p className="footer-description mx-auto mt-6 max-w-sm md:mx-0">Vuelos, hospedaje, experiencias y grupos en México y el mundo, con un equipo que te acompaña.</p><p className="footer-slogan mt-5">Vuela, viaja y vive…</p></div>
-        <div className="grid grid-cols-2 gap-x-6 gap-y-8 md:contents">
+        <div className="footer-columns grid grid-cols-2 gap-x-6 gap-y-8">
           {footerColumns.map((col) => <div key={col.title}><h2 className="footer-heading">{col.title}</h2><ul className="mt-3 md:mt-4 md:space-y-1.5">{col.links.map(([label, href]) => <li key={href + label}><a className="footer-link" href={href}><span>{label}</span></a></li>)}</ul></div>)}
         </div>
       </div>
