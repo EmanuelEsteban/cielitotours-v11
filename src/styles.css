@@ -2466,7 +2466,7 @@ textarea.ct-input { resize: vertical; }
   background: linear-gradient(180deg, var(--nos-editorial-join) 0%, var(--nos-cream) 32%, var(--nos-ivory) 100%);
 }
 .nos-esencia-txt > .nos-kicker, .nos-spec > .nos-wrap > .nos-kicker { position: relative; }
-.nos-esencia-txt > .nos-kicker::after, .nos-spec > .nos-wrap > .nos-kicker::after {
+.nos-spec > .nos-wrap > .nos-kicker::after {
   content: "";
   position: absolute;
   top: calc(100% + 5px);
@@ -2501,4 +2501,21 @@ textarea.ct-input { resize: vertical; }
 .nos-editorial-curve-ivory { stroke: var(--nos-ivory); }
 @media (max-width: 900px) {
   .nos-spec > .nos-wrap > .nos-kicker > span { font-size: 15px; }
+}
+
+/* Esencia: underline follows the label; second line follows the measured Ca advance. */
+.nos-esencia-label { position: relative; }
+.nos-esencia-label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: .18em;
+  bottom: -7px;
+  height: 1.5px;
+  background: var(--nos-champ);
+  pointer-events: none;
+}
+.nos-esencia-second { position: relative; left: 1.083713em; }
+@media (max-width: 900px) {
+  .nos-esencia-second { left: 1.109003em; }
 }

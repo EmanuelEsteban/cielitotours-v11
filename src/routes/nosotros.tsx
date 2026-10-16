@@ -112,8 +112,8 @@ function Nosotros() {
         </svg>
         <div className="nos-wrap nos-esencia-grid">
           <div className="nos-esencia-txt">
-            <p className="nos-kicker">Nuestra esencia</p>
-            <h2 className="nos-h2 nos-h2-xl">Cada viaje tiene<br />un propósito</h2>
+            <p className="nos-kicker"><span className="nos-esencia-label">Nuestra esencia</span></p>
+            <h2 className="nos-h2 nos-h2-xl">Cada viaje tiene<br /><span className="nos-esencia-second">un propósito</span></h2>
             <span className="nos-rule" aria-hidden="true" />
             <p className="nos-p"><strong>Una escapada familiar, un viaje de negocios o una celebración especial tienen necesidades diferentes.</strong> En Cielito Tours evaluamos tus fechas, objetivos y presupuesto para ayudarte a encontrar opciones de vuelos, hospedaje y servicios turísticos con información clara y atención personalizada.</p>
             <p className="nos-script nos-esencia-hand" aria-hidden="true">Personas que hacen<br />&nbsp;&nbsp;posible tus mejores viajes <HandHeart /></p>
