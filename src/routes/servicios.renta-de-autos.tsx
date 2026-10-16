@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, CalendarDays, Car, ChevronDown, Minus, Plus } fr
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import autosHeroImage from "@/assets/autos-hero-coast.jpg";
 import autosProcessImage from "@/assets/autos-process-coast.jpg";
+import autosQuoteRoadImage from "@/assets/autos-quote-road-reflection.jpg";
 import { SiteShell } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
@@ -104,8 +105,23 @@ function CarsPage() {
       </section>
 
       <section id="cotizar-auto" className="autos-quote">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[.58fr_1.42fr] lg:gap-16 lg:px-8">
-          <div className="lg:sticky lg:top-24 lg:self-start">
+        <div className="autos-quote-surface" aria-hidden="true">
+          <div className="autos-quote-reflections" />
+          <img src={autosQuoteRoadImage} alt="" width={1536} height={1024} loading="lazy" className="autos-quote-road" />
+          <svg className="autos-quote-routes" viewBox="0 0 1200 560" fill="none">
+            <defs><linearGradient id="autos-quote-route-fade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="currentColor" stopOpacity="0" /><stop offset=".3" stopColor="currentColor" /><stop offset=".65" stopColor="currentColor" /><stop offset="1" stopColor="currentColor" stopOpacity="0" /></linearGradient></defs>
+            <g stroke="url(#autos-quote-route-fade)" strokeWidth=".9">
+              <path d="M-80 420C140 490 250 265 390 330S620 495 810 370S1030 180 1250 225" />
+              <path d="M-60 445C150 500 265 285 400 353S650 510 835 393S1060 210 1260 248" />
+            </g>
+            <g className="autos-quote-routes-silver" stroke="url(#autos-quote-route-fade)" strokeWidth=".7">
+              <path d="M-80 350C120 410 195 220 350 285S570 440 760 315S1000 120 1250 175" />
+              <path d="M-65 375C135 435 215 245 370 305S600 460 790 335S1020 150 1245 195" />
+            </g>
+          </svg>
+        </div>
+        <div className="autos-quote-content mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[.58fr_1.42fr] lg:gap-16 lg:px-8">
+          <div className="lg:self-start">
             <p className="autos-quote-kicker">Cotización personalizada<span aria-hidden="true" className="autos-quote-kicker-rule" /></p>
             <h2 className="autos-quote-title">Cuéntanos<br />tu recorrido.</h2>
             <p className="mt-5 max-w-md font-semibold leading-7 text-ink">Preparamos tu solicitud de renta de forma personalizada.</p>
