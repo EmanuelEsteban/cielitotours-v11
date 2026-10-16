@@ -15,8 +15,8 @@ const cards = [
   { name: "Hospedaje", note: "Estancias que son parte del viaje", href: "/servicios/hospedaje", image: imagery.hotel, icon: BedDouble, xl: 5, row: "a" },
   { name: "Paquetes", note: "Todo el viaje, bien coordinado", href: "/viajes", image: imagery.europe, icon: Map, xl: 4 },
   { name: "Cruceros", note: "Muchos destinos, una maleta", href: "/cruceros", image: imagery.cruise, icon: Ship, xl: 8, tablet: "full" },
-  { name: "Empresas", note: "Rutas, estancias y traslados alineados a la agenda del equipo.", href: "/grupos/empresas", image: imagery.empresas1, icon: BriefcaseBusiness, xl: 6, group: true },
-  { name: "Deportivos", note: "Equipos, clubes y delegaciones, listos para llegar juntos.", href: "/grupos/deportivos", image: imagery.deportivos1, icon: Trophy, xl: 6, group: true },
+  { name: "Empresas", note: "Rutas, estancias y traslados alineados a la agenda del equipo.", href: "/cotizar", image: imagery.empresas1, icon: BriefcaseBusiness, xl: 6, group: true },
+  { name: "Deportivos", note: "Equipos, clubes y delegaciones, listos para llegar juntos.", href: "/cotizar", image: imagery.deportivos1, icon: Trophy, xl: 6, group: true },
 ] as const;
 
 const spans: Record<number, string> = { 4: "xl:col-span-4", 5: "xl:col-span-5", 6: "xl:col-span-6", 7: "xl:col-span-7", 8: "xl:col-span-8" };

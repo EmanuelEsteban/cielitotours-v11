@@ -10,8 +10,8 @@ export const heroAccesses = [
   { name: "Hospedaje", href: "/servicios/hospedaje", icon: BedDouble },
   { name: "Paquetes", href: "/viajes", icon: Map },
   { name: "Cruceros", href: "/cruceros", icon: Ship },
-  { name: "Empresas", href: "/grupos/empresas", icon: BriefcaseBusiness },
-  { name: "Deportivos", href: "/grupos/deportivos", icon: Trophy },
+  { name: "Empresas", href: "/cotizar", icon: BriefcaseBusiness },
+  { name: "Deportivos", href: "/cotizar", icon: Trophy },
 ] as const;
 
 /** Hero route: left 60% only, exits through the paper strip at x≈57.5%. */
