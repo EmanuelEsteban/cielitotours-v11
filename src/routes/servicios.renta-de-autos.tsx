@@ -1,10 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { format, parseISO, startOfToday } from "date-fns";
 import { es } from "date-fns/locale";
-import { ArrowDown, ArrowLeft, ArrowRight, CalendarDays, ChevronDown, Minus, Plus } from "lucide-react";
+import { ArrowLeft, ArrowRight, CalendarDays, Car, ChevronDown, Minus, Plus } from "lucide-react";
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
-import carsHeroImage from "@/assets/cielito-cars-hero.jpg";
-import roadProcessImage from "@/assets/cielito-road-process.jpg";
+import autosHeroImage from "@/assets/autos-hero-coast.jpg";
+import autosProcessImage from "@/assets/autos-process-coast.jpg";
 import { SiteShell } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
