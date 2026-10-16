@@ -1,10 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { format, parseISO, startOfToday } from "date-fns";
 import { es } from "date-fns/locale";
-import { ArrowDown, ArrowLeft, ArrowRight, BedDouble, CalendarDays, ChevronDown, Minus, Plus } from "lucide-react";
+import { ArrowDown, ArrowLeft, ArrowRight, BedDouble, CalendarDays, ChevronDown, Hotel, Minus, Plus } from "lucide-react";
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import stayHeroImage from "@/assets/hospedaje-hero-resort.jpg";
-import stayProcessImage from "@/assets/cielito-stay-process.jpg";
+import stayProcessImage from "@/assets/hospedaje-process-terrace.jpg";
+import stayQuoteImage from "@/assets/hospedaje-quote-resort.jpg";
 import { SiteShell } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
