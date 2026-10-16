@@ -92,10 +92,10 @@ function Nosotros() {
         </div>
         <div className="nos-wrap nos-hero-grid">
           <div className="nos-hero-txt">
-            <p className="nos-kicker nos-kicker-rules">Cielito Tours</p>
+            <p className="nos-kicker nos-kicker-rules"><span>Cielito Tours</span></p>
             <h1 className="nos-h1">Tenemos la experiencia para llevarte a las <em>opciones correctas.</em></h1>
             <p className="nos-p">Cada viaje tiene un propósito, y en Cielito Tours te ayudamos a encontrar las mejores opciones con asesoría personalizada, de acuerdo con tus necesidades, objetivos y presupuesto.</p>
-            <Link to="/cotizar" className="nos-btn">Comenzar mi cotización <ArrowRight className="size-4" aria-hidden /></Link>
+            <div className="nos-hero-action"><Link to="/cotizar" className="nos-btn">Comenzar mi cotización <ArrowRight className="size-4" aria-hidden /></Link></div>
             <ul className="nos-cats">{cats.map(([I, t]) => <li key={t}><I className="size-[22px]" aria-hidden strokeWidth={1.4} />{t}</li>)}</ul>
           </div>
           <Stamp />

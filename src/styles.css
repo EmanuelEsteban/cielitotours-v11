@@ -2420,10 +2420,10 @@ textarea.ct-input { resize: vertical; }
 }
 
 /* ===== NOSOTROS — filetes champagne en el kicker del hero (Hero-01) ===== */
-.nos .nos-kicker-rules { position: relative; width: fit-content; }
-.nos .nos-kicker-rules::before, .nos .nos-kicker-rules::after { content: ""; position: absolute; top: 50%; width: 20px; height: 1px;
-  margin-top: -.5px; background: linear-gradient(90deg, color-mix(in oklab, var(--nos-champ) 30%, transparent), var(--nos-champ)); }
-.nos .nos-kicker-rules::before { right: calc(100% + 12px); }
-.nos .nos-kicker-rules::after { left: calc(100% + 12px - .26em); background: linear-gradient(90deg, var(--nos-champ), color-mix(in oklab, var(--nos-champ) 30%, transparent)); }
-@media (min-width: 1384px) { .nos .nos-kicker-rules::before, .nos .nos-kicker-rules::after { width: 35px; } }
-@media (max-width: 900px) { .nos .nos-kicker-rules::before { display: none; } }
+.nos .nos-kicker-rules { display: flex; align-items: center; justify-content: center; gap: 12px; width: fit-content; margin-inline: auto; }
+.nos .nos-kicker-rules::before, .nos .nos-kicker-rules::after { content: ""; flex: 0 0 35px; height: 1px;
+  background: linear-gradient(90deg, color-mix(in oklab, var(--nos-champ) 30%, transparent), var(--nos-champ)); }
+.nos .nos-kicker-rules::after { background: linear-gradient(90deg, var(--nos-champ), color-mix(in oklab, var(--nos-champ) 30%, transparent)); }
+.nos .nos-hero-action { display: flex; justify-content: center; align-items: flex-start; height: 54.5px; margin-top: 30px; }
+.nos .nos-hero-action .nos-btn { margin-top: 0; padding: 12px 18px; gap: 10px; min-height: 48px; }
+@media (max-width: 900px) { .nos .nos-kicker-rules::before, .nos .nos-kicker-rules::after { flex-basis: 24px; } }
