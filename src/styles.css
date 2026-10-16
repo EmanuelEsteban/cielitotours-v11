@@ -2427,3 +2427,30 @@ textarea.ct-input { resize: vertical; }
 .nos .nos-kicker-rules::after { left: calc(100% + 12px - .26em); background: linear-gradient(90deg, var(--nos-champ), color-mix(in oklab, var(--nos-champ) 30%, transparent)); }
 @media (min-width: 1384px) { .nos .nos-kicker-rules::before, .nos .nos-kicker-rules::after { width: 35px; } }
 @media (max-width: 900px) { .nos .nos-kicker-rules::before { display: none; } }
+
+/* Nosotros · Esencia: typography within the approved text slots. */
+.nos-esencia-txt > .nos-kicker {
+  width: calc(6.138 * clamp(42px, 4vw, 64px));
+  height: calc(clamp(13px, 1.05vw, 15.5px) * 1.5);
+  line-height: calc(clamp(13px, 1.05vw, 15.5px) * 1.5);
+  font-family: "Manrope", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-align: center;
+}
+.nos-esencia-txt > .nos-p {
+  height: calc(clamp(15.5px, 1.1vw, 17px) * 1.68 * 5);
+  font-family: "Manrope", sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--nos-muted);
+}
+.nos-esencia-txt > .nos-p strong { font-weight: 550; }
+@media (max-width: 900px) {
+  .nos-esencia-txt > .nos-kicker { font-size: 15px; }
+}
+@media (max-width: 640px) {
+  .nos-esencia-txt > .nos-p { height: calc(15.5px * 1.68 * 7); }
+}
