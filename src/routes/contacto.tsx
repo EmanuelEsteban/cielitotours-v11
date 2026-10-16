@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { ContactPage } from "@/components/contact/contact-page";
+export const Route = createFileRoute("/contacto")({ head: () => ({ meta: [{ title: "Contacto | Cielito Tours" }, { name: "description", content: "Atención al cliente de Cielito Tours: dudas, seguimiento de tu viaje y WhatsApp oficial." }, { property: "og:title", content: "Contacto | Cielito Tours" }, { property: "og:description", content: "Siempre hay alguien al otro lado de tu viaje." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }), component: ContactPage });

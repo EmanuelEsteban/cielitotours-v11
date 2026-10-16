@@ -10,33 +10,324 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AvisoDePrivacidadRouteImport } from './routes/aviso-de-privacidad'
+import { Route as ContactoRouteImport } from './routes/contacto'
+import { Route as CotizarRouteImport } from './routes/cotizar'
+import { Route as CrucerosRouteImport } from './routes/cruceros'
+import { Route as DestinosRouteImport } from './routes/destinos'
+import { Route as DisneyRouteImport } from './routes/disney'
+import { Route as GruposRouteImport } from './routes/grupos'
+import { Route as NosotrosRouteImport } from './routes/nosotros'
+import { Route as PoliticasDeCancelacionRouteImport } from './routes/politicas-de-cancelacion'
+import { Route as PreguntasFrecuentesRouteImport } from './routes/preguntas-frecuentes'
+import { Route as PrivacidadRouteImport } from './routes/privacidad'
+import { Route as ServiciosRouteImport } from './routes/servicios'
+import { Route as TerminosRouteImport } from './routes/terminos'
+import { Route as ToursRouteImport } from './routes/tours'
+import { Route as ViajesRouteImport } from './routes/viajes'
+import { Route as GruposDeportivosRouteImport } from './routes/grupos.deportivos'
+import { Route as GruposEmpresasRouteImport } from './routes/grupos.empresas'
+import { Route as ServiciosIndexRouteImport } from './routes/servicios.index'
+import { Route as ServiciosHospedajeRouteImport } from './routes/servicios.hospedaje'
+import { Route as ServiciosRentaDeAutosRouteImport } from './routes/servicios.renta-de-autos'
+import { Route as ServiciosVuelosRouteImport } from './routes/servicios.vuelos'
+import { Route as ViajesIndexRouteImport } from './routes/viajes.index'
+import { Route as ViajesSlugRouteImport } from './routes/viajes.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AvisoDePrivacidadRoute = AvisoDePrivacidadRouteImport.update({
+  id: '/aviso-de-privacidad',
+  path: '/aviso-de-privacidad',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactoRoute = ContactoRouteImport.update({
+  id: '/contacto',
+  path: '/contacto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CotizarRoute = CotizarRouteImport.update({
+  id: '/cotizar',
+  path: '/cotizar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CrucerosRoute = CrucerosRouteImport.update({
+  id: '/cruceros',
+  path: '/cruceros',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DestinosRoute = DestinosRouteImport.update({
+  id: '/destinos',
+  path: '/destinos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DisneyRoute = DisneyRouteImport.update({
+  id: '/disney',
+  path: '/disney',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GruposRoute = GruposRouteImport.update({
+  id: '/grupos',
+  path: '/grupos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NosotrosRoute = NosotrosRouteImport.update({
+  id: '/nosotros',
+  path: '/nosotros',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticasDeCancelacionRoute = PoliticasDeCancelacionRouteImport.update({
+  id: '/politicas-de-cancelacion',
+  path: '/politicas-de-cancelacion',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PreguntasFrecuentesRoute = PreguntasFrecuentesRouteImport.update({
+  id: '/preguntas-frecuentes',
+  path: '/preguntas-frecuentes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacidadRoute = PrivacidadRouteImport.update({
+  id: '/privacidad',
+  path: '/privacidad',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiciosRoute = ServiciosRouteImport.update({
+  id: '/servicios',
+  path: '/servicios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TerminosRoute = TerminosRouteImport.update({
+  id: '/terminos',
+  path: '/terminos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ToursRoute = ToursRouteImport.update({
+  id: '/tours',
+  path: '/tours',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ViajesRoute = ViajesRouteImport.update({
+  id: '/viajes',
+  path: '/viajes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GruposDeportivosRoute = GruposDeportivosRouteImport.update({
+  id: '/deportivos',
+  path: '/deportivos',
+  getParentRoute: () => GruposRoute,
+} as any)
+const GruposEmpresasRoute = GruposEmpresasRouteImport.update({
+  id: '/empresas',
+  path: '/empresas',
+  getParentRoute: () => GruposRoute,
+} as any)
+const ServiciosIndexRoute = ServiciosIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ServiciosRoute,
+} as any)
+const ServiciosHospedajeRoute = ServiciosHospedajeRouteImport.update({
+  id: '/hospedaje',
+  path: '/hospedaje',
+  getParentRoute: () => ServiciosRoute,
+} as any)
+const ServiciosRentaDeAutosRoute = ServiciosRentaDeAutosRouteImport.update({
+  id: '/renta-de-autos',
+  path: '/renta-de-autos',
+  getParentRoute: () => ServiciosRoute,
+} as any)
+const ServiciosVuelosRoute = ServiciosVuelosRouteImport.update({
+  id: '/vuelos',
+  path: '/vuelos',
+  getParentRoute: () => ServiciosRoute,
+} as any)
+const ViajesIndexRoute = ViajesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ViajesRoute,
+} as any)
+const ViajesSlugRoute = ViajesSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => ViajesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/aviso-de-privacidad': typeof AvisoDePrivacidadRoute
+  '/contacto': typeof ContactoRoute
+  '/cotizar': typeof CotizarRoute
+  '/cruceros': typeof CrucerosRoute
+  '/destinos': typeof DestinosRoute
+  '/disney': typeof DisneyRoute
+  '/grupos': typeof GruposRouteWithChildren
+  '/nosotros': typeof NosotrosRoute
+  '/politicas-de-cancelacion': typeof PoliticasDeCancelacionRoute
+  '/preguntas-frecuentes': typeof PreguntasFrecuentesRoute
+  '/privacidad': typeof PrivacidadRoute
+  '/servicios': typeof ServiciosRouteWithChildren
+  '/terminos': typeof TerminosRoute
+  '/tours': typeof ToursRoute
+  '/viajes': typeof ViajesRouteWithChildren
+  '/grupos/deportivos': typeof GruposDeportivosRoute
+  '/grupos/empresas': typeof GruposEmpresasRoute
+  '/servicios/hospedaje': typeof ServiciosHospedajeRoute
+  '/servicios/renta-de-autos': typeof ServiciosRentaDeAutosRoute
+  '/servicios/vuelos': typeof ServiciosVuelosRoute
+  '/viajes/$slug': typeof ViajesSlugRoute
+  '/servicios/': typeof ServiciosIndexRoute
+  '/viajes/': typeof ViajesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/aviso-de-privacidad': typeof AvisoDePrivacidadRoute
+  '/contacto': typeof ContactoRoute
+  '/cotizar': typeof CotizarRoute
+  '/cruceros': typeof CrucerosRoute
+  '/destinos': typeof DestinosRoute
+  '/disney': typeof DisneyRoute
+  '/grupos': typeof GruposRouteWithChildren
+  '/nosotros': typeof NosotrosRoute
+  '/politicas-de-cancelacion': typeof PoliticasDeCancelacionRoute
+  '/preguntas-frecuentes': typeof PreguntasFrecuentesRoute
+  '/privacidad': typeof PrivacidadRoute
+  '/terminos': typeof TerminosRoute
+  '/tours': typeof ToursRoute
+  '/grupos/deportivos': typeof GruposDeportivosRoute
+  '/grupos/empresas': typeof GruposEmpresasRoute
+  '/servicios/hospedaje': typeof ServiciosHospedajeRoute
+  '/servicios/renta-de-autos': typeof ServiciosRentaDeAutosRoute
+  '/servicios/vuelos': typeof ServiciosVuelosRoute
+  '/viajes/$slug': typeof ViajesSlugRoute
+  '/servicios': typeof ServiciosIndexRoute
+  '/viajes': typeof ViajesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/aviso-de-privacidad': typeof AvisoDePrivacidadRoute
+  '/contacto': typeof ContactoRoute
+  '/cotizar': typeof CotizarRoute
+  '/cruceros': typeof CrucerosRoute
+  '/destinos': typeof DestinosRoute
+  '/disney': typeof DisneyRoute
+  '/grupos': typeof GruposRouteWithChildren
+  '/nosotros': typeof NosotrosRoute
+  '/politicas-de-cancelacion': typeof PoliticasDeCancelacionRoute
+  '/preguntas-frecuentes': typeof PreguntasFrecuentesRoute
+  '/privacidad': typeof PrivacidadRoute
+  '/servicios': typeof ServiciosRouteWithChildren
+  '/terminos': typeof TerminosRoute
+  '/tours': typeof ToursRoute
+  '/viajes': typeof ViajesRouteWithChildren
+  '/grupos/deportivos': typeof GruposDeportivosRoute
+  '/grupos/empresas': typeof GruposEmpresasRoute
+  '/servicios/hospedaje': typeof ServiciosHospedajeRoute
+  '/servicios/renta-de-autos': typeof ServiciosRentaDeAutosRoute
+  '/servicios/vuelos': typeof ServiciosVuelosRoute
+  '/viajes/$slug': typeof ViajesSlugRoute
+  '/servicios/': typeof ServiciosIndexRoute
+  '/viajes/': typeof ViajesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/aviso-de-privacidad'
+    | '/contacto'
+    | '/cotizar'
+    | '/cruceros'
+    | '/destinos'
+    | '/disney'
+    | '/grupos'
+    | '/nosotros'
+    | '/politicas-de-cancelacion'
+    | '/preguntas-frecuentes'
+    | '/privacidad'
+    | '/servicios'
+    | '/terminos'
+    | '/tours'
+    | '/viajes'
+    | '/grupos/deportivos'
+    | '/grupos/empresas'
+    | '/servicios/hospedaje'
+    | '/servicios/renta-de-autos'
+    | '/servicios/vuelos'
+    | '/viajes/$slug'
+    | '/servicios/'
+    | '/viajes/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/aviso-de-privacidad'
+    | '/contacto'
+    | '/cotizar'
+    | '/cruceros'
+    | '/destinos'
+    | '/disney'
+    | '/grupos'
+    | '/nosotros'
+    | '/politicas-de-cancelacion'
+    | '/preguntas-frecuentes'
+    | '/privacidad'
+    | '/terminos'
+    | '/tours'
+    | '/grupos/deportivos'
+    | '/grupos/empresas'
+    | '/servicios/hospedaje'
+    | '/servicios/renta-de-autos'
+    | '/servicios/vuelos'
+    | '/viajes/$slug'
+    | '/servicios'
+    | '/viajes'
+  id:
+    | '__root__'
+    | '/'
+    | '/aviso-de-privacidad'
+    | '/contacto'
+    | '/cotizar'
+    | '/cruceros'
+    | '/destinos'
+    | '/disney'
+    | '/grupos'
+    | '/nosotros'
+    | '/politicas-de-cancelacion'
+    | '/preguntas-frecuentes'
+    | '/privacidad'
+    | '/servicios'
+    | '/terminos'
+    | '/tours'
+    | '/viajes'
+    | '/grupos/deportivos'
+    | '/grupos/empresas'
+    | '/servicios/hospedaje'
+    | '/servicios/renta-de-autos'
+    | '/servicios/vuelos'
+    | '/viajes/$slug'
+    | '/servicios/'
+    | '/viajes/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AvisoDePrivacidadRoute: typeof AvisoDePrivacidadRoute
+  ContactoRoute: typeof ContactoRoute
+  CotizarRoute: typeof CotizarRoute
+  CrucerosRoute: typeof CrucerosRoute
+  DestinosRoute: typeof DestinosRoute
+  DisneyRoute: typeof DisneyRoute
+  GruposRoute: typeof GruposRouteWithChildren
+  NosotrosRoute: typeof NosotrosRoute
+  PoliticasDeCancelacionRoute: typeof PoliticasDeCancelacionRoute
+  PreguntasFrecuentesRoute: typeof PreguntasFrecuentesRoute
+  PrivacidadRoute: typeof PrivacidadRoute
+  ServiciosRoute: typeof ServiciosRouteWithChildren
+  TerminosRoute: typeof TerminosRoute
+  ToursRoute: typeof ToursRoute
+  ViajesRoute: typeof ViajesRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +339,231 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/aviso-de-privacidad': {
+      id: '/aviso-de-privacidad'
+      path: '/aviso-de-privacidad'
+      fullPath: '/aviso-de-privacidad'
+      preLoaderRoute: typeof AvisoDePrivacidadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contacto': {
+      id: '/contacto'
+      path: '/contacto'
+      fullPath: '/contacto'
+      preLoaderRoute: typeof ContactoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cotizar': {
+      id: '/cotizar'
+      path: '/cotizar'
+      fullPath: '/cotizar'
+      preLoaderRoute: typeof CotizarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cruceros': {
+      id: '/cruceros'
+      path: '/cruceros'
+      fullPath: '/cruceros'
+      preLoaderRoute: typeof CrucerosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/destinos': {
+      id: '/destinos'
+      path: '/destinos'
+      fullPath: '/destinos'
+      preLoaderRoute: typeof DestinosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/disney': {
+      id: '/disney'
+      path: '/disney'
+      fullPath: '/disney'
+      preLoaderRoute: typeof DisneyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/grupos': {
+      id: '/grupos'
+      path: '/grupos'
+      fullPath: '/grupos'
+      preLoaderRoute: typeof GruposRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nosotros': {
+      id: '/nosotros'
+      path: '/nosotros'
+      fullPath: '/nosotros'
+      preLoaderRoute: typeof NosotrosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politicas-de-cancelacion': {
+      id: '/politicas-de-cancelacion'
+      path: '/politicas-de-cancelacion'
+      fullPath: '/politicas-de-cancelacion'
+      preLoaderRoute: typeof PoliticasDeCancelacionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/preguntas-frecuentes': {
+      id: '/preguntas-frecuentes'
+      path: '/preguntas-frecuentes'
+      fullPath: '/preguntas-frecuentes'
+      preLoaderRoute: typeof PreguntasFrecuentesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacidad': {
+      id: '/privacidad'
+      path: '/privacidad'
+      fullPath: '/privacidad'
+      preLoaderRoute: typeof PrivacidadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/servicios': {
+      id: '/servicios'
+      path: '/servicios'
+      fullPath: '/servicios'
+      preLoaderRoute: typeof ServiciosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terminos': {
+      id: '/terminos'
+      path: '/terminos'
+      fullPath: '/terminos'
+      preLoaderRoute: typeof TerminosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tours': {
+      id: '/tours'
+      path: '/tours'
+      fullPath: '/tours'
+      preLoaderRoute: typeof ToursRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/viajes': {
+      id: '/viajes'
+      path: '/viajes'
+      fullPath: '/viajes'
+      preLoaderRoute: typeof ViajesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/grupos/deportivos': {
+      id: '/grupos/deportivos'
+      path: '/deportivos'
+      fullPath: '/grupos/deportivos'
+      preLoaderRoute: typeof GruposDeportivosRouteImport
+      parentRoute: typeof GruposRoute
+    }
+    '/grupos/empresas': {
+      id: '/grupos/empresas'
+      path: '/empresas'
+      fullPath: '/grupos/empresas'
+      preLoaderRoute: typeof GruposEmpresasRouteImport
+      parentRoute: typeof GruposRoute
+    }
+    '/servicios/': {
+      id: '/servicios/'
+      path: '/'
+      fullPath: '/servicios/'
+      preLoaderRoute: typeof ServiciosIndexRouteImport
+      parentRoute: typeof ServiciosRoute
+    }
+    '/servicios/hospedaje': {
+      id: '/servicios/hospedaje'
+      path: '/hospedaje'
+      fullPath: '/servicios/hospedaje'
+      preLoaderRoute: typeof ServiciosHospedajeRouteImport
+      parentRoute: typeof ServiciosRoute
+    }
+    '/servicios/renta-de-autos': {
+      id: '/servicios/renta-de-autos'
+      path: '/renta-de-autos'
+      fullPath: '/servicios/renta-de-autos'
+      preLoaderRoute: typeof ServiciosRentaDeAutosRouteImport
+      parentRoute: typeof ServiciosRoute
+    }
+    '/servicios/vuelos': {
+      id: '/servicios/vuelos'
+      path: '/vuelos'
+      fullPath: '/servicios/vuelos'
+      preLoaderRoute: typeof ServiciosVuelosRouteImport
+      parentRoute: typeof ServiciosRoute
+    }
+    '/viajes/': {
+      id: '/viajes/'
+      path: '/'
+      fullPath: '/viajes/'
+      preLoaderRoute: typeof ViajesIndexRouteImport
+      parentRoute: typeof ViajesRoute
+    }
+    '/viajes/$slug': {
+      id: '/viajes/$slug'
+      path: '/$slug'
+      fullPath: '/viajes/$slug'
+      preLoaderRoute: typeof ViajesSlugRouteImport
+      parentRoute: typeof ViajesRoute
+    }
   }
 }
 
+interface GruposRouteChildren {
+  GruposDeportivosRoute: typeof GruposDeportivosRoute
+  GruposEmpresasRoute: typeof GruposEmpresasRoute
+}
+
+const GruposRouteChildren: GruposRouteChildren = {
+  GruposDeportivosRoute: GruposDeportivosRoute,
+  GruposEmpresasRoute: GruposEmpresasRoute,
+}
+
+const GruposRouteWithChildren =
+  GruposRoute._addFileChildren(GruposRouteChildren)
+
+interface ServiciosRouteChildren {
+  ServiciosHospedajeRoute: typeof ServiciosHospedajeRoute
+  ServiciosRentaDeAutosRoute: typeof ServiciosRentaDeAutosRoute
+  ServiciosVuelosRoute: typeof ServiciosVuelosRoute
+  ServiciosIndexRoute: typeof ServiciosIndexRoute
+}
+
+const ServiciosRouteChildren: ServiciosRouteChildren = {
+  ServiciosHospedajeRoute: ServiciosHospedajeRoute,
+  ServiciosRentaDeAutosRoute: ServiciosRentaDeAutosRoute,
+  ServiciosVuelosRoute: ServiciosVuelosRoute,
+  ServiciosIndexRoute: ServiciosIndexRoute,
+}
+
+const ServiciosRouteWithChildren = ServiciosRoute._addFileChildren(
+  ServiciosRouteChildren,
+)
+
+interface ViajesRouteChildren {
+  ViajesSlugRoute: typeof ViajesSlugRoute
+  ViajesIndexRoute: typeof ViajesIndexRoute
+}
+
+const ViajesRouteChildren: ViajesRouteChildren = {
+  ViajesSlugRoute: ViajesSlugRoute,
+  ViajesIndexRoute: ViajesIndexRoute,
+}
+
+const ViajesRouteWithChildren =
+  ViajesRoute._addFileChildren(ViajesRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AvisoDePrivacidadRoute: AvisoDePrivacidadRoute,
+  ContactoRoute: ContactoRoute,
+  CotizarRoute: CotizarRoute,
+  CrucerosRoute: CrucerosRoute,
+  DestinosRoute: DestinosRoute,
+  DisneyRoute: DisneyRoute,
+  GruposRoute: GruposRouteWithChildren,
+  NosotrosRoute: NosotrosRoute,
+  PoliticasDeCancelacionRoute: PoliticasDeCancelacionRoute,
+  PreguntasFrecuentesRoute: PreguntasFrecuentesRoute,
+  PrivacidadRoute: PrivacidadRoute,
+  ServiciosRoute: ServiciosRouteWithChildren,
+  TerminosRoute: TerminosRoute,
+  ToursRoute: ToursRoute,
+  ViajesRoute: ViajesRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
