@@ -14,168 +14,7 @@ export type Database = {
   }
   public: {
     Tables: {
-      quote_requests: {
-        Row: {
-          assigned_to: string | null
-          budget: string | null
-          created_at: string
-          departure_place: string | null
-          destination: string | null
-          details: string | null
-          device_type: string | null
-          email: string
-          end_date: string | null
-          folio: string
-          full_name: string
-          id: string
-          internal_notes: string | null
-          phone: string
-          preferred_contact: string
-          privacy_consent: boolean
-          service: string
-          source_campaign: string | null
-          source_page: string | null
-          start_date: string | null
-          status: string
-          travelers: number | null
-          updated_at: string
-        }
-        Insert: {
-          assigned_to?: string | null
-          budget?: string | null
-          created_at?: string
-          departure_place?: string | null
-          destination?: string | null
-          details?: string | null
-          device_type?: string | null
-          email: string
-          end_date?: string | null
-          folio?: string
-          full_name: string
-          id?: string
-          internal_notes?: string | null
-          phone: string
-          preferred_contact?: string
-          privacy_consent: boolean
-          service: string
-          source_campaign?: string | null
-          source_page?: string | null
-          start_date?: string | null
-          status?: string
-          travelers?: number | null
-          updated_at?: string
-        }
-        Update: {
-          assigned_to?: string | null
-          budget?: string | null
-          created_at?: string
-          departure_place?: string | null
-          destination?: string | null
-          details?: string | null
-          device_type?: string | null
-          email?: string
-          end_date?: string | null
-          folio?: string
-          full_name?: string
-          id?: string
-          internal_notes?: string | null
-          phone?: string
-          preferred_contact?: string
-          privacy_consent?: boolean
-          service?: string
-          source_campaign?: string | null
-          source_page?: string | null
-          start_date?: string | null
-          status?: string
-          travelers?: number | null
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      travel_offers: {
-        Row: {
-          created_at: string
-          currency: string | null
-          destination: string
-          duration: string | null
-          featured: boolean
-          id: string
-          image_key: string | null
-          intent: string[]
-          kind: string
-          name: string
-          price_from: number | null
-          published: boolean
-          region: string
-          season: string | null
-          slug: string
-          sort_order: number
-          summary: string
-          updated_at: string
-        }
-        Insert: {
-          created_at?: string
-          currency?: string | null
-          destination: string
-          duration?: string | null
-          featured?: boolean
-          id?: string
-          image_key?: string | null
-          intent?: string[]
-          kind: string
-          name: string
-          price_from?: number | null
-          published?: boolean
-          region: string
-          season?: string | null
-          slug: string
-          sort_order?: number
-          summary: string
-          updated_at?: string
-        }
-        Update: {
-          created_at?: string
-          currency?: string | null
-          destination?: string
-          duration?: string | null
-          featured?: boolean
-          id?: string
-          image_key?: string | null
-          intent?: string[]
-          kind?: string
-          name?: string
-          price_from?: number | null
-          published?: boolean
-          region?: string
-          season?: string | null
-          slug?: string
-          sort_order?: number
-          summary?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      user_roles: {
-        Row: {
-          created_at: string
-          id: string
-          role: Database["public"]["Enums"]["app_role"]
-          user_id: string
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          role: Database["public"]["Enums"]["app_role"]
-          user_id: string
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          role?: Database["public"]["Enums"]["app_role"]
-          user_id?: string
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Views: {
       [_ in never]: never
@@ -184,7 +23,7 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      app_role: "admin" | "editor" | "advisor"
+      [_ in never]: never
     }
     CompositeTypes: {
       [_ in never]: never
@@ -311,8 +150,6 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {
-      app_role: ["admin", "editor", "advisor"],
-    },
+    Enums: {},
   },
 } as const
