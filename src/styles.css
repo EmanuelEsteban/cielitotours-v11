@@ -2952,7 +2952,7 @@ main:has(> .vuelos-final:last-child) + .site-footer .footer-transition-thread { 
   --hosp-mask-cut: black;
   z-index: 1;
 }
-main:has(> .hosp-final:last-child) + .site-footer .footer-transition-shape { fill: var(--secondary); }
+main:has(> .hosp-final:last-child):not(:has(> #cta-final:last-child)) + .site-footer .footer-transition-shape { fill: var(--secondary); }
 main:has(> .hosp-final:last-child) + .site-footer .footer-transition-thread { display: none; }
 .hosp-final-gold { position: absolute; left: 0; top: 100%; width: 100%; height: 48px; overflow: visible; pointer-events: none; fill: none; stroke-linecap: round; }
 .hosp-final-gold path { vector-effect: non-scaling-stroke; }
