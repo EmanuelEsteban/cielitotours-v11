@@ -173,7 +173,18 @@ function FlightsPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-secondary py-16 sm:py-24">
+      <section className="vuelos-final relative bg-secondary py-16 sm:py-24">
+        <svg aria-hidden="true" viewBox="0 0 1440 48" preserveAspectRatio="none" className="vuelos-final-weave">
+          <defs>
+            <linearGradient id="vf-gold" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#94703B" /><stop offset=".18" stopColor="#D4AD62" /><stop offset=".3" stopColor="#F5D994" /><stop offset=".46" stopColor="#C39A52" /><stop offset=".62" stopColor="#D4AD62" /><stop offset=".74" stopColor="#F5D994" /><stop offset=".88" stopColor="#C39A52" /><stop offset="1" stopColor="#94703B" /></linearGradient>
+            <mask id="vf-over" maskUnits="userSpaceOnUse" x="0" y="0" width="1440" height="48"><rect x="285" y="0" width="60" height="48" fill="white" /><rect x="983" y="0" width="60" height="48" fill="white" /></mask>
+          </defs>
+          <path className="vf-shadow" d="M0 9C240 41 460 32 720 18C980 4 1130 43 1440 5" />
+          <path className="vf-b" d="M0 14C260 30 420 44 720 13C1000 0 1100 50 1440 10" />
+          <path className="vf-a" d="M0 9C240 41 460 32 720 18C980 4 1130 43 1440 5" />
+          <path className="vf-a-shine" d="M0 9C240 41 460 32 720 18C980 4 1130 43 1440 5" />
+          <g mask="url(#vf-over)"><path className="vf-gap" d="M0 14C260 30 420 44 720 13C1000 0 1100 50 1440 10" /><path className="vf-b" d="M0 14C260 30 420 44 720 13C1000 0 1100 50 1440 10" /></g>
+        </svg>
         <svg aria-hidden="true" viewBox="0 0 1000 260" className="pointer-events-none absolute inset-0 hidden size-full text-primary opacity-15 sm:block"><path d="M-20 210 C180 40 350 265 540 105 S790 30 1030 155" fill="none" stroke="currentColor" strokeWidth="2" className="route-line" /></svg>
         <div className="relative mx-auto max-w-4xl px-6 text-center">
           <p className="section-kicker">Tu ruta es el inicio</p>

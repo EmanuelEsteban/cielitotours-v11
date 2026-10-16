@@ -2876,3 +2876,18 @@ textarea.ct-input { resize: vertical; }
   .vuelos-hero-cta:hover { transform: none; }
   .vuelos-hero-cta:hover svg { transform: none; }
 }
+
+/* Vuelos Premium Visual 03 — transición inferior celeste → pie con filamentos entrelazados */
+main:has(> .vuelos-final:last-child) + .site-footer .footer-transition-shape { fill: var(--secondary); }
+main:has(> .vuelos-final:last-child) + .site-footer .footer-transition-thread { display: none; }
+.vuelos-final-weave { position: absolute; left: 0; bottom: -48px; z-index: 2; width: 100%; height: 48px; overflow: visible; pointer-events: none; fill: none; stroke-linecap: round; }
+.vuelos-final-weave path { vector-effect: non-scaling-stroke; }
+.vuelos-final-weave .vf-shadow { stroke: oklch(0.2 0.04 250 / .22); stroke-width: 4; transform: translateY(1.5px); filter: blur(1px); }
+.vuelos-final-weave .vf-a { stroke: url(#vf-gold); stroke-width: 2.75; }
+.vuelos-final-weave .vf-a-shine { stroke: #F5D994; stroke-width: 1; opacity: .55; transform: translateY(-.9px); }
+.vuelos-final-weave .vf-b { stroke: url(#vf-gold); stroke-width: 1.6; }
+.vuelos-final-weave .vf-gap { stroke: var(--secondary); stroke-width: 4; opacity: .9; }
+@media (max-width: 767px) {
+  .vuelos-final-weave .vf-a { stroke-width: 2.25; }
+  .vuelos-final-weave .vf-b { stroke-width: 1.25; opacity: .8; }
+}
