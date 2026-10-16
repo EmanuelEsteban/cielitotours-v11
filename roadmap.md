@@ -1,4 +1,4 @@
-# FAQ Signature Artisanal 02
-- [x] Inspect approved reference and FAQ-only scope; document is truncated mid-sentence.
-- [x] Reproduce reference backgrounds, stamp, calligraphic subtitle, parchment accordions and double gold organic waves with live accessible content.
-- [x] Inspect desktop/mobile screenshots; verify all three accordions, keyboard controls and return link at 1440/768/390/375px with no overflow or console errors; build OK. Shared header/footer unchanged.
+# FAQ Signature Artisanal 03
+- [x] Inspect supplied refinements and preserve approved design; brief ends at “Si en móvil no”, before the sixth refinement.
+- [ ] Refine subtitle and decorative inscriptions, enlarge cards and increase clearance without changing title or hero geometry.
+- [ ] Reserve measured accordion space and verify stable textures, curves and footer across open/closed states at desktop/tablet/mobile widths.
