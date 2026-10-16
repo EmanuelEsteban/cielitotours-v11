@@ -2192,7 +2192,19 @@ textarea.ct-input { resize: vertical; }
 .nos-stamp { position: absolute; left: 36%; top: 26px; width: 150px; color: color-mix(in oklab, var(--nos-gold) 85%, var(--nos-navy)); opacity: .5; transform: rotate(-10deg); overflow: visible; }
 
 /* esencia */
-.nos-esencia { padding-block: 72px 64px; background: linear-gradient(180deg, var(--nos-cream) 0%, var(--nos-ivory) 55%, var(--nos-cream) 100%); }
+.nos-esencia { --nos-esencia-ink: color-mix(in oklab, var(--nos-navy) 82%, var(--nos-muted));
+  --nos-esencia-satin: color-mix(in oklab, var(--nos-champ) 14%, var(--nos-ivory));
+  padding-block: 72px 64px;
+  background: radial-gradient(ellipse 65% 48% at 0% 100%, color-mix(in oklab, var(--nos-champ) 13%, transparent), transparent 85%),
+    linear-gradient(155deg, var(--nos-cream), var(--nos-ivory) 48%, var(--nos-esencia-satin)); }
+.nos-esencia::before { content: ""; position: absolute; left: -140px; bottom: 24px; width: 480px; height: 220px;
+  border-radius: 48% 65% 54% 38%; border-bottom: 32px solid color-mix(in oklab, var(--nos-champ) 15%, transparent);
+  transform: rotate(-18deg); filter: blur(5px); pointer-events: none; z-index: -1;
+  mask-image: linear-gradient(90deg, transparent, var(--nos-ivory) 30%, transparent 92%); }
+.nos-esencia-heading { display: grid; width: fit-content; max-width: 100%; }
+.nos .nos-esencia-heading .nos-kicker { justify-self: center; font-family: var(--font-sans); font-size: 16.5px; font-weight: 600;
+  letter-spacing: .22em; line-height: clamp(19.5px, 1.575vw, 23.25px); }
+@media (max-width: 900px) { .nos .nos-esencia-heading .nos-kicker { font-size: 14px; } }
 .nos-esencia-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: center; }
 .nos-esencia-hand { margin-top: 30px; font-size: clamp(28px, 2.1vw, 36px); transform: rotate(-4deg); transform-origin: left; }
 .nos-team { position: relative; padding: 10px; background: #FFFCF6; box-shadow: 0 2px 4px rgb(20 44 73 / .06), 0 30px 50px -30px rgb(20 44 73 / .45); border-radius: 4px; }
@@ -2399,9 +2411,12 @@ textarea.ct-input { resize: vertical; }
 /* Esencia y Apapacho: titulares editoriales */
 .nos-esencia .nos-h2, .nos-apa .nos-h2 { font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif; font-weight: 600; letter-spacing: -.005em; }
 .nos-esencia .nos-h2-xl { font-size: clamp(42px, 4vw, 64px); line-height: 1; }
-.nos-esencia-txt .nos-p { margin-top: 18px; font-size: clamp(15.5px, 1.1vw, 17px); font-weight: 450; line-height: 1.68; color: #3E4C5E; max-width: 54ch; }
+.nos-esencia-txt .nos-p { margin-top: 24px; font-family: var(--font-sans); font-size: 18.5px; font-weight: 400; line-height: 1.68;
+  color: var(--nos-esencia-ink); max-width: 48ch; }
+.nos-esencia-txt .nos-p strong { font-weight: 500; }
+@media (max-width: 900px) { .nos-esencia-txt .nos-p { font-size: 16.5px; } }
 .nos-rule { display: block; width: 46px; height: 1px; margin-top: 20px; background: linear-gradient(90deg, var(--nos-champ), transparent); }
-.nos-esencia-hand { margin-top: 18px; }
+.nos-esencia-hand { margin-top: 64px; }
 .nos-apa .nos-h2 { font-size: clamp(38px, 3.5vw, 56px); line-height: 1.02; font-weight: 500; }
 .nos-apa .nos-h2 em { font-style: italic; color: #F3DFB8; }
 .nos-apa-txt .nos-p { margin-top: 20px; font-size: clamp(15.5px, 1.1vw, 17px); line-height: 1.65; color: rgb(251 245 233 / .9); max-width: 54ch; }
