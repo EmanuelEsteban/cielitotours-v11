@@ -173,6 +173,56 @@
 @keyframes flight { to { stroke-dashoffset: -120; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; } }
 
+/* Header-only premium palette and finishes; page and footer tokens stay intact. */
+.site-header {
+  --header-ivory: oklch(0.96 0.012 85);
+  --header-bright: oklch(0.985 0.006 85);
+  --header-champagne: oklch(0.79 0.055 85);
+  --header-petroleum: oklch(0.36 0.064 234);
+  --header-hover: oklch(0.415 0.06 234);
+  --header-fuchsia: oklch(0.57 0.23 8);
+  --header-fuchsia-light: oklch(0.60 0.23 8);
+  --header-shadow: oklch(0.16 0.035 248 / .32);
+  --header-panel-fill: linear-gradient(165deg, var(--ink), var(--header-petroleum));
+  --header-panel-shadow: 0 16px 36px -10px var(--header-shadow), 0 4px 10px var(--header-shadow), inset 0 1px 0 color-mix(in oklab, var(--header-ivory) 14%, transparent);
+  --header-cta-shadow: 0 4px 10px -3px var(--header-shadow), inset 0 1px 0 color-mix(in oklab, var(--header-ivory) 20%, transparent);
+  color: var(--header-ivory);
+  border-bottom-color: color-mix(in oklab, var(--header-champagne) 16%, transparent);
+}
+.site-header.is-scrolled { box-shadow: 0 4px 18px -8px var(--header-shadow); }
+.header-nav-item { display: flex; align-items: center; }
+.header-nav-link { position: relative; display: inline-flex; align-items: center; min-height: 44px; font-family: var(--font-sans); font-size: 15px; font-weight: 600; line-height: 1.5; letter-spacing: 0; color: var(--header-ivory); transition: color 200ms ease; }
+.header-nav-link::after { content: ""; position: absolute; bottom: 3px; left: 0; width: 100%; height: 1px; background: var(--header-champagne); transform: scaleX(0); transform-origin: center; transition: transform 200ms ease; }
+.header-nav-item[data-open="true"] .header-nav-link,
+.header-nav-link:hover, .header-nav-link:focus-visible { color: var(--header-bright); }
+.header-nav-item[data-open="true"] .header-nav-link::after,
+.header-nav-item[data-active="true"] .header-nav-link::after,
+.header-nav-item:hover .header-nav-link::after,
+.header-nav-item:focus-within .header-nav-link::after { transform: scaleX(1); }
+.site-header .header-menu-toggle { width: 24px; height: 44px; min-width: 24px; padding: 0; margin-left: 4px; border-radius: 8px; color: var(--header-ivory); background: transparent; box-shadow: none; }
+.site-header .header-menu-toggle:hover { color: var(--header-bright); background: transparent; }
+.header-menu-toggle svg { width: 14px; height: 14px; transition: transform 200ms ease; }
+.header-nav-item[data-open="true"] .header-menu-toggle svg { transform: rotate(180deg); }
+.header-dropdown { position: absolute; top: calc(100% + 8px); left: -12px; z-index: 1; min-width: 216px; padding: 8px; border-radius: 12px; border: 1px solid color-mix(in oklab, var(--header-champagne) 24%, transparent); background: var(--header-panel-fill); box-shadow: var(--header-panel-shadow); opacity: 0; visibility: hidden; transform: translateY(5px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; }
+.header-dropdown::before { content: ""; position: absolute; height: 12px; top: -12px; left: 0; right: 0; }
+.header-nav-item[data-open="true"] .header-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+.header-dropdown-link { display: flex; align-items: center; position: relative; min-height: 44px; margin: 2px 0; padding: 10px 16px; border-radius: 8px; color: var(--header-ivory); font-size: 15px; font-weight: 500; line-height: 1.5; white-space: nowrap; transition: background 180ms ease, color 180ms ease; }
+.header-dropdown-link::before { content: ""; position: absolute; left: 4px; top: 14px; bottom: 14px; width: 2px; border-radius: 2px; background: var(--header-champagne); opacity: 0; transition: opacity 180ms ease; }
+.header-dropdown-link:hover, .header-dropdown-link:focus-visible, .header-dropdown-link[aria-current="page"] { color: var(--header-bright); background: var(--header-hover); }
+.header-dropdown-link:hover::before, .header-dropdown-link:focus-visible::before, .header-dropdown-link[aria-current="page"]::before { opacity: 1; }
+.header-dropdown-link[aria-current="page"]::before { background: var(--header-fuchsia-light); }
+.site-header .header-quote { border-radius: 10px; border: 1px solid color-mix(in oklab, var(--header-ivory) 14%, transparent); background: linear-gradient(180deg, var(--header-fuchsia-light), var(--header-fuchsia)); color: var(--header-bright); font-family: var(--font-sans); font-weight: 600; box-shadow: var(--header-cta-shadow); transition: transform 180ms ease, filter 180ms ease; }
+.site-header .header-quote:hover { transform: translateY(-2px); filter: brightness(1.04); }
+.site-header .header-mobile-toggle { color: var(--header-ivory); border-radius: 10px; }
+.site-header .header-mobile-toggle:hover { color: var(--header-bright); background: var(--header-petroleum); }
+.header-mobile-panel { border-top: 1px solid color-mix(in oklab, var(--header-champagne) 20%, transparent); background: var(--header-panel-fill); box-shadow: var(--header-panel-shadow); max-height: calc(100dvh - 77px); overflow-y: auto; animation: header-panel-in 200ms ease both; }
+.header-mobile-link { position: relative; color: var(--header-ivory); border-bottom: 1px solid color-mix(in oklab, var(--header-champagne) 12%, transparent); font-size: 16px; font-weight: 600; transition: color 180ms ease, background 180ms ease; }
+.header-mobile-link:hover, .header-mobile-link[aria-current="page"] { color: var(--header-bright); background: var(--header-hover); }
+.header-mobile-link[aria-current="page"]::before { content: ""; position: absolute; left: -8px; top: 18px; bottom: 18px; width: 2px; background: var(--header-fuchsia-light); }
+.site-header :is(.header-nav-link, .header-menu-toggle, .header-dropdown-link, .header-mobile-link, .header-mobile-toggle, .header-quote):focus-visible { outline: 2px solid var(--header-champagne); outline-offset: 3px; }
+@keyframes header-panel-in { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .site-header *, .site-header *::before, .site-header *::after { transition: none !important; animation: none !important; } .site-header .header-quote:hover { transform: none; } }
+
 /* Riviera Maya only: scoped atmosphere, activated by .theme-caribe */
 .theme-caribe {
   --background: oklch(0.965 0.018 88);
