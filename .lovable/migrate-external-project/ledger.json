@@ -1,0 +1,16 @@
+{
+  "project": "CielitoTour v11 (migrated from github EmanuelEsteban/cielito-tours-v10)",
+  "capabilities": [
+    {"capability": "code", "source": "github:/tmp/v10", "outcome": "copy src/, public/, drizzle/, scripts/, supabase/, drizzle.config.ts, AGENTS.md, README.md", "status": "migrate", "next_action": "copy files, add deps (@supabase/supabase-js, lenis, drizzle-kit, drizzle-orm, postgres)"},
+    {"capability": "schema", "source": "drizzle/migrations 0000-0003 (user_roles, travel_offers, quote_requests)", "outcome": "apply to Lovable Cloud postgres", "status": "migrate", "next_action": "enable Lovable Cloud, apply migrations"},
+    {"capability": "records", "source": "none attached", "outcome": "old data lives in v10 cloud project", "status": "pending", "next_action": "after preview, request CSV/JSON exports of travel_offers, quote_requests, user_roles + auth users"},
+    {"capability": "auth", "source": "supabase auth (auth-middleware, cron-auth, user_roles)", "outcome": "Lovable Cloud auth, same client code", "status": "migrate", "next_action": "enable cloud, verify sign-in"},
+    {"capability": "authorization", "source": "RLS policies in migrations", "outcome": "apply with schema", "status": "migrate", "next_action": "apply migrations, verify RLS"},
+    {"capability": "uploaded_file_bytes", "source": "check storage usage in code", "outcome": "verify", "status": "inspect", "next_action": "grep storage usage"},
+    {"capability": "external_providers", "source": "none found besides supabase", "outcome": "n/a", "status": "verified", "next_action": ""},
+    {"capability": "public_endpoints", "source": "check src/routes/api", "outcome": "verify", "status": "inspect", "next_action": "grep api routes"},
+    {"capability": "secrets", "source": "supabase keys via Lovable Cloud env", "outcome": "managed by cloud", "status": "migrate", "next_action": "enable cloud"},
+    {"capability": "cutover", "source": "new project, no traffic", "outcome": "n/a", "status": "n/a", "next_action": ""},
+    {"capability": "verification", "source": "build + preview + smoke flow", "outcome": "pending", "status": "pending", "next_action": "build, routes, one CRUD flow"}
+  ]
+}
