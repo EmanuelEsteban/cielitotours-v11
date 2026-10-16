@@ -129,7 +129,7 @@ function Nosotros() {
       <section className="nos-spec">
         <Palm className="nos-palm nos-palm-spec" />
         <div className="nos-wrap">
-          <p className="nos-kicker text-center">Nuestra especialidad</p>
+          <p className="nos-kicker text-center"><span>Nuestra especialidad</span></p>
           <h2 className="nos-h2 text-center">Diversos propósitos, un mismo compromiso</h2>
           <ul className="nos-cards">
             {specs.map(({ img, pos, icon: I, title, text, alt }) => <li key={title} className="nos-card">

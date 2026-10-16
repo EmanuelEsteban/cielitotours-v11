@@ -2477,12 +2477,12 @@ textarea.ct-input { resize: vertical; }
   pointer-events: none;
 }
 .nos-spec > .nos-wrap > .nos-kicker {
-  height: calc(clamp(13px, 1.05vw, 15.5px) * 1.5);
-  line-height: calc(clamp(13px, 1.05vw, 15.5px) * 1.5);
+  height: 1.5em;
+  line-height: 1.5;
   font-family: "Manrope", sans-serif;
-  font-size: 17px;
   font-weight: 600;
 }
+.nos-spec > .nos-wrap > .nos-kicker > span { font-size: 17px; line-height: 0; }
 .nos-editorial-curves {
   position: absolute;
   inset-inline: 0;
@@ -2500,5 +2500,5 @@ textarea.ct-input { resize: vertical; }
 .nos-editorial-curve-stone { stroke: var(--nos-muted); }
 .nos-editorial-curve-ivory { stroke: var(--nos-ivory); }
 @media (max-width: 900px) {
-  .nos-spec > .nos-wrap > .nos-kicker { font-size: 15px; }
+  .nos-spec > .nos-wrap > .nos-kicker > span { font-size: 15px; }
 }
