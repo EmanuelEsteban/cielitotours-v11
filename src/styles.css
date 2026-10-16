@@ -2886,7 +2886,7 @@ main:has(> .vuelos-final:last-child) + .site-footer .footer-transition-thread { 
 .vuelos-final-weave .vf-a { stroke: url(#vf-gold); stroke-width: 2.75; }
 .vuelos-final-weave .vf-a-shine { stroke: #F5D994; stroke-width: 1; opacity: .55; transform: translateY(-.9px); }
 .vuelos-final-weave .vf-b { stroke: url(#vf-gold); stroke-width: 1.6; }
-.vuelos-final-weave .vf-gap { stroke: var(--secondary); stroke-width: 4; opacity: .9; }
+.vuelos-final-weave .vf-gap { stroke: oklch(0.27 0.054 250); stroke-width: 3.5; opacity: .85; }
 @media (max-width: 767px) {
   .vuelos-final-weave .vf-a { stroke-width: 2.25; }
   .vuelos-final-weave .vf-b { stroke-width: 1.25; opacity: .8; }
