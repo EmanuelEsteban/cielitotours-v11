@@ -105,6 +105,11 @@ function Nosotros() {
 
       {/* ESENCIA */}
       <section className="nos-esencia">
+        <svg className="nos-editorial-curves" viewBox="0 0 1440 360" preserveAspectRatio="none" fill="none" aria-hidden="true">
+          <path className="nos-editorial-curve-champ" d="M-100 18C165 70 158 128 60 192S-35 294 118 350" />
+          <path className="nos-editorial-curve-stone" d="M-80 82C86 120 132 190 38 244S-12 316 80 380" />
+          <path className="nos-editorial-curve-ivory" d="M1530 4C1290 88 1304 142 1400 204S1510 290 1318 368" />
+        </svg>
         <div className="nos-wrap nos-esencia-grid">
           <div className="nos-esencia-txt">
             <p className="nos-kicker">Nuestra esencia</p>
