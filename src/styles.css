@@ -2510,7 +2510,7 @@ textarea.ct-input { resize: vertical; }
   position: absolute;
   left: 0;
   right: .18em;
-  bottom: -7px;
+  bottom: -4.5px;
   height: 1.5px;
   background: var(--nos-champ);
   pointer-events: none;
