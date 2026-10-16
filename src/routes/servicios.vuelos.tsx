@@ -93,7 +93,7 @@ function FlightsPage() {
               Tu próximo viaje empieza por encontrar el <span className="text-accent">vuelo adecuado.</span>
             </h1>
             <p className="mt-4 max-w-lg text-base leading-7 text-primary-foreground/85 sm:text-lg sm:leading-8">Cuéntanos a dónde quieres viajar, tus fechas y lo que necesitas. Nuestro equipo te ayudará a preparar una opción pensada para tu viaje.</p>
-            <Button asChild size="lg" className="mt-6 min-h-12 w-full sm:w-auto">
+            <Button asChild size="lg" className="vuelos-hero-cta mt-6 min-h-12 w-full sm:w-auto">
               <a href="#cotizar-vuelo">Cotizar mi vuelo <ArrowDown /></a>
             </Button>
           </div>
@@ -102,9 +102,20 @@ function FlightsPage() {
         <div aria-hidden="true" className="paper-edge absolute inset-x-0 bottom-0 z-20 h-3" />
       </section>
 
-      <section id="cotizar-vuelo" className="mobile-section bg-background py-16 sm:py-24">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[.58fr_1.42fr] lg:gap-16 lg:px-8">
-          <div className="lg:sticky lg:top-24 lg:self-start">
+      <section id="cotizar-vuelo" className="mobile-section vuelos-quote py-16 sm:py-24">
+        <svg aria-hidden="true" viewBox="0 0 280 120" className="vuelos-quote-plane"><g fill="currentColor"><path d="M10 60 Q60 52 150 50 L210 48 Q240 47 252 52 L262 56 Q265 58 262 60 L250 64 Q220 70 160 70 L120 72 L96 96 L84 96 L98 72 L60 73 Q30 73 14 68 Q6 64 10 60 Z" /><path d="M150 62 L120 100 L134 100 L172 64 Z" /><path d="M40 58 L26 34 L36 34 L54 56 Z" /></g></svg>
+        <svg aria-hidden="true" viewBox="0 0 600 800" fill="none" className="vuelos-quote-routes">
+          <defs>
+            <linearGradient id="vq-champagne" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="oklch(0.82 0.16 93)" stopOpacity="0" /><stop offset=".45" stopColor="oklch(0.82 0.16 93)" stopOpacity=".55" /><stop offset="1" stopColor="oklch(0.82 0.16 93)" stopOpacity="0" /></linearGradient>
+            <linearGradient id="vq-bluegray" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stopColor="oklch(0.6 0.045 240)" stopOpacity="0" /><stop offset=".5" stopColor="oklch(0.6 0.045 240)" stopOpacity=".5" /><stop offset="1" stopColor="oklch(0.6 0.045 240)" stopOpacity="0" /></linearGradient>
+          </defs>
+          <path d="M640 110 C 430 170 390 330 170 370" stroke="url(#vq-champagne)" strokeWidth="1.5" />
+          <path d="M660 260 C 470 300 430 470 210 520" stroke="url(#vq-bluegray)" strokeWidth="1.25" />
+          <path d="M620 430 C 460 470 400 600 240 650" stroke="url(#vq-champagne)" strokeWidth="1" />
+          <path d="M680 40 C 520 90 470 200 320 240" stroke="url(#vq-bluegray)" strokeWidth="1" />
+        </svg>
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[.58fr_1.42fr] lg:gap-16 lg:px-8">
+          <div>
             <p className="section-kicker">Cotización personalizada</p>
             <h2 className="mt-4 font-display text-4xl font-bold leading-tight text-ink sm:text-5xl">Cuéntanos tu ruta.</h2>
             <p className="mt-5 max-w-md font-semibold leading-7 text-ink">Preparamos tu cotización de forma personalizada.</p>

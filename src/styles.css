@@ -2667,3 +2667,58 @@ textarea.ct-input { resize: vertical; }
 @media (max-width: 900px) {
   .nos-esencia-second { left: 1.109003em; }
 }
+
+/* Vuelos Premium Visual 01 — botón del hero */
+.vuelos-hero-cta {
+  border-radius: 12px;
+  border: 1px solid color-mix(in oklab, var(--primary) 68%, white 32%);
+  background: linear-gradient(180deg, color-mix(in oklab, var(--primary) 94%, white 6%), var(--primary) 55%, color-mix(in oklab, var(--primary) 92%, black 8%));
+  box-shadow: 0 10px 24px -10px color-mix(in oklab, var(--primary) 55%, transparent), inset 0 1px 0 color-mix(in oklab, white 26%, transparent);
+  font-weight: 600;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+.vuelos-hero-cta:hover { transform: translateY(-2px); box-shadow: 0 16px 32px -12px color-mix(in oklab, var(--primary) 60%, transparent), inset 0 1px 0 color-mix(in oklab, white 32%, transparent); }
+.vuelos-hero-cta:active { transform: translateY(0); box-shadow: 0 8px 18px -10px color-mix(in oklab, var(--primary) 55%, transparent), inset 0 1px 0 color-mix(in oklab, white 22%, transparent); }
+.vuelos-hero-cta:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.vuelos-hero-cta svg { transition: transform 220ms ease; }
+.vuelos-hero-cta:hover svg { transform: translateX(3px); }
+
+/* Vuelos Premium Visual 01 — fondo de la sección de cotización */
+.vuelos-quote {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(85% 55% at 76% 0%, color-mix(in oklab, var(--accent) 12%, transparent), transparent 62%),
+    linear-gradient(158deg, oklch(0.968 0.017 88) 0%, oklch(0.946 0.013 96) 46%, oklch(0.912 0.02 236) 100%);
+}
+.vuelos-quote-plane {
+  position: absolute;
+  left: -5%;
+  bottom: -3%;
+  width: min(540px, 62%);
+  height: auto;
+  color: oklch(0.56 0.04 242);
+  opacity: .16;
+  filter: blur(1.5px);
+  pointer-events: none;
+  mask-image: linear-gradient(100deg, transparent 0%, black 32%, black 68%, transparent 100%);
+  -webkit-mask-image: linear-gradient(100deg, transparent 0%, black 32%, black 68%, transparent 100%);
+}
+.vuelos-quote-routes {
+  position: absolute;
+  right: -3%;
+  top: 0;
+  height: 100%;
+  width: min(600px, 56%);
+  opacity: .55;
+  pointer-events: none;
+}
+@media (max-width: 1023px) {
+  .vuelos-quote-plane { width: 78%; left: -14%; bottom: -2%; opacity: .12; }
+  .vuelos-quote-routes { width: 88%; right: -22%; opacity: .4; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vuelos-hero-cta, .vuelos-hero-cta svg { transition: none; }
+  .vuelos-hero-cta:hover { transform: none; }
+  .vuelos-hero-cta:hover svg { transform: none; }
+}
